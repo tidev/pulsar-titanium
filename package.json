@@ -1,0 +1,23 @@
+{
+    "name": "appc",
+    "main": "./lib/appc",
+    "version": "0.0.1",
+    "description": "Appcelerator build tools and UI",
+    "repository": "",
+    "license": "MIT",
+    "engines": {
+    "atom": ">0.50.0"
+    },
+    "keywords": [
+        "axway",
+        "appcelerator",
+        "titanium",
+        "arrow"
+    ],
+    "dependencies": {
+        "xml2js": "*"
+    },
+    "packageDependencies": {
+
+    }
+}

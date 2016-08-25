@@ -1,0 +1,137 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.toolbar {
+    background-color: @base-background-color;//#222;
+    // background: linear-gradient(#222, #111);
+    border-top: 1px solid #ac0201;
+    height: 44px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    margin: 7px 20px 9px 15px; // compensate for triangle logo
+    width: 28px;
+    height: 28px;
+    // float: left;
+    opacity: 0.5;
+}
+
+.element {
+    background-color: lighten(@base-background-color, 5%);//#2a2a2a;
+    border: none;
+    border-top: 1px solid lighten(@base-background-color, 15%);//#444;
+    border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
+    border-radius: 4px;
+    height: 28px;
+}
+
+.button {
+    cursor: default;
+    flex: 0 0 auto;
+    padding: 0;
+    width: 40px;
+    margin: auto 10px auto 0;
+}
+
+.hud {
+    margin: auto 10px auto 40px;
+    padding: 0;
+    width: 400px;
+    overflow: hidden;
+    display: flex;
+    background-color: lighten(@base-background-color, 10%);//#333;
+}
+
+.hud-icon {
+    margin: auto 0 auto 10px;
+    width: 22px;
+    height: 22px;
+}
+
+.hud-message {
+    margin: auto 0;
+    padding: 0 10px 0 8px;
+    flex: 1;
+    height: 24px;
+    overflow: hidden;
+    vertical-align: bottom;
+    font-size: 11px;
+    line-height: 24px;
+    user-select: all;
+    cursor: default;
+}
+
+.hud-spinner {
+    float: right;
+    margin: auto 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.select {
+    margin: auto 10px auto 0;
+    overflow: hidden;
+    // color: #ccc;
+}
+
+.console {
+    height: 300px;
+    overflow-y: hidden;
+}
+
+.console-toolbar {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    background-color: @base-background-color;//#222;
+    border-top: 1px solid #ac0201;
+    border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
+}
+
+.console-toolbar-button {
+    background-color: @base-background-color;//#222;
+    // color: #ddd;
+    border: none;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: 60px;
+    height: 28px;
+}
+
+.console-messages {
+    height: 280px;
+    padding: 0 10px;
+    overflow-y: scroll;
+    font-family: monospace;
+    user-select: text;
+}
+
+p.log {
+    margin: 0;
+    padding: 0;
+}
+
+p.trace {
+    color: #999;
+}
+
+p.info {
+    color: #fff;
+}
+
+p.debug {
+    color: #dddd00;
+}
+
+p.warn {
+    color: #ddaa00;
+}
+
+p.error {
+    color: #dd0000;
+}
