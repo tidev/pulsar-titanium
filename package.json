@@ -15,7 +15,8 @@
         "arrow"
     ],
     "dependencies": {
-        "xml2js": "*"
+        "titanium": "^5.0.10",
+        "xml2js": "^0.4.17"
     },
     "packageDependencies": {
 
