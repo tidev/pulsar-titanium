@@ -10,11 +10,26 @@
     border-top: 1px solid #ac0201;
     height: 44px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;// space-between;//flex-start;
+}
+
+.left-bar {
+    display: flex;
+    flex-shrink: 0;
+    margin: auto auto auto 6px;
+    flex-basis: 330px;
+}
+
+.right-bar {
+    display: flex;
+    flex-shrink: 2;
+    justify-content: flex-end;
+    margin: auto 6px auto auto;
+    flex-basis: 330px;
 }
 
 .logo {
-    margin: 7px 20px 9px 15px; // compensate for triangle logo
+    margin: 7px 8px 9px 0px; // compensate for triangle logo
     width: 28px;
     height: 28px;
     // float: left;
@@ -35,11 +50,18 @@
     flex: 0 0 auto;
     padding: 0;
     width: 40px;
-    margin: auto 10px auto 0;
+    
+}
+.button-left {
+    margin: auto 6px auto 0;
+}
+.button-right {
+    margin: auto 0 auto 6px;
 }
 
+
 .hud {
-    margin: auto 10px auto auto;
+    margin: auto;// 10px auto auto;
     padding: 0;
     width: 400px;
     overflow: hidden;
@@ -75,9 +97,11 @@
 }
 
 .select {
-    margin: auto 10px auto 0;
+    margin: auto 6px auto 0;
     overflow: hidden;
     // color: #ccc;
+    // font-size: 0.8em;
+    text-overflow:ellipsis;
 }
 
 .console {
