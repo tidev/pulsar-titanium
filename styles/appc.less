@@ -106,34 +106,40 @@
 
 .console {
     height: 100%;
+    padding: 0 0 44px 0; // bottom margin = toolbar height
+    background-color: #000;
     overflow-y: hidden;
 }
 
 .console-toolbar {
     margin: 0;
-    padding: 0;
-    height: 30px;
+    padding: 0 6px;
+    height: 44px;
+    display: flex;
     background-color: @base-background-color;//#222;
     border-top: 1px solid #ac0201;
     border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
 }
 
 .console-toolbar-button {
+    cursor: default;
     background-color: @base-background-color;//#222;
     // color: #ddd;
     border: none;
-    margin: 0 10px 0 0;
+    margin: auto 10px auto 0;
     padding: 0;
-    width: 60px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
 }
 
 .console-messages {
     height: 100%;
-    padding: 0 10px 15px 0;
+    margin: 0 6px;
+    // padding: 0 0 50px 0;
     overflow-y: scroll;
     font-family: monospace;
     user-select: text;
+    // background-color: #dddd00;
 }
 
 p.log {
@@ -158,5 +164,5 @@ p.warn {
 }
 
 p.error {
-    color: #dd0000;
+    color: #ff0000;
 }
