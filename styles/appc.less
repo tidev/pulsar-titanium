@@ -45,6 +45,10 @@
     height: 28px;
 }
 
+.disabled {
+    color: darken(@text-color, 30%);
+}
+
 .button {
     cursor: default;
     flex: 0 0 auto;
@@ -59,6 +63,26 @@
     margin: auto 0 auto 6px;
 }
 
+.build-button-container {
+    // margin: auto 0 !important;
+    // border-radius: 4px 0 0 4px !important;
+    display: flex;
+    width: 45px;
+}
+
+.build-button {
+    background-color: lighten(@base-background-color, 5%);
+    border: none;
+    margin: auto 0;
+    width: 25px;
+    text-align: right;
+}
+
+.build-select {
+    // border-radius: 0px !important;
+    background-color: lighten(@base-background-color, 5%);
+    border: none;
+}
 
 .hud {
     margin: auto;// 10px auto auto;
