@@ -4,19 +4,27 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.toolbar {
-    background-color: @base-background-color;//#222;
-    // background: linear-gradient(#222, #111);
+.toolbar-container {
+    background-color: @base-background-color;
     border-top: 1px solid #ac0201;
+}
+
+.toolbar {
+    // background-color: @base-background-color;//#222;
+    // background: linear-gradient(#222, #111);
+    // border-top: 1px solid #ac0201;
     height: 44px;
     display: flex;
     justify-content: center;// space-between;//flex-start;
+}
+.toolbar-expanded {
+    height: 88px;
 }
 
 .left-bar {
     display: flex;
     flex-shrink: 0;
-    margin: auto auto auto 6px;
+    margin: 8px auto auto 6px;
     flex-basis: 330px;
 }
 
@@ -24,16 +32,23 @@
     display: flex;
     flex-shrink: 2;
     justify-content: flex-end;
-    margin: auto 6px auto auto;
+    margin: 8px 6px auto auto;
     flex-basis: 330px;
 }
 
 .logo {
-    margin: 7px 8px 9px 0px; // compensate for triangle logo
+    margin: 0px 8px 0px 0px; // compensate for triangle logo
     width: 28px;
     height: 28px;
     // float: left;
     opacity: 0.5;
+}
+
+.element-flat {
+    background-color: @base-background-color;
+    border: none;
+    height: 28px;
+    min-width: 25px;
 }
 
 .element {
@@ -43,6 +58,7 @@
     border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
     border-radius: 4px;
     height: 28px;
+    min-width: 40px;
 }
 
 .disabled {
@@ -53,9 +69,8 @@
     cursor: default;
     flex: 0 0 auto;
     padding: 0;
-    width: 40px;
-    
 }
+
 .button-left {
     margin: auto 6px auto 0;
 }
@@ -85,7 +100,7 @@
 }
 
 .hud {
-    margin: auto;// 10px auto auto;
+    margin: 8px auto auto;// 10px auto auto;
     padding: 0;
     width: 400px;
     overflow: hidden;
@@ -126,6 +141,20 @@
     // color: #ccc;
     // font-size: 0.8em;
     text-overflow:ellipsis;
+}
+
+.code-signing {
+    // display: block;
+    display: flex;
+    justify-content: center;
+    clear: both;
+    height: 44px;
+    width: 100%;
+    border-top: 1px solid darken(@base-background-color, 5%);
+}
+
+.toolbar-title {
+    margin: auto 5px auto 10px;
 }
 
 .console {
