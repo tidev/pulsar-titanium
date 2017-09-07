@@ -1,0 +1,26 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Appcelerator",
+          "submenu": [
+            {
+              "label": "Run",
+              "command": "appc:run"
+            },
+            {
+              "label": "New Controller...",
+              "command": "appc:generate"
+            },
+            {
+              "label": "Toggle Console",
+              "command": "appc:console"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
