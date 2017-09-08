@@ -1,6 +1,6 @@
 {
     "name": "appc",
-    "main": "./lib/appc",
+    "main": "./lib/index",
     "version": "0.0.2",
     "description": "Appcelerator build tools and UI",
     "repository": "",
@@ -15,7 +15,6 @@
         "arrow"
     ],
     "dependencies": {
-        "titanium": "^5.0.10",
         "xml2js": "^0.4.17"
     },
     "packageDependencies": {
