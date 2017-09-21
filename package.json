@@ -1,23 +1,30 @@
 {
-    "name": "appc",
-    "main": "./lib/index",
-    "version": "0.0.2",
-    "description": "Appcelerator build tools and UI",
-    "repository": "",
-    "license": "MIT",
-    "engines": {
+  "name": "appc",
+  "main": "./lib/index",
+  "version": "0.0.2",
+  "description": "Appcelerator build tools and UI",
+  "repository": "",
+  "license": "MIT",
+  "engines": {
     "atom": ">0.50.0"
-    },
-    "keywords": [
-        "axway",
-        "appcelerator",
-        "titanium",
-        "arrow"
-    ],
-    "dependencies": {
-        "xml2js": "^0.4.17"
-    },
-    "packageDependencies": {
-
-    }
+  },
+  "keywords": [
+    "axway",
+    "appcelerator",
+    "titanium",
+    "arrow"
+  ],
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  },
+  "packageDependencies": {},
+  "devDependencies": {
+    "babel-jest": "^21.0.2",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^21.1.0",
+    "regenerator-runtime": "^0.11.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
 }

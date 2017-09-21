@@ -1,0 +1,5 @@
+'use babel';
+
+export default {
+
+}
