@@ -20,7 +20,7 @@ While this is not in the public Atom package library you need to manually instal
 
 `ln -s /path/to/the/plugin ~/.atom/packages`
 
-4. Relaunch Atom
+3. Relaunch Atom
 
 ### Credits
 
