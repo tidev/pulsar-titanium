@@ -16,7 +16,7 @@ While this is not in the public Atom package library you need to manually instal
 
 `npm install`
 
-3. Copy or symlink the project directory into your Atom packagaes directory. For example:
+2. Copy or symlink the project directory into your Atom packagaes directory. For example:
 
 `ln -s /path/to/the/plugin ~/.atom/packages`
 
