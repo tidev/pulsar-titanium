@@ -12,7 +12,10 @@ The [Atom text editor](https://atom.io) is built on [Electron](http://electron.a
 
 While this is not in the public Atom package library you need to manually install it.
 
-1. Clone or download the project
+1. Clone or download the project and run from the project directory:
+
+`npm install`
+
 2. Copy or symlink the project directory into your Atom packagaes directory. For example:
 
 `ln -s /path/to/the/plugin ~/.atom/packages`
