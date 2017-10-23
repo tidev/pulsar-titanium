@@ -1,5 +1,0 @@
-'use babel';
-
-export default {
-
-}

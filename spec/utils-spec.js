@@ -2,37 +2,37 @@
 
 import Utils from '../lib/utils';
 
-describe('iOS provisioning profile matches app id', () => {
+describe('iOS provisioning profile matches app ID', () => {
 
-    describe('wildcard', () => {
-        test('match all', () => {
+    describe('Wildcard app ID', () => {
+        it('should match all', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('*', 'com.example.app')).toBeTruthy();
             expect(Utils.iOSProvisioinngProfileMatchesAppId('*', 'com.anotherexample.app')).toBeTruthy();
         });
     });
 
-    describe('explicit', () => {
-        test('case sensitivity', () => {
+    describe('Explicit app ID', () => {
+        it('should match case sensitivity', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.app', 'com.example.app')).toBeTruthy();
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.app', 'com.Example.App')).toBeFalsy();
         });
-        test('mismatching path components', () => {
+        it('mismatching path components', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.app', 'com.example.anotherapp')).toBeFalsy();
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.app', 'com.anotherexample.app')).toBeFalsy();
         });
     });
 
-    describe('prefixed wildcard', () => {
-        test('match', () => {
+    describe('Prefixed wildcard app ID', () => {
+        it('should match', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.example.app')).toBeTruthy();
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.anotherexample.app')).toBeFalsy();
         });
 
-        test('case sensitivity', () => {
+        it('case sensitivity', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.example.App')).toBeTruthy();
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.Example.app')).toBeFalsy();
         });
-        test('additional path component', () => {
+        it('additional path component', () => {
             expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.example.example.app')).toBeTruthy();
         });
     });
