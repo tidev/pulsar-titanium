@@ -12,7 +12,7 @@
     "axway",
     "appcelerator",
     "titanium",
-    "arrow"
+    "alloy"
   ],
   "dependencies": {
     "xml2js": "^0.4.17"
@@ -20,8 +20,5 @@
   "packageDependencies": {},
   "devDependencies": {
     "regenerator-runtime": "^0.11.0"
-  },
-  "scripts": {
-    "test": "jest"
   }
 }
