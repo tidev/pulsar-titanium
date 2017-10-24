@@ -15,7 +15,8 @@
     "alloy"
   ],
   "dependencies": {
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "etch": "^0.12.6"
   },
   "packageDependencies": {},
   "devDependencies": {
