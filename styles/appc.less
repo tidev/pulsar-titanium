@@ -1,233 +1,233 @@
-// The ui-variables file is provided by base themes provided by Atom.
-//
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
-// for a full listing of what's available.
 @import "ui-variables";
 
-.toolbar-container {
-    background-color: @base-background-color;
-    border-top: 1px solid #ac0201;
-}
 
-.toolbar {
-    // background-color: @base-background-color;//#222;
-    // background: linear-gradient(#222, #111);
+/**
+ * toolbar
+ */
+
+.appc-toolbar {
+    background-color: @base-background-color;
     // border-top: 1px solid #ac0201;
-    height: 44px;
-    display: flex;
-    justify-content: center;// space-between;//flex-start;
-}
-.toolbar-expanded {
-    height: 88px;
-}
-
-.left-bar {
-    display: flex;
-    flex-shrink: 0;
-    margin: 8px auto auto 6px;
-    flex-basis: 330px;
-}
-
-.right-bar {
-    display: flex;
-    flex-shrink: 2;
-    justify-content: flex-end;
-    margin: 8px 6px auto auto;
-    flex-basis: 330px;
-}
-
-.logo {
-    margin: 0px 8px 0px 0px; // compensate for triangle logo
-    width: 28px;
-    height: 28px;
-    // float: left;
-    opacity: 0.5;
-}
-
-.element-flat {
-    background-color: @base-background-color;
-    border: none;
-    height: 28px;
-    min-width: 25px;
-}
-
-.element {
-    background-color: lighten(@base-background-color, 5%);//#2a2a2a;
-    border: none;
-    border-top: 1px solid lighten(@base-background-color, 15%);//#444;
-    border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
-    border-radius: 4px;
-    height: 28px;
-    min-width: 40px;
-}
-
-.disabled {
-    color: darken(@text-color, 30%);
-}
-
-.button {
-    cursor: default;
-    flex: 0 0 auto;
-    padding: 0;
-}
-
-.button-left {
-    margin: auto 6px auto 0;
-}
-.button-right {
-    margin: auto 0 auto 6px;
-}
-
-.build-button-container {
-    // margin: auto 0 !important;
-    // border-radius: 4px 0 0 4px !important;
-    display: flex;
-    width: 45px;
-}
-
-.build-button {
-    background-color: lighten(@base-background-color, 5%);
-    border: none;
-    margin: auto 0;
-    width: 25px;
-    text-align: right;
-}
-
-.build-select {
-    // border-radius: 0px !important;
-    background-color: lighten(@base-background-color, 5%);
-    border: none;
-}
-
-.hud {
-    margin: 8px auto auto;// 10px auto auto;
-    padding: 0;
-    width: 400px;
-    overflow: hidden;
-    display: flex;
-    background-color: lighten(@base-background-color, 10%);//#333;
-}
-
-.hud-icon {
-    margin: auto 0 auto 10px;
-    width: 22px;
-    height: 22px;
-}
-
-.hud-message {
-    margin: auto 0;
-    padding: 0 10px 0 8px;
-    flex: 1;
-    height: 24px;
-    overflow: hidden;
-    vertical-align: bottom;
-    font-size: 11px;
-    line-height: 24px;
-    user-select: all;
-    cursor: default;
-}
-
-.hud-spinner {
-    float: right;
-    margin: auto 10px;
-    // width: 20px;
-    // height: 20px;
-    text-align: center;
-}
-
-.select {
-    margin: auto 6px auto 0;
-    overflow: hidden;
-    // color: #ccc;
-    // font-size: 0.8em;
-    text-overflow:ellipsis;
-}
-
-.code-signing {
-    // display: block;
-    display: flex;
-    justify-content: center;
-    clear: both;
-    height: 44px;
-    width: 100%;
-    border-top: 1px solid darken(@base-background-color, 5%);
-}
-
-.keystore-input {
-    margin: auto 6px auto 0;
-    height: 29px;
-    width: 150px;
-    flex: 0 0 auto;
-}
-
-.keystore-path-input {
-    width: 300px;
-}
 
 
-.toolbar-title {
-    margin: auto 5px auto 10px;
+    /*
+     * toolbar containers
+     */
+
+    .toolbar-expanded {
+        height: 88px;
+    }
+
+    .toolbar-row {
+        height: 44px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .toolbar-left {
+        display: flex;
+        flex-shrink: 0;
+        margin: 8px auto auto 6px;
+    }
+
+    .toolbar-right {
+        display: flex;
+        flex-shrink: 1;
+        justify-content: flex-end;
+        margin: 8px 6px auto auto;
+    }
+
+    .toolbar-center {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        justify-content: center;
+        margin: 8px auto auto auto;
+    }
+
+
+    /**
+     * toolbar: generic items
+     */
+
+    .toolbar-item {
+        margin: auto 6px auto 0;
+        background-color: lighten(@base-background-color, 5%);
+        border: none;
+        border-top: 1px solid lighten(@base-background-color, 15%);
+        border-bottom: 1px solid darken(@base-background-color, 15%);
+        border-radius: 4px;
+        height: 28px;
+        min-width: 40px;
+    }
+
+    .toolbar-item-flat {
+        margin: auto 6px auto 0;
+        background-color: @base-background-color;
+        border: none;
+        height: 28px;
+        min-width: 25px;
+    }
+
+    .disabled {
+        color: darken(@text-color, 30%);
+    }
+
+    .button {
+        cursor: default;
+        flex: 0 0 auto;
+        padding: 0;
+    }
+
+    .toolbar-right > .button {
+        margin: auto 0 auto 6px;
+    }
+
+    .select {
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
+
+    .input {
+        margin: auto 6px auto 0;
+        height: 29px;
+        width: 150px;
+        flex: 0 0 auto;
+    }
+
+    .toolbar-item-title {
+        margin: auto 3px auto 10px;
+        text-align: right;
+    }
+
+
+    /**
+     * main toolbar items
+     */
+
+     .main-toolbar-group {
+        flex-basis: 380px;
+     }
+
+    .logo {
+        margin: 0px 8px 0px 0px;
+        width: 28px;
+        height: 28px;
+        opacity: 0.5;
+    }
+
+    .build-button-container {
+        display: flex;
+        width: 45px;
+        margin: auto 6px auto 0;
+    }
+    
+    .build-button {
+        background-color: lighten(@base-background-color, 5%);
+        border: none;
+        margin: auto 0!important;
+        width: 25px;
+        text-align: right;
+    }
+    
+    .build-select {
+        background-color: lighten(@base-background-color, 5%);
+        border: none;
+    }
+
+
+    /**
+     * hud
+     */
+
+     .hud {
+        margin: 8px auto auto;
+        padding: 0;
+        width: 400px;
+        overflow: hidden;
+        display: flex;
+        background-color: lighten(@base-background-color, 10%);
+    }
+    
+    .hud-icon {
+        margin: auto 0 auto 10px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    .hud-message {
+        margin: auto 0;
+        padding: 0 10px 0 8px;
+        flex: 1;
+        height: 24px;
+        overflow: hidden;
+        vertical-align: bottom;
+        font-size: 11px;
+        line-height: 24px;
+        user-select: all;
+        cursor: default;
+    }
+    
+    .hud-spinner {
+        float: right;
+        margin: auto 10px;
+        text-align: center;
+    }
+
+
+    /**
+     * android keystore
+     */
+
+    
+    
+    .keystore-path-input {
+        width: 300px;
+    }
 }
 
-.console {
+
+/**
+ * console
+ */
+
+.appc-console {
     height: 100%;
-    padding: 0 0 44px 0; // bottom margin = toolbar height
+    padding: 0 0 44px 0;
     background-color: #000;
     overflow-y: hidden;
-}
 
-.console-toolbar {
-    margin: 0;
-    padding: 0 6px;
-    height: 44px;
-    display: flex;
-    background-color: @base-background-color;//#222;
-    border-top: 1px solid #ac0201;
-    border-bottom: 1px solid darken(@base-background-color, 15%);//#111;
-}
+    .console-messages {
+        height: 100%;
+        margin: 0 6px;
+        overflow-y: scroll;
+        font-family: monospace;
+        user-select: text;
+    }
 
-.console-toolbar-button {
-    cursor: default;
-    background-color: @base-background-color;//#222;
-    // color: #ddd;
-    border: none;
-    margin: auto 10px auto 0;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-}
-
-.console-messages {
-    height: 100%;
-    margin: 0 6px;
-    // padding: 0 0 50px 0;
-    overflow-y: scroll;
-    font-family: monospace;
-    user-select: text;
-    // background-color: #dddd00;
-}
-
-p.log {
-    margin: 0;
-    padding: 0;
-}
-
-p.trace {
-    color: #999;
-}
-
-p.info {
-    color: #fff;
-}
-
-p.debug {
-    color: #dddd00;
-}
-
-p.warn {
-    color: #ddaa00;
-}
-
-p.error {
-    color: #ff0000;
+    p.log {
+        margin: 0;
+        padding: 0;
+    }
+    
+    p.trace {
+        color: #999;
+    }
+    
+    p.info {
+        color: #fff;
+    }
+    
+    p.debug {
+        color: #dddd00;
+    }
+    
+    p.warn {
+        color: #ddaa00;
+    }
+    
+    p.error {
+        color: #ff0000;
+    }
 }
