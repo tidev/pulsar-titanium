@@ -14,9 +14,18 @@
     "titanium",
     "alloy"
   ],
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "autoCompleteProvider"
+      }
+    }
+  },
   "dependencies": {
     "xml2js": "^0.4.17",
-    "etch": "^0.12.6"
+    "etch": "^0.12.6",
+    "find": "^0.2.4",
+    "underscore": "1.8.x"
   },
   "packageDependencies": {},
   "devDependencies": {
