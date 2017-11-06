@@ -1,12 +1,12 @@
 {
-  "name": "appc",
+  "name": "appcelerator-titanium",
   "main": "./lib/index",
   "version": "0.0.2",
-  "description": "Appcelerator build tools and UI",
+  "description": "Axway Appcelerator Titanium build tools and UI for Atom",
   "repository": "",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">1.20.0"
   },
   "keywords": [
     "axway",
