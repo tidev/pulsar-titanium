@@ -19,6 +19,11 @@
       "versions": {
         "2.0.0": "provideAutoComplete"
       }
+    },
+    "hyperclick": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
     }
   },
   "dependencies": {
