@@ -25,7 +25,7 @@
   "providedServices": {
     "hyperclick": {
       "versions": {
-        "0.1.0": "definitionsProvider"
+        "0.1.0": "provideDefinitions"
       }
     }
   }
