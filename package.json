@@ -35,12 +35,5 @@
   "packageDependencies": {},
   "devDependencies": {
     "regenerator-runtime": "^0.11.0"
-  },
-  "providedServices": {
-    "hyperclick": {
-      "versions": {
-        "0.1.0": "provideDefinitions"
-      }
-    }
   }
 }
