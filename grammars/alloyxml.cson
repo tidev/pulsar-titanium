@@ -1,7 +1,7 @@
 'scopeName': 'text.alloyxml'
 'firstLineMatch': '<Alloy'
 'fileTypes': [
-  # 'xml'
+  'xml'
 ]
 'name': 'Alloy (XML)'
 'patterns': [
