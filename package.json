@@ -30,7 +30,8 @@
     "xml2js": "^0.4.17",
     "etch": "^0.12.6",
     "find": "^0.2.4",
-    "underscore": "1.8.x"
+    "underscore": "1.8.x",
+    "mkdirp": "^0.5.1"
   },
   "packageDependencies": {},
   "devDependencies": {
