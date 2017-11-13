@@ -73,9 +73,35 @@ Image suggestions are presented where appropriate, including a thumbnail preview
 
 ![TSS image reference auto-complete](images/autocomplete_tss_image.png)
 
-## Open related
+## Open related files
 
-TBD
+Opening related Alloy files is supported (see above commands list).
+
+* From View, open related Style and/or Controller
+* From Style, open related View and/or Controller
+* From Controller, open related View and/or Style
+
+## Jump-to-definition
+
+Jump-to-definition support is provided for quickly accessing the definiion or usage of Alloy markup and to easily generate new definitions. Images can be opened directly from their path.
+
+### Alloy
+
+From Views, click through to style definitions for tags, classes and IDs, in related or global TSS. Click through to event definitions in the related controller.
+
+![View tag style definition](images/definitions_tag.png)
+
+A prompt is displayed to generate undefined styles or functions.
+
+![View tag style generate definition](images/definitions_generate_tag.png)
+
+### Strings
+
+Click on localised string references to jump to their definition. The option to generate undefined strings is provided.
+
+### Images
+
+Click on an image path to open the image in a new tab. For iOS, where multiple scaled images exist with the same name the first is opened (e.g. @2x).
 
 # Contributions
 

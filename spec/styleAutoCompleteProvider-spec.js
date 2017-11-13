@@ -20,7 +20,7 @@ function getSuggestions(prefix) {
 
 beforeEach(() => {
     waitsForPromise(() => 
-        atom.packages.activatePackage('appc')
+        atom.packages.activatePackage('appcelerator-titanium')
     );
 });
 

@@ -1,12 +1,12 @@
 {
-  "name": "appc",
+  "name": "appcelerator-titanium",
   "main": "./lib/index",
   "version": "0.0.2",
-  "description": "Appcelerator build tools and UI",
+  "description": "Axway Appcelerator Titanium build tools and UI for Atom",
   "repository": "",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">1.20.0"
   },
   "keywords": [
     "axway",
@@ -19,13 +19,19 @@
       "versions": {
         "2.0.0": "provideAutoComplete"
       }
+    },
+    "hyperclick": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
     }
   },
   "dependencies": {
     "xml2js": "^0.4.17",
     "etch": "^0.12.6",
     "find": "^0.2.4",
-    "underscore": "1.8.x"
+    "underscore": "1.8.x",
+    "mkdirp": "^0.5.1"
   },
   "packageDependencies": {},
   "devDependencies": {
