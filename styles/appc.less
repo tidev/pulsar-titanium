@@ -93,7 +93,7 @@
         margin: auto 6px auto 0;
         height: 29px;
         width: 150px;
-        flex: 0 0 auto;
+        // flex: 0 0 auto;
     }
 
     .toolbar-item-title {
@@ -106,7 +106,7 @@
      * main toolbar items
      */
 
-     .main-toolbar-group {
+    .main-toolbar-group {
         flex-basis: 380px;
      }
 
@@ -141,7 +141,7 @@
      * hud
      */
 
-     .hud {
+    .hud {
         margin: 8px auto auto;
         padding: 0;
         width: 400px;
@@ -229,5 +229,66 @@
     
     p.error {
         color: #ff0000;
+    }
+}
+
+.appc-generate-dialog {
+
+    .row {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .types {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        flex-grow: 1;
+    }
+
+    .icon {
+        position: relative;
+        flex: 1 0 30%;
+        padding: 10px 0 10px 40px;
+        cursor: default;
+        &:before {
+            position: absolute;
+            margin-left: -32px;
+            color: @text-color-highlight;
+            text-align: center;
+        }
+        &:hover {
+            background-color: lighten(@base-background-color, 10%);
+        }
+    }
+
+    .selected {
+        background-color: lighten(@base-background-color, 5%);
+    }
+
+    .title {
+        width: 70px;
+        margin: 10px 20px 0 0;
+        text-align: right;
+        flex-grow: 0;
+    }
+
+    .input-title {
+        margin: auto 20px auto 0;
+    }
+
+    .input {
+        height: 29px;
+        width: 300px;
+    }
+
+    .row-buttons {
+        display: flex;
+        margin: 20px 0 5px 90px;
+    }
+
+    .btn {
+        margin: 0 5px 0 0;
+        cursor: default;
     }
 }
