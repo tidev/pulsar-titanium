@@ -1,23 +1,28 @@
 {
   "menu": [
     {
+      "label": "View",
+      "submenu": [
+        {
+          "label": "Appcelerator Titanium",
+          "submenu": [
+            { "label": "Toggle Console", "command": "appc:console:toggle" },
+            { "label": "Open related view", "command": "appc:open-related-view" },
+            { "label": "Open related style", "command": "appc:open-related-style" },
+            { "label": "Open related controller", "command": "appc:open-related-controller" },
+            { "label": "Toggle related files", "command": "appc:open-or-close-related" }
+          ]
+        }
+      ]
+    },
+    {
       "label": "Packages",
       "submenu": [
         {
-          "label": "Appcelerator",
+          "label": "Appcelerator Titanium",
           "submenu": [
-            {
-              "label": "Run",
-              "command": "appc:run"
-            },
-            {
-              "label": "New Controller...",
-              "command": "appc:generate"
-            },
-            {
-              "label": "Toggle Console",
-              "command": "appc:console"
-            }
+            { "label": "Build", "command": "appc:run" },
+            { "label": "New Controller...", "command": "appc:generate" }
           ]
         }
       ]
