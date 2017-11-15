@@ -2,7 +2,8 @@
 
 Appcelerator build tools and UI package for the Atom text editor.
 
-![Screenshot](images/screenshot.jpg)
+<!-- ![Screenshot](images/screenshot.jpg) -->
+<img src="images/screenshot.png" width="1540px" alt="Appcelerator Titanium for Atom screenshot" />
 
 ### Atom
 
@@ -35,7 +36,7 @@ Command                 | Description
 appc:build              | Build using the current selected command and configuration
 appc:stop               | Stop the current build
 appc:console            | Toggle the console
-appc:generate           | Open a dialog to generate a new controller, creating Alloy XML, TSS and JavaScript files
+appc:generate           | Open dialog to generate a new alloy file or component
 appc:open view          | Open the related Alloy XML file
 appc:open style         | Open the related Alloy TSS file
 appc:open controller    | Open the related JavaScript file
@@ -45,6 +46,8 @@ appc:open close related | Toggle the related Alloy XML, TSS and Javascript files
 
 TBD
 
+
+
 ## Auto-completion
 
 Auto-completion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
@@ -53,25 +56,31 @@ Auto-completion support is provided to help speed up development by providing qu
 
 Titanium APIs and Alloy markup suggestions are provided in Titanium JavaScript and Alloy XML and TSS files. This includes classes, properties, methods and events. Where appropriate additional information is provided with a link to the online documentation. Deprecated properties are also indicated.
 
-![Alloy markup class auto-complete](images/autocomplete_alloy_class.png)
+<img src="images/autocomplete_alloy_class.png" width="900px" height="591px" alt="Alloy markup class auto-complete" />
 
 ### Project references
 
 Suggestions for other controllers, modules and widgets are presented when referencing through a Titanium function or Alloy markup.
 
-![Alloy markup widget reference auto-complete](images/autocomplete_alloy_widget.png)
+<img src="images/autocomplete_alloy_widget.png" width="324px" height="83px" alt="Alloy markup widget reference auto-complete" />
 
 ### Class and ID references
 
 Suggestions for classes and IDs declared or defined in related Alloy XML and TSS files are presented.
 
-![TSS class reference auto-complete](images/autocomplete_tss_class.png)
+<img src="images/autocomplete_tss_class.png" width="251px" height="86px" alt="TSS class reference auto-complete" />
 
 ### Images
 
 Image suggestions are presented where appropriate, including a thumbnail preview and information about the scaled versions available.
 
-![TSS image reference auto-complete](images/autocomplete_tss_image.png)
+<img src="images/autocomplete_tss_image.png" width="558px" height="155px" alt="TSS image reference auto-complete" />
+
+## Alloy file and component generation
+
+<img src="images/generate_dialog.png" width="639px" height="218px" alt="Alloy file and component generate dialog" />
+
+A UI for the `alloy generate` command is provided. The Generate File dialog is presented by clicking the + icon in the toolbar or using the command from the menu or palette. Select the type of file or component to generate and provide the required information. The generated file(s) are then opened.
 
 ## Open related files
 
@@ -89,11 +98,11 @@ Jump-to-definition support is provided for quickly accessing the definiion or us
 
 From Views, click through to style definitions for tags, classes and IDs, in related or global TSS. Click through to event definitions in the related controller.
 
-![View tag style definition](images/definitions_tag.png)
+<img src="images/definitions_tag.png" width="257px" height="129px" alt="View tag style definition" />
 
 A prompt is displayed to generate undefined styles or functions.
 
-![View tag style generate definition](images/definitions_generate_tag.png)
+<img src="images/definitions_generate_tag.png" width="539px" height="74px" alt="View tag style generate definition" />
 
 ### Strings
 
