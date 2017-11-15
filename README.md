@@ -2,8 +2,7 @@
 
 Appcelerator build tools and UI package for the Atom text editor.
 
-<!-- ![Screenshot](images/screenshot.jpg) -->
-<img src="images/screenshot.png" width="1540px" alt="Appcelerator Titanium for Atom screenshot" />
+<img src="images/screenshot.png" width="900px" height="591px" alt="Appcelerator Titanium for Atom screenshot" />
 
 ### Atom
 
@@ -56,7 +55,7 @@ Auto-completion support is provided to help speed up development by providing qu
 
 Titanium APIs and Alloy markup suggestions are provided in Titanium JavaScript and Alloy XML and TSS files. This includes classes, properties, methods and events. Where appropriate additional information is provided with a link to the online documentation. Deprecated properties are also indicated.
 
-<img src="images/autocomplete_alloy_class.png" width="900px" height="591px" alt="Alloy markup class auto-complete" />
+<img src="images/autocomplete_alloy_class.png" width="385px" height="222px" alt="Alloy markup class auto-complete" />
 
 ### Project references
 
