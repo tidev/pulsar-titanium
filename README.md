@@ -1,8 +1,19 @@
+<!-- <img width="385" alt="autocomplete_alloy_class" src="https://user-images.githubusercontent.com/2697821/33011938-54d3d302-cdd7-11e7-910c-531f51454f74.png"> -->
+<!-- <img width="324" alt="autocomplete_alloy_widget" src="https://user-images.githubusercontent.com/2697821/33011939-54ebd5c4-cdd7-11e7-8cdd-b39a8c8b92d3.png"> -->
+<!-- <img width="251" alt="autocomplete_tss_class" src="https://user-images.githubusercontent.com/2697821/33011940-550697c4-cdd7-11e7-8c56-b6ad9cb400a8.png"> -->
+<!-- <img width="558" alt="autocomplete_tss_image" src="https://user-images.githubusercontent.com/2697821/33011941-551aca50-cdd7-11e7-86ec-cae8ea0430ff.png"> -->
+<!-- <img width="539" alt="definitions_generate_tag" src="https://user-images.githubusercontent.com/2697821/33011942-553025bc-cdd7-11e7-8389-572b2bf811e0.png"> -->
+<!-- <img width="257" alt="definitions_tag" src="https://user-images.githubusercontent.com/2697821/33011943-554470ee-cdd7-11e7-9e04-1e49272c3f6d.png"> -->
+<!-- <img width="639" alt="generate_dialog" src="https://user-images.githubusercontent.com/2697821/33011944-555909fa-cdd7-11e7-8bc8-0301059b360d.png"> -->
+<!-- ![screenshot](https://user-images.githubusercontent.com/2697821/33011945-556d79c6-cdd7-11e7-84a6-78c3a57b6eb1.png) -->
+
+
+
 # Appcelerator Titanium package for Atom
 
 Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom.io).
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/screenshot.png?raw=true" width="900px" height="591px" alt="Appcelerator Titanium for Atom screenshot" />
+<img src="https://user-images.githubusercontent.com/2697821/33011945-556d79c6-cdd7-11e7-84a6-78c3a57b6eb1.png" width="900px" height="591px" alt="Appcelerator Titanium for Atom screenshot" />
 
 ## Getting Started
 
@@ -61,29 +72,29 @@ Auto-completion support is provided to help speed up development by providing qu
 
 Titanium APIs and Alloy markup suggestions are provided in Titanium JavaScript and Alloy XML and TSS files. This includes classes, properties, methods and events. Where appropriate additional information is provided with a link to the online documentation. Deprecated properties are also indicated.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/autocomplete_alloy_class.png?raw=true" width="385px" height="222px" alt="Alloy markup class auto-complete" />
+<img src="https://user-images.githubusercontent.com/2697821/33011938-54d3d302-cdd7-11e7-910c-531f51454f74.png" width="385px" height="222px" alt="Alloy markup class auto-complete" />
 
 #### Project references
 
 Suggestions for other controllers, modules and widgets are presented when referencing through a Titanium function or Alloy markup.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/autocomplete_alloy_widget.png?raw=true" width="324px" height="83px" alt="Alloy markup widget reference auto-complete" />
+<img src="https://user-images.githubusercontent.com/2697821/33011939-54ebd5c4-cdd7-11e7-8cdd-b39a8c8b92d3.png" width="324px" height="83px" alt="Alloy markup widget reference auto-complete" />
 
 #### Class and ID references
 
 Suggestions for classes and IDs declared or defined in related Alloy XML and TSS files are presented.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/autocomplete_tss_class.png?raw=true" width="251px" height="86px" alt="TSS class reference auto-complete" />
+<img src="https://user-images.githubusercontent.com/2697821/33011940-550697c4-cdd7-11e7-8c56-b6ad9cb400a8.png" width="251px" height="86px" alt="TSS class reference auto-complete" />
 
 #### Images
 
 Image suggestions are presented where appropriate, including a thumbnail preview and information about the scaled versions available.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/autocomplete_tss_image.png?raw=true" width="558px" height="155px" alt="TSS image reference auto-complete" />
+<img src="https://user-images.githubusercontent.com/2697821/33011941-551aca50-cdd7-11e7-86ec-cae8ea0430ff.png" width="558px" height="155px" alt="TSS image reference auto-complete" />
 
 ### Alloy file and component generation
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/generate_dialog.png?raw=true" width="639px" height="218px" alt="Alloy file and component generate dialog" />
+<img src="https://user-images.githubusercontent.com/2697821/33011944-555909fa-cdd7-11e7-8bc8-0301059b360d.png" width="639px" height="218px" alt="Alloy file and component generate dialog" />
 
 A UI for the `alloy generate` command is provided. The Generate File dialog is presented by clicking the + icon in the toolbar or using the command from the menu or palette. Select the type of file or component to generate and provide the required information. The generated file(s) are then opened.
 
@@ -103,11 +114,11 @@ Jump-to-definition support is provided for quickly accessing the definiion or us
 
 From Views, click through to style definitions for tags, classes and IDs, in related or global TSS. Click through to event definitions in the related controller.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/definitions_tag.png?raw=true" width="257px" height="129px" alt="View tag style definition" />
+<img src="https://user-images.githubusercontent.com/2697821/33011943-554470ee-cdd7-11e7-9e04-1e49272c3f6d.png" width="257px" height="129px" alt="View tag style definition" />
 
 A prompt is displayed to generate undefined styles or functions.
 
-<img src="https://github.com/appcelerator/atom-appcelerator-titanium/blob/master/images/definitions_generate_tag.png?raw=true" width="539px" height="74px" alt="View tag style generate definition" />
+<img src="https://user-images.githubusercontent.com/2697821/33011942-553025bc-cdd7-11e7-8389-572b2bf811e0.png" width="539px" height="74px" alt="View tag style generate definition" />
 
 #### Strings
 
