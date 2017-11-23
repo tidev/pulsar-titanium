@@ -1,0 +1,12 @@
+{
+	"extends": [ "axway", "axway/+react" ],
+	"globals": {
+		"atom": false,
+		"setTimeout": false,
+		"__dirname": false,
+		"require": false
+	},
+	"rules": {
+		"max-len": "off"
+	}
+}
