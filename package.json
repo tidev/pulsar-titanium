@@ -42,6 +42,6 @@
 		"regenerator-runtime": "^0.11.0"
 	},
 	"scripts": {
-		"lint": "eslint lib/providers/controllerAutoCompleteProvider.js"
+		"lint": "eslint lib"
 	}
 }

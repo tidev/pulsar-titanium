@@ -4,7 +4,8 @@
 		"atom": false,
 		"setTimeout": false,
 		"__dirname": false,
-		"require": false
+		"require": false,
+		"module": false
 	},
 	"rules": {
 		"max-len": "off"
