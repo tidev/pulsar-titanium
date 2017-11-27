@@ -8,6 +8,6 @@
 		"module": false
 	},
 	"rules": {
-		"max-len": "off"
+		"security/detect-non-literal-regexp": "off"
 	}
 }
