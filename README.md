@@ -6,9 +6,9 @@ Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom
 
 ## Getting Started
 
-Some of the features in this package are implemented as providers for services in the [Atom IDE](https://ide.atom.io) package. Install `atom-ide-ui` from the Atom package installer.
+Atom 1.21 is required. Some of the features in this package are implemented as providers for services in the [Atom IDE](https://ide.atom.io) package. Install `atom-ide-ui` from the Atom package installer.
 
-:bangbang: While this is not in the public Atom package library you need to manually install it.
+:bangbang: While this is not in the public Atom package library you need to manually install it:
 
 1. Clone or download the project and run from the project directory:
 
@@ -30,8 +30,6 @@ Using the CLI:
 apm install appcelerator-titanium
 ```
 
-
-
 ## Features
 
 ### Commands
@@ -48,8 +46,6 @@ appc:open controller    | Open the related JavaScript file
 appc:open close related | Toggle the related Alloy XML, TSS and Javascript files
 
 ### Build tools
-
-TBD
 
 #### Toolbar
 
@@ -118,7 +114,7 @@ When building for distribution through Google Play, the app must be signed with 
 
 <img src="https://user-images.githubusercontent.com/2697821/33169528-ed7b7922-d03c-11e7-9647-cc39256dc94a.png" width="1110px" height="40px" alt="Android keystore" />
 
-The path to the keystore can be entered manually or by using the file picker. 
+The path to the keystore can be entered manually or by using the file picker. Keystore path and alias are stored in package configuration.
 
 ### Auto-completion
 

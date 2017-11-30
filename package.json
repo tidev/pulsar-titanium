@@ -1,18 +1,23 @@
 {
 	"name": "appcelerator-titanium",
 	"main": "./lib/index",
-	"version": "0.0.2",
+	"version": "0.0.0",
 	"description": "Axway Appcelerator Titanium build tools and UI for Atom",
-	"repository": "",
+	"repository": "https://github.com/appcelerator/atom-appcelerator-titanium",
 	"license": "MIT",
 	"engines": {
-		"atom": ">1.20.0"
+		"atom": ">1.21.0"
 	},
 	"keywords": [
 		"axway",
 		"appcelerator",
 		"titanium",
-		"alloy"
+		"alloy",
+		"mobile",
+		"javascript",
+		"ios",
+		"android",
+		"windows"
 	],
 	"providedServices": {
 		"autocomplete.provider": {
@@ -33,7 +38,6 @@
 		"underscore": "1.8.x",
 		"mkdirp": "^0.5.1"
 	},
-	"packageDependencies": {},
 	"devDependencies": {
 		"eslint": "^4.11.0",
 		"eslint-config-axway": "^2.0.7",
