@@ -1,4 +1,4 @@
-# Appcelerator Titanium package for Atom
+# Appcelerator Titanium Package for Atom
 
 Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom.io).
 
@@ -6,7 +6,7 @@ Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom
 
 ## Getting Started
 
-* Atom 1.21 is required.
+* Atom 1.21 (or later) is required.
 * Some features are implemented as providers for services in the [Atom IDE](https://ide.atom.io) package. Install `atom-ide-ui` package.
 * Install `appcelerator-titanium` package.
 
@@ -53,31 +53,31 @@ The toolbar provides a UI to commonly used commands when developing a Titanium a
 
 <img src="https://user-images.githubusercontent.com/2697821/33169533-f0e0a89e-d03c-11e7-99f8-7cb91858dbed.png" width="722px"  alt="Toolbar" />
 
-1. Build select and run
+##### 1. Build select and run
 
 Select to run on simulator or device, package for ad-hoc or App Store distribution or a custom build option.
 
-2. Platform select
+##### 2. Platform select
 
 Select available platforms to build for.
 
-3. Target select
+##### 3. Target select
 
 Select simulator/emulator or local device. When attaching a device, select Refresh Targets option to add it to the target list.
 
-4. Code signing / keystore configuration 
+##### 4. Code signing / Android KeyStore configuration 
 
 When building for device (iOS) or distribution (iOS and Android) the option to configure code signing or keystore credentials is available.
 
-5. Info panel
+##### 5. Info panel
 
 Provides information about the active project.
 
-6. Generate component
+##### 6. Generate component
 
 Presents a dialog to generate a Titanium component: Controller, View, Style, Model, Widget or Alloy.jmk file.
 
-7. Console
+##### 7. Console
 
 Show or hide the console which outputs debug information during build and run.
 
@@ -87,10 +87,10 @@ The build select button executes and provides selections of the build command. D
 
 <img src="https://user-images.githubusercontent.com/2697821/33169524-ed2b85ca-d03c-11e7-881e-4eb9e301649d.png" width="109px" alt="Build command select" />
 
-* Run: build and run the app on selected simulator/emulator or device
-* Ad-hoc: (iOS only) build and package the app for ad-hoc distribution using selected code signing
-* Publish: build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
-* Custom: execute `appc run -d <project_dir>` with custom arguments
+* Run: Build and run the app on selected simulator/emulator or device
+* Ad-Hoc: (iOS only) build and package the app for Ad-Hoc distribution using selected code signing
+* Publish: Build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
+* Custom: Execute `appc run -d <project_dir>` with custom arguments
 
 #### Console
 
@@ -108,7 +108,7 @@ When building for a device and ad-hoc or App Store distribution, a certificate a
 
 Certificates are populated according to the selected build option (developer / distribution). Available provisioning profiles are displayed but only those which match the selected certificate and app ID are enabled.
 
-#### Android keystore
+#### Android KeyStore
 
 When building for distribution through Google Play, the app must be signed with a keystore. Click the code signing / keystore button (#4) to display the keystore options.
 
