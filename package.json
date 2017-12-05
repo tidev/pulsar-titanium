@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"description": "Axway Appcelerator Titanium build tools and UI for Atom",
 	"repository": "https://github.com/appcelerator/atom-appcelerator-titanium",
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"engines": {
 		"atom": ">1.21.0"
 	},
