@@ -9,3 +9,9 @@
 - Fixed provisioning profile ordering ([ATOM-32](https://jira.appcelerator.org/browse/ATOM-32))
 - Fixed autocomplete error when creating styles for classes ([ATOM-28](https://jira.appcelerator.org/browse/ATOM-28))
 - Updated publish option labelling
+
+## 1.0.2
+
+**09/12/17**
+
+- Fixed issues with non-Titanium projects ([ATOM-33](https://jira.appcelerator.org/browse/ATOM-33))
