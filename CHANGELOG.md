@@ -2,7 +2,7 @@
 
 ## 1.0.3
 
-**11/12/17**
+**21/12/17**
 
 - Fixed error on Linux - thanks @m1ga ([ATOM-34](https://jira.appcelerator.org/browse/ATOM-34))
 - Fixed deprecation warnings ([ATOM-35](https://jira.appcelerator.org/browse/ATOM-35))
