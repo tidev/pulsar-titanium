@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0
+
+- Added support for creating new Titanium projects ([ATOM-37](https://jira.appcelerator.org/browse/ATOM-37))
+- Added support for native module projects ([ATOM-38](https://jira.appcelerator.org/browse/ATOM-38))
+- Added keyboard shortcuts for opening related Alloy files ([ATOM-39](https://jira.appcelerator.org/browse/ATOM-39))
+- Fixed triggering image autocompletion ([ATOM-43](https://jira.appcelerator.org/browse/ATOM-43))
+
 ## 1.0.3
 
 **21/12/17**
