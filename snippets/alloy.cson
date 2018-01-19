@@ -1,0 +1,74 @@
+'.source.js':
+
+    'globals': 
+        'prefix': 'alglo'
+        'body': 'Alloy.Globals.$1'
+        'description': 'Alloy Globals object'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'cfg': 
+        'prefix': 'alcfg'
+        'body': 'Alloy.CFG.$1'
+        'description': 'Alloy config object'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'createController': 
+        'prefix': 'alcon'
+        'body': 'Alloy.createController(\'$1\', $2});'
+        'description': 'Alloy: instatiate controller'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'createCollection': 
+        'prefix': 'alcol'
+        'body': 'Alloy.createCollection(\'$1\', $2});'
+        'description': 'Alloy: instatiate collection of model objects'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'createModel': 
+        'prefix': 'almod'
+        'body': 'Alloy.createModel(\'$1\', $2});'
+        'description': 'Alloy: instatiate model object'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'createWidget': 
+        'prefix': 'alwid'
+        'body': 'Alloy.createWidget(\'$1\', $2});'
+        'description': 'Alloy: instatiate widget'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'ifiOS': 
+        'prefix': 'ifios'
+        'body': '''
+            if (OS_IOS) {
+                $1
+            }
+        '''
+        'description': 'iOS conditional statement'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+
+    'ifAndroid': 
+        'prefix': 'ifand'
+        'body': '''
+            if (OS_ANDROID) {
+                $1
+            }
+        '''
+        'description': 'Android conditional statement'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+
+    'ifWindows': 
+        'prefix': 'ifwin'
+        'body': '''
+            if (OS_WINDOWS) {
+                $1
+            }
+        '''
+        'description': 'Windows conditional statement'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    

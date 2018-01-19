@@ -1,0 +1,58 @@
+'.source.js': 
+
+    'debug': 
+        'prefix': 'tidebug'
+        'body': 'Ti.API.debug($1);'
+        'description': 'Titanium debug log message'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'info': 
+        'prefix': 'tiinfo'
+        'body': 'Ti.API.info($1);'
+        'description': 'Titanium info log message'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'trace': 
+        'prefix': 'titrace'
+        'body': 'Ti.API.trace($1);'
+        'description': 'Titanium trace log message'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'warn': 
+        'prefix': 'tiwarn'
+        'body': 'Ti.API.warn($1);'
+        'description': 'Titanium warn log message'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'error': 
+        'prefix': 'tierror'
+        'body': 'Ti.API.error($1);'
+        'description': 'Titanium error log message'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+    'addEventListener': 
+        'prefix': 'tiaddevent'
+        'body': 'Ti.API.addEventListener(\'$1\', $2);'
+        'description': 'Titanium: add event listener'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+    'removeEventListener': 
+        'prefix': 'tiremevent'
+        'body': 'Ti.API.removeEventListener(\'$1\', $2);'
+        'description': 'Titanium: remove event listener'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+    'fireEvent': 
+        'prefix': 'tifireevent'
+        'body': 'Ti.API.fireEvent(\'$1\', $2);'
+        'description': 'Titanium: fire event'
+        'rightLabelHTML': '<span style="color:#ff0">Ti</span>'
+    
+
+
+    
