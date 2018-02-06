@@ -198,16 +198,24 @@
     'showCamera':
         'prefix': 'ticamera'
         'body': '''
-            Ti.Media.showCamera({
-                whichCamera: Ti.Media.CAMERA_REAR,
-                success: function(e) {
-                    if (e.success) {
-                        Ti.API.info('Success');
-                        // Image can be accessed through e.media
-                    }
-                },
-                error: function(err) {
-                    Ti.API.error('Error: ' + err);
+            // Camera access requires user permission:
+            // http://docs.appcelerator.com/platform/latest/#!/api/Titanium.Media-method-hasCameraPermissions.
+            Ti.Media.requestCameraPermissions(function(e) {
+                if (e.success) {
+                    Ti.Media.showCamera({
+                        whichCamera: Ti.Media.CAMERA_REAR,
+                        success: function(e) {
+                            if (e.success) {
+                                Ti.API.info('Success');
+                                // Image can be accessed through e.media
+                            }
+                        },
+                        error: function(err) {
+                            Ti.API.error('Error: ' + err);
+                        }
+                    });
+                } else {
+                    // Camera access not granted
                 }
             });
         '''
