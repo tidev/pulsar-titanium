@@ -230,6 +230,63 @@
     }
 }
 
+.appc-new-project-dialog {
+
+    &:first-child {
+        margin-top: 10px;
+    }
+
+    .row {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .row-no-margin {
+        display: flex;
+    }
+
+    p {
+        margin: 0 0 0 170px;
+        word-wrap: break-word;
+        width: 400px;
+    }
+
+    p.error {
+        color: @text-color-error;
+    }
+
+    .title {
+        width: 150px;
+        margin: auto 20px auto 0;
+        text-align: right;
+        flex-grow: 0;
+    }
+
+    .input {
+        height: 29px;
+        width: 300px;
+    }
+
+    input.disabled {
+        background-color: @base-background-color;
+        color: @text-color;
+        border: none;
+    }
+
+    .value {
+        margin: auto 0;
+    }
+
+    .row-buttons {
+        display: flex;
+        margin: 20px 0 5px 170px;
+    }
+
+    .btn {
+        margin: 0 5px 0 0;
+        cursor: default;
+    }
+}
 
 /**
  * generate dialog
@@ -304,8 +361,8 @@
 .appc-suggestion-icon {
     margin: 0;
     padding: 2px;
-    height:25px;
-    width:25px;
+    height: 25px;
+    width: 25px;
 
     .image {
         margin: 0;
@@ -313,8 +370,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-        height:25px;
-        width:25px;
-        border:none;
+        height: 25px;
+        width: 25px;
+        border: none;
     }
 }

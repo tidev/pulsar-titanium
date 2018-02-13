@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.0
+
+- Added support for creating new Titanium projects ([ATOM-37](https://jira.appcelerator.org/browse/ATOM-37))
+- Added support for native module projects ([ATOM-38](https://jira.appcelerator.org/browse/ATOM-38))
+- Added snippets support ([ATOM-11](https://jira.appcelerator.org/browse/ATOM-11))
+- Added keyboard shortcuts for opening related Alloy files ([ATOM-39](https://jira.appcelerator.org/browse/ATOM-39))
+- Added option to set full path to `appc` command ([ATOM-50](https://jira.appcelerator.org/browse/ATOM-50))
+- Improved behaviour when non-Titanium project is open ([ATOM-40](https://jira.appcelerator.org/browse/ATOM-40))
+- Improved tiapp.xml parsing ([ATOM-49](https://jira.appcelerator.org/browse/ATOM-49))
+- Fixed triggering image autocompletion ([ATOM-43](https://jira.appcelerator.org/browse/ATOM-43))
+
 ## 1.0.3
 
 **21/12/17**

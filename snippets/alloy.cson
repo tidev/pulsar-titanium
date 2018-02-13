@@ -1,0 +1,80 @@
+'.source.js':
+
+    # propertes
+    'globals': 
+        'prefix': 'alglo'
+        'body': 'Alloy.Globals.$1'
+        'rightLabelHTML': 'Alloy.Globals'
+        'description': 'Alloy Globals object'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-property-Globals'
+
+    'cfg': 
+        'prefix': 'alcfg'
+        'body': 'Alloy.CFG.$1'
+        'rightLabelHTML': 'Alloy.CFG'
+        'description': 'Alloy CFG object'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-property-Globals'
+
+    # alloy methods
+    'createController': 
+        'prefix': 'alcon'
+        'body': 'Alloy.createController(\'$1\', $2});$3'
+        'rightLabelHTML': 'Alloy.createController()'
+        'description': 'Alloy create controller function'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-method-createController'
+
+    'createCollection': 
+        'prefix': 'alcol'
+        'body': 'Alloy.createCollection(\'$1\', $2});$3'
+        'rightLabelHTML': 'Alloy.createCollection()'
+        'description': 'Alloy create collection function'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-method-createCollection'
+
+    'createModel': 
+        'prefix': 'almod'
+        'body': 'Alloy.createModel(\'$1\', $2});$3'
+        'rightLabelHTML': 'Alloy.createModel()'
+        'description': 'Alloy create model function'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-method-createModel'
+
+    'createWidget': 
+        'prefix': 'alwid'
+        'body': 'Alloy.createWidget(\'$1\', $2});$3'
+        'rightLabelHTML': 'Alloy.createWidget()'
+        'description': 'Alloy create widget function'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/api/Alloy-method-createWidget'
+    
+    # conditional statements
+    'ifiOS': 
+        'prefix': 'ifios'
+        'body': '''
+            if (OS_IOS) {
+                $1
+            }$2
+        '''
+        'rightLabelHTML': 'if (OS_IOS)'
+        'description': 'Alloy iOS conditional statement'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-Conditionalcode'
+
+    'ifAndroid': 
+        'prefix': 'ifand'
+        'body': '''
+            if (OS_ANDROID) {
+                $1
+            }$2
+        '''
+        'rightLabelHTML': 'if (OS_ANDROID)'
+        'description': 'Alloy Android conditional statement'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-Conditionalcode'
+
+    'ifWindows': 
+        'prefix': 'ifwin'
+        'body': '''
+            if (OS_WINDOWS) {
+                $1
+            }$2
+        '''
+        'rightLabelHTML': 'if (OS_WINDOWS)'
+        'description': 'Alloy Windows conditional statement'
+        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-Conditionalcode'
+    
