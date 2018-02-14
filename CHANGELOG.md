@@ -2,6 +2,8 @@
 
 ## 1.1.0
 
+**14/02/18**
+
 - Added support for creating new Titanium projects ([ATOM-37](https://jira.appcelerator.org/browse/ATOM-37))
 - Added support for native module projects ([ATOM-38](https://jira.appcelerator.org/browse/ATOM-38))
 - Added snippets support ([ATOM-11](https://jira.appcelerator.org/browse/ATOM-11))
