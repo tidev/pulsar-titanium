@@ -225,14 +225,12 @@ Prefix          | Description
 `tiaudio`       | Play local or remote audio
 `tivideo`       | Play local or remove video
 `ticamera`      | Open camera
--               | 
 `alglo`         | Alloy Globals object
 `alcfg`         | Alloy CFG object
 `alcon`         | Alloy create controller function
 `alcol`         | Alloy create collection function
 `almod`         | Alloy create model function
 `alwid`         | Alloy create widget function
--               | 
 `ifios`         | iOS conditional statement
 `ifand`         | Android conditional statement
 `ifwin`         | Window conditional statement
