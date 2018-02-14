@@ -233,7 +233,7 @@ Prefix          | Description
 `alwid`         | Alloy create widget function
 `ifios`         | iOS conditional statement
 `ifand`         | Android conditional statement
-`ifwin`         | Window conditional statement
+`ifwin`         | Windows conditional statement
 
 ## Contributions
 
