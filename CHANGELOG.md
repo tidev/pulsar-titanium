@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Default to latest SDK if none selected ([ATOM-66](https://jira.appcelerator.org/browse/ATOM-66))
+- Improved Alloy create function snippets
+
 ## 1.1.0
 
 **14/02/18**
