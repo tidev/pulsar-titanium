@@ -4,6 +4,7 @@
 
 - Default to latest SDK if none selected ([ATOM-66](https://jira.appcelerator.org/browse/ATOM-66))
 - Improved Alloy create function snippets
+- Fixed Slider tag autocomplete suggestion ([ATOM-70](https://jira.appcelerator.org/browse/ATOM-70))
 
 ## 1.1.0
 
