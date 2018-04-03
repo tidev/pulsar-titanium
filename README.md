@@ -34,16 +34,16 @@ atom /path/to/titanium/project
 
 ### Commands
 
-Command                 | Description
----                     | ---
-appc:build              | Build using the current selected command and configuration
-appc:stop               | Stop the current build
-appc:console            | Toggle the console
-appc:generate           | Open dialog to generate a new alloy file or component
-appc:open view          | Open the related Alloy XML file
-appc:open style         | Open the related Alloy TSS file
-appc:open controller    | Open the related JavaScript file
-appc:open close related | Toggle the related Alloy XML, TSS and Javascript files
+Command                 | Keymap            | Description
+---                     | ---               | ---
+appc:build              | `ctrl-alt-enter`  | Build using the current selected command and configuration
+appc:stop               | -                 | Stop the current build
+appc:console            | -                 | Toggle the console
+appc:generate           | -                 | Open dialog to generate a new alloy file or component
+appc:open view          | `ctrl-alt-v`      | Open the related Alloy XML file
+appc:open style         | `ctrl-alt-s`      | Open the related Alloy TSS file
+appc:open controller    | `ctrl-alt-x`      | Open the related JavaScript file
+appc:open close related | `ctrl-alt-a`      | Toggle the related Alloy XML, TSS and Javascript files
 
 ### Build tools
 
@@ -200,6 +200,40 @@ Click on localised string references to jump to their definition. The option to 
 #### Images
 
 Click on an image path to open the image in a new tab. For iOS, where multiple scaled images exist with the same name the first is opened (e.g. @2x).
+
+### Snippets
+
+Code snippets for common Alloy and Titanium APIs are provided for use in Alloy controllers and modules. A description of the snippet and link to documentation are provided where appropriate. Type the prefix and the autocomplete overlay will be displayed with matching snippets.
+
+<img src="https://user-images.githubusercontent.com/2697821/35726837-259fe6be-07fe-11e8-9a73-ea13a8572723.png" width="356px" alt="Code snippet suggestions" />
+
+Prefix          | Description
+---             | ---
+`tidebug`       | Debug log message
+`tierror`       | Error log message
+`tiinfo`        | Info log message
+`tiwarn`        | Warn log message
+`titrace`       | Trace log message
+`tiaddevent`    | Add event listener
+`tiremevent`    | Remove event listener
+`tifireevent`   | Fire event
+`tialert`       | Show alert dialog
+`tiopt`         | Show option dialog
+`tianim`        | View animation
+`tifile`        | Open file
+`tisound`       | Play sound
+`tiaudio`       | Play local or remote audio
+`tivideo`       | Play local or remove video
+`ticamera`      | Open camera
+`alglo`         | Alloy Globals object
+`alcfg`         | Alloy CFG object
+`alcon`         | Alloy create controller function
+`alcol`         | Alloy create collection function
+`almod`         | Alloy create model function
+`alwid`         | Alloy create widget function
+`ifios`         | iOS conditional statement
+`ifand`         | Android conditional statement
+`ifwin`         | Windows conditional statement
 
 ## Contributions
 
