@@ -8,6 +8,10 @@
 		"module": false
 	},
 	"rules": {
-		"security/detect-non-literal-regexp": "off"
+		"security/detect-non-literal-regexp": "off",
+		"react/jsx-no-bind": "off", 
+		"react/no-string-refs": "off",
+		"no-control-regex": "off",
+		"jsx-a11y/label-has-for": "off"
 	}
 }

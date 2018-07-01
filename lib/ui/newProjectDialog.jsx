@@ -66,20 +66,24 @@ export default class NewProjectDialog {
 		let projectLocation = <div className="row" />;
 		if (this.project.name && this.project.name.length > 0) {
 			if (this.state.locationExists) {
-				projectLocation = <div className="row">
-					<p class="disabled error">{`${path.join(this.project.location, this.project.name)}`} already exists</p>
-				</div>;
+				projectLocation = (
+					<div className="row">
+						<p className="disabled error">{`${path.join(this.project.location, this.project.name)}`} already exists</p>
+					</div>
+				);
 			} else {
-				projectLocation = <div className="row">
-					<p class="disabled">Project will be created at {`${path.join(this.project.location, this.project.name)}`}</p>
-				</div>;
+				projectLocation = (
+					<div className="row">
+						<p className="disabled">Project will be created at {`${path.join(this.project.location, this.project.name)}`}</p>
+					</div>
+				);
 			}
 		}
 		let services = '';
 		if (this.project.enableServices) {
 			services = [
 				<div className="row">
-					<p class="disabled">App will be registered with the Axway AMPLIFY Platform and mobile backend services enabled.</p>
+					<p className="disabled">App will be registered with the Axway AMPLIFY Platform and mobile backend services enabled.</p>
 				</div>,
 				<div className="row">
 					<div className="title">User:</div>
@@ -91,7 +95,7 @@ export default class NewProjectDialog {
 				</div>,
 				<div className="row">
 					<div className="title">Enable Hyperloop:</div>
-					<input class="input-checkbox" type="checkbox" ref="enableHyperloop" disabled={this.state.executing} checked={this.project.enableHyperloop} on={{ change: this.enableHyperloopDidChange }} />
+					<input className="input-checkbox" type="checkbox" ref="enableHyperloop" disabled={this.state.executing} checked={this.project.enableHyperloop} on={{ change: this.enableHyperloopDidChange }} />
 				</div>
 			];
 		}
@@ -107,7 +111,7 @@ export default class NewProjectDialog {
 				</div>
 				<div className="row">
 					<div className="title">Platforms:</div>
-					<div class="btn-group">
+					<div className="btn-group">
 						{platformOptions}
 					</div>
 				</div>
@@ -119,12 +123,12 @@ export default class NewProjectDialog {
 				{projectLocation}
 				<div className="row">
 					<div className="title">Enable Services:</div>
-					<input class="input-checkbox" type="checkbox" ref="enableServices" disabled={this.state.executing} checked={this.project.enableServices} on={{ change: this.enableServicesDidChange }} />
+					<input className="input-checkbox" type="checkbox" ref="enableServices" disabled={this.state.executing} checked={this.project.enableServices} on={{ change: this.enableServicesDidChange }} />
 				</div>
 				{services}
 				<div className="row-buttons">
-					<button class="btn" attributes={{ tabindex: '10' }} disabled={this.state.executing} on={{ click: this.cancelButtonClicked }}>Cancel</button>
-					<button class="btn btn-primary inline-block-tight" ref="submit" disabled={!this.state.submitButtonEnabled || this.state.executing} attributes={{ tabindex: '11' }} on={{ click: this.submitButtonClicked }}>Create</button>
+					<button className="btn" attributes={{ tabindex: '10' }} disabled={this.state.executing} on={{ click: this.cancelButtonClicked }}>Cancel</button>
+					<button className="btn btn-primary inline-block-tight" ref="submit" disabled={!this.state.submitButtonEnabled || this.state.executing} attributes={{ tabindex: '11' }} on={{ click: this.submitButtonClicked }}>Create</button>
 					<div className="hud-spinner loading loading-spinner-tiny" attributes={this.state.executing ? { style: 'display:block;' } : { style: 'display:none;' }} />
 				</div>
 			</div>

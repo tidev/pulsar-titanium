@@ -35,11 +35,13 @@ export default class Hud {
 	 * @returns {Object}
 	 */
 	render() {
-		return <div className="toolbar-item hud">
-			<img className="hud-icon" src={this.state.icon} />
-			<p className="hud-message">{this.state.text}</p>
-			<div className="hud-spinner loading loading-spinner-tiny" attributes={this.state.spinner ? { style: 'display:block;' } : { style: 'display:none;' }} />
-		</div>;
+		return (
+			<div className="toolbar-item hud">
+				<img className="hud-icon" alt="Loading ..." src={this.state.icon} />
+				<p className="hud-message">{this.state.text}</p>
+				<div className="hud-spinner loading loading-spinner-tiny" attributes={this.state.spinner ? { style: 'display:block;' } : { style: 'display:none;' }} />
+			</div>
+		);
 	}
 
 	/**

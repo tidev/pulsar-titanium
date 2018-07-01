@@ -37,9 +37,11 @@ class ConsoleLog {
 	 * @returns {Object}
 	 */
 	render() {
-		return <div className="console-messages native-key-bindings" ref="log" attributes={{ tabindex:'-1' }}>
-			{this.children}
-		</div>;
+		return (
+			<div className="console-messages native-key-bindings" ref="log" attributes={{ tabindex: '-1' }}>
+				{this.children}
+			</div>
+		);
 	}
 
 	/**
@@ -162,31 +164,33 @@ export default class Console {
 	 * @returns {Object}
 	 */
 	render() {
-		return <div className="appc-console">
-			<div className="appc-toolbar">
-				<div class="toolbar-row">
-					<div className="toolbar-left">
-						<Select change={this.logLevelValueDidChange.bind(this)} value={this.state.logLevel}>
-							<option value="info">Info</option>
-							<option value="trace">Trace</option>
-							<option value="debug">Debug</option>
-							<option value="warn">Warn</option>
-							<option value="error">Error</option>
-						</Select>
-						<div className="toolbar-item-title">
-							<label class="input-label"><input class="input-checkbox" type="checkbox" attributes={this.state.autoScroll ? { checked:'true' } : {} } on={{ change:this.autoScrollCheckboxDidChange }} />Auto-scroll</label>
+		return (
+			<div className="appc-console">
+				<div className="appc-toolbar">
+					<div className="toolbar-row">
+						<div className="toolbar-left">
+							<Select change={this.logLevelValueDidChange.bind(this)} value={this.state.logLevel}>
+                                <option value="info">Info</option>
+								<option value="trace">Trace</option>
+								<option value="debug">Debug</option>
+								<option value="warn">Warn</option>
+								<option value="error">Error</option>
+							</Select>
+							<div className="toolbar-item-title">
+								<label className="input-label"><input className="input-checkbox" type="checkbox" attributes={this.state.autoScroll ? { checked: 'true' } : {}} on={{ change: this.autoScrollCheckboxDidChange }} />Auto-scroll</label>
+							</div>
+							<div className="toolbar-item-title">
+								<label className="input-label"><input className="input-checkbox" type="checkbox" attributes={this.state.showOnBuild ? { checked: 'true' } : {}} on={{ change: this.showOnBuildCheckboxDidChange }} />Show on build</label>
+							</div>
 						</div>
-						<div className="toolbar-item-title">
-							<label class="input-label"><input class="input-checkbox" type="checkbox" attributes={this.state.showOnBuild ? { checked:'true' } : {} } on={{ change:this.showOnBuildCheckboxDidChange }} />Show on build</label>
+						<div className="toolbar-right">
+							<Button flat="true" icon="trashcan" className="button-right" click={this.clear.bind(this)} />
 						</div>
-					</div>
-					<div className="toolbar-right">
-						<Button flat="true" icon="trashcan" className="button-right" click={this.clear.bind(this)} />
 					</div>
 				</div>
+				<ConsoleLog ref="log" autoScroll={this.state.autoScroll} />
 			</div>
-			<ConsoleLog ref="log" autoScroll={this.state.autoScroll} />
-		</div>;
+		);
 	}
 
 	/**
