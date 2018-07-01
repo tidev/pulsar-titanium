@@ -1,6 +1,14 @@
 # Changelog
 
+## 1.2.0
+
+**01/07/18**
+
+- Added support for cleaning the project via the toolbar ([#93](https://github.com/appcelerator/atom-appcelerator-titanium/pull/93), thanks to [@m1ga](https://github.com/m1ga))
+
 ## 1.1.1
+
+**22/03/18**
 
 - Default to latest SDK if none selected ([ATOM-66](https://jira.appcelerator.org/browse/ATOM-66))
 - Improved Alloy create function snippets
