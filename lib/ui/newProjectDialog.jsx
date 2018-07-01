@@ -6,7 +6,7 @@ import { homedir } from 'os';
 import fs from 'fs';
 import path from 'path';
 import etch from 'etch';
-import Button from './button';
+import Button from './button.jsx';
 import Utils from '../utils';
 import Appc from '../appc';
 

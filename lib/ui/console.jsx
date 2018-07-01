@@ -4,8 +4,8 @@
 import { CompositeDisposable } from 'atom';
 import { platform } from 'os';
 import etch from 'etch';
-import Button from './button';
-import Select from './select';
+import Button from './button.jsx';
+import Select from './select.jsx';
 
 /**
  * ConosleLog

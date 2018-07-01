@@ -7,9 +7,9 @@ import { remote } from 'electron';
 import etch from 'etch';
 import Appc from '../appc';
 import Project from '../project';
-import Button from './button';
-import Select from './select';
-import Hud from './hud';
+import Button from './button.jsx';
+import Select from './select.jsx';
+import Hud from './hud.jsx';
 import Utils from '../utils';
 
 etch.setScheduler(atom.views);
