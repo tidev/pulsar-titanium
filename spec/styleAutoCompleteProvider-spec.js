@@ -3,20 +3,20 @@
 import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvider';
 
 let editor;
-function initTextEditor(text) {
-	editor = atom.workspace.buildTextEditor();
-	editor.setGrammar(atom.grammars.grammarForScopeName('source.css.tss'));
-	editor.insertText(text);
-}
+// function initTextEditor(text) {
+// 	editor = atom.workspace.buildTextEditor();
+// 	editor.setGrammar(atom.grammars.grammarForScopeName('source.css.tss'));
+// 	editor.insertText(text);
+// }
 
-function getSuggestions(prefix) {
-	return styleAutoCompleteProvider.getSuggestions({
-		editor,
-		bufferPosition: editor.getCursorBufferPosition(),
-		scopeDescriptor: editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()),
-		prefix
-	});
-}
+// function getSuggestions(prefix) {
+// 	return styleAutoCompleteProvider.getSuggestions({
+// 		editor,
+// 		bufferPosition: editor.getCursorBufferPosition(),
+// 		scopeDescriptor: editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()),
+// 		prefix
+// 	});
+// }
 
 beforeEach(() => {
 	waitsForPromise(() =>

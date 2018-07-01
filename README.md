@@ -1,4 +1,4 @@
-# Appcelerator Titanium Package for Atom
+# Appcelerator Titanium Package for Atom [![Build Status](https://travis-ci.org/appcelerator/atom-appcelerator-titanium.svg?branch=master)](https://travis-ci.org/appcelerator/atom-appcelerator-titanium)
 
 Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom.io).
 
@@ -45,6 +45,7 @@ appc:open view          | `ctrl-alt-v`      | Open the related Alloy XML file
 appc:open style         | `ctrl-alt-s`      | Open the related Alloy TSS file
 appc:open controller    | `ctrl-alt-x`      | Open the related JavaScript file
 appc:open close related | `ctrl-alt-a`      | Toggle the related Alloy XML, TSS and Javascript files
+appc:clean | `ctrl-alt-k`      | Clean the current project directory
 
 ### Build tools
 

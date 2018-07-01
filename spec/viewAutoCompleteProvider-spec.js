@@ -3,20 +3,20 @@
 import viewAutoCompleteProvider from '../lib/providers/viewAutoCompleteProvider';
 
 let editor;
-function initTextEditor(text) {
-	editor = atom.workspace.buildTextEditor();
-	editor.setGrammar(atom.grammars.grammarForScopeName('text.alloyxml'));
-	editor.insertText(text);
-}
+// function initTextEditor(text) {
+// 	editor = atom.workspace.buildTextEditor();
+// 	editor.setGrammar(atom.grammars.grammarForScopeName('text.alloyxml'));
+// 	editor.insertText(text);
+// }
 
-function getSuggestions(prefix) {
-	return viewAutoCompleteProvider.getSuggestions({
-		editor,
-		bufferPosition: editor.getCursorBufferPosition(),
-		scopeDescriptor: editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()),
-		prefix
-	});
-}
+// function getSuggestions(prefix) {
+// 	return viewAutoCompleteProvider.getSuggestions({
+// 		editor,
+// 		bufferPosition: editor.getCursorBufferPosition(),
+// 		scopeDescriptor: editor.scopeDescriptorForBufferPosition(editor.getCursorBufferPosition()),
+// 		prefix
+// 	});
+// }
 
 beforeEach(() => {
 	waitsForPromise(() =>
