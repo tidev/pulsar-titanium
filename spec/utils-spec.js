@@ -1,3 +1,6 @@
+/* eslint-env mocha */
+/* global expect */
+
 'use babel';
 
 import Utils from '../lib/utils';
@@ -32,6 +35,7 @@ describe('iOS provisioning profile matches app ID', () => {
 			expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.example.App')).toBeTruthy();
 			expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.Example.app')).toBeFalsy();
 		});
+
 		it('additional path component', () => {
 			expect(Utils.iOSProvisioinngProfileMatchesAppId('com.example.*', 'com.example.example.app')).toBeTruthy();
 		});
