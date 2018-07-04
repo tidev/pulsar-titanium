@@ -23,6 +23,10 @@ function getSuggestions(prefix) {
 	});
 }
 
+before(() => {
+	this.skip(); // Skip until autocomplete-spec is fixed again
+});
+
 beforeEach(() => {
 	waitsForPromise(() =>
 		atom.packages.activatePackage('appcelerator-titanium')
@@ -31,7 +35,7 @@ beforeEach(() => {
 
 describe('Tag suggestions', () => {
 
-	it.skip('should provide tag suggestions', () => {
+	it('should provide tag suggestions', () => {
 		initTextEditor('<W');
 
 		const suggestions = getSuggestions('W');
@@ -70,7 +74,7 @@ describe('Tag suggestions', () => {
 
 describe('Attribute suggestions', () => {
 
-	it.skip('should provide property suggestions', () => {
+	it('should provide property suggestions', () => {
 		initTextEditor('<Window s');
 		const suggestions = getSuggestions('status');
 
@@ -84,7 +88,7 @@ describe('Attribute suggestions', () => {
 		expect(suggestions[0].descriptionMoreURL).toBe('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-scaleX');
 	});
 
-	it.skip('should provide event suggestions for', () => {
+	it('should provide event suggestions for', () => {
 		initTextEditor('<Window on');
 
 		const suggestions = getSuggestions('on');

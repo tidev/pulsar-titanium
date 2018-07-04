@@ -23,6 +23,10 @@ function getSuggestions(prefix) {
 	});
 }
 
+before(() => {
+	this.skip(); // Skip until autocomplete-spec is fixed again
+});
+
 beforeEach(() => {
 	waitsForPromise(() =>
 		atom.packages.activatePackage('appcelerator-titanium')
@@ -31,7 +35,7 @@ beforeEach(() => {
 
 describe('Tag suggestions', () => {
 
-	it.skip('should provide tag suggestions', () => {
+	it('should provide tag suggestions', () => {
 		initTextEditor('"W');
 		const suggestions = getSuggestions('W');
 
@@ -65,7 +69,7 @@ describe('Tag suggestions', () => {
 
 describe('Property suggestions', () => {
 
-	it.skip('should provide property name suggestions', () => {
+	it('should provide property name suggestions', () => {
 		initTextEditor('"#id":{s');
 		const suggestions = getSuggestions('s');
 
@@ -82,7 +86,7 @@ describe('Property suggestions', () => {
 		expect(suggestions[2].snippet).toBe('scalesPageToFit: ');
 	});
 
-	it.skip('should provide correct snippet for object types', () => {
+	it('should provide correct snippet for object types', () => {
 		initTextEditor('"#id":{f');
 		const suggestions = getSuggestions('f');
 
@@ -95,7 +99,7 @@ describe('Property suggestions', () => {
 		expect(fontSuggestion.snippet).toBe('font: {\n\t\${1}\t\n}');
 	});
 
-	it.skip('should provide property value suggestions', () => {
+	it('should provide property value suggestions', () => {
 		initTextEditor('"#id":{');
 		editor.insertNewline();
 		editor.insertText('separatorStyle:');
@@ -111,7 +115,7 @@ describe('Property suggestions', () => {
 		expect(suggestions[1].text).toBe('Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_SINGLE_LINE');
 	});
 
-	it.skip('should provide property no value suggestions with invalid prefix', () => {
+	it('should provide property no value suggestions with invalid prefix', () => {
 		initTextEditor('"#id":{');
 		editor.insertNewline();
 		editor.insertText('separatorStyle:');
