@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0
+
+**06/07/18**
+
+- Added LiveView support  ([#108](https://github.com/appcelerator/atom-appcelerator-titanium/issues/108))
+- Added expiration date to certificates **and** provisioning profiles ([#91](https://github.com/appcelerator/atom-appcelerator-titanium/issues/91))
+- Fixed HUD-error  ([#103](https://github.com/appcelerator/atom-appcelerator-titanium/issues/103))
+- Use `INFO` log-level by default, for parity with Studio  ([#90](https://github.com/appcelerator/atom-appcelerator-titanium/issues/90))
+- Allow custom args to be saved across Atom sessions ([#114](https://github.com/appcelerator/atom-appcelerator-titanium/issues/114))
+
 ## 1.2.0
 
 **01/07/18**
