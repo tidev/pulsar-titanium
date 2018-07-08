@@ -2,7 +2,7 @@
 
 Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom.io).
 
-<img src="https://user-images.githubusercontent.com/2697821/33011945-556d79c6-cdd7-11e7-84a6-78c3a57b6eb1.png" width="900px" alt="Appcelerator Titanium for Atom screenshot" />
+<img src="https://user-images.githubusercontent.com/10667698/42400977-8e552cde-8141-11e8-8696-1380eb9dd581.png" width="900px" alt="Appcelerator Titanium for Atom screenshot" />
 
 ## Getting Started
 
@@ -51,7 +51,7 @@ appc:open close related | `ctrl-alt-a`      | Toggle the related Alloy XML, TSS 
 
 The toolbar provides a UI to commonly used commands when developing a Titanium application. Further information on each function is provided in the sections below.
 
-<img src="https://user-images.githubusercontent.com/2697821/33169533-f0e0a89e-d03c-11e7-99f8-7cb91858dbed.png" width="722px"  alt="Toolbar" />
+<img src="https://user-images.githubusercontent.com/10667698/42401225-aecbb72a-8142-11e8-9f6f-653925d8f432.png" width="722px"  alt="Toolbar" />
 
 ##### 1. Build select and run
 
@@ -69,15 +69,19 @@ Select simulator/emulator or local device. When attaching a device, select Refre
 
 When building for device (iOS) or distribution (iOS and Android) the option to configure code signing or keystore credentials is available.
 
-##### 5. Info panel
+##### 5. LiveView toggle
+
+Toggle the LiveView icon to enable or disable LiveView in your application. 
+
+##### 6. Info panel
 
 Provides information about the active project.
 
-##### 6. Generate component
+##### 7. Generate component
 
 Presents a dialog to generate a Titanium component: Controller, View, Style, Model, Widget or Alloy.jmk file.
 
-##### 7. Console
+##### 8. Console
 
 Show or hide the console which outputs debug information during build and run.
 
@@ -130,7 +134,7 @@ $ appc ti sdk
 ...
 
 Installed SDKs:
-   7.0.0.GA [selected]  7.0.0.GA
+   7.2.0.GA [selected]  7.2.0.GA
 ```
 
 ```
@@ -237,7 +241,8 @@ Prefix          | Description
 
 ## Contributions
 
-This package would not be possible without support from the Titanium community. Autocompletion, jump-to-definition and grammar support provided by [Jong Eun Lee](https://github.com/yomybaby) through the [Titanium Alloy package](https://github.com/yomybaby/atom-titanium).
+This package would not be possible without support from the Titanium community. Autocompletion, jump-to-definition and grammar support provided by [Jong Eun Lee](https://github.com/yomybaby) through the [Titanium Alloy package](https://github.com/yomybaby/atom-titanium). Also a huge **thanks** to all our [open source contributors](https://github.com/appcelerator/atom-appcelerator-titanium/graphs/contributors) that help making every release
+unique for the Titanium community!
 
 ### Additional thanks
 

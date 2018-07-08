@@ -2,7 +2,7 @@
   "name": "appcelerator-titanium",
   "main": "./lib/index",
   "version": "1.3.0",
-  "description": "Axway Appcelerator Titanium build tools and UI for Atom",
+  "description": "Appcelerator Titanium build tools and UI for Atom",
   "repository": "https://github.com/appcelerator/atom-appcelerator-titanium",
   "license": "Apache-2.0",
   "engines": {
