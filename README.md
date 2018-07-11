@@ -37,9 +37,10 @@ atom /path/to/titanium/project
 Command                 | Keymap            | Description
 ---                     | ---               | ---
 appc:build              | `ctrl-alt-enter`  | Build using the current selected command and configuration
-appc:stop               | -                 | Stop the current build
-appc:console            | -                 | Toggle the console
-appc:generate           | -                 | Open dialog to generate a new alloy file or component
+appc:stop               | None              | Stop the current build
+appc:console            | None              | Toggle the console
+appc:generate           | None              | Open dialog to generate a new alloy file or component
+appc:takeScreenshot     | None              | Take a screenshot of the currently running device
 appc:open view          | `ctrl-alt-v`      | Open the related Alloy XML file
 appc:open style         | `ctrl-alt-s`      | Open the related Alloy TSS file
 appc:open controller    | `ctrl-alt-x`      | Open the related JavaScript file
