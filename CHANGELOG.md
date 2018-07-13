@@ -2,7 +2,7 @@
 
 ## 1.4.0
 
-**12/07/18**
+**13/07/18**
 
 - Added support for taking screenshots from the IDE ([#112](https://github.com/appcelerator/atom-appcelerator-titanium/pull/112), thanks to [@m1ga](https://github.com/m1ga))
 
