@@ -1,5 +1,8 @@
 'use babel';
 
+/* eslint-env mocha */
+/* global expect */
+
 import Utils from '../lib/utils';
 
 describe('iOS provisioning profile matches app ID', function () {

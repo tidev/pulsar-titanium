@@ -1,5 +1,8 @@
 'use babel';
 
+/* eslint-env mocha */
+/* global expect */
+
 import Appc from '../lib/appc';
 import info from './data/ti_info';
 

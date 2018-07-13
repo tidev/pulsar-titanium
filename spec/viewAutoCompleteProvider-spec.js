@@ -1,14 +1,20 @@
 'use babel';
 
+/* eslint-env mocha */
+/* global waitsForPromise */
+
 import viewAutoCompleteProvider from '../lib/providers/viewAutoCompleteProvider';
 
 let editor;
+
+// eslint-disable-next-line no-unused-vars
 function initTextEditor(text) {
 	editor = atom.workspace.buildTextEditor();
 	editor.setGrammar(atom.grammars.grammarForScopeName('text.alloyxml'));
 	editor.insertText(text);
 }
 
+// eslint-disable-next-line no-unused-vars
 function getSuggestions(prefix) {
 	return viewAutoCompleteProvider.getSuggestions({
 		editor,
@@ -63,7 +69,7 @@ describe('Tag suggestions', function () {
 });
 
 describe('Attribute suggestions', function () {
-	
+
 	// it('should provide property suggestions', function () {
 	// 	initTextEditor('<Window s');
 	// 	suggestions = getSuggestions('status');
