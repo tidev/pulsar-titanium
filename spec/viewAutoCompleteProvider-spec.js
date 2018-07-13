@@ -23,7 +23,7 @@ function getSuggestions(prefix) {
 	});
 }
 
-before(() => {
+before(() => {
 	this.skip(); // Skip until autocomplete-spec is fixed again
 });
 
