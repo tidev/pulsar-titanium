@@ -1,3 +1,6 @@
+/* eslint-env mocha */
+/* global expect */
+
 'use babel';
 
 import Utils from '../lib/utils';
