@@ -1,6 +1,3 @@
-/* eslint-env mocha */
-/* global expect */
-
 'use babel';
 
 import Appc from '../lib/appc';

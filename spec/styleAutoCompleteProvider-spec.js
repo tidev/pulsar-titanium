@@ -1,20 +1,15 @@
-/* eslint-env mocha */
-/* global waitsForPromise */
-
 'use babel';
 
 import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvider';
 
 let editor;
 
-// eslint-disable-next-line no-unused-vars
 function initTextEditor(text) {
 	editor = atom.workspace.buildTextEditor();
 	editor.setGrammar(atom.grammars.grammarForScopeName('source.css.tss'));
 	editor.insertText(text);
 }
 
-// eslint-disable-next-line no-unused-vars
 function getSuggestions(prefix) {
 	return styleAutoCompleteProvider.getSuggestions({
 		editor,
