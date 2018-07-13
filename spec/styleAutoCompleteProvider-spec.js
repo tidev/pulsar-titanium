@@ -1,9 +1,9 @@
 'use babel';
 
 /* eslint-env mocha */
-/* global waitsForPromise */
+/* global waitsForPromise, expect */
 
-import Project from '../lib/project'
+import Project from '../lib/project';
 import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvider';
 
 let editor;
@@ -37,7 +37,7 @@ describe('Tag suggestions', function () {
 		Project.isTitaniumApp = true;
 		initTextEditor('"W');
 		const suggestions = getSuggestions('W');
-		console.log(suggestions);
+
 		expect(suggestions.length).toBe(4);
 		expect(suggestions[0].type).toBe('tag');
 		expect(suggestions[0].text).toBe('WebView');
@@ -71,7 +71,7 @@ describe('Property suggestions', function () {
 		Project.isTitaniumApp = true;
 
 		initTextEditor('"#id":{s');
-		suggestions = getSuggestions('s');
+		const suggestions = getSuggestions('s');
 		expect(suggestions[0].type).toBe('property');
 		expect(suggestions[0].displayText).toBe('SATELLITE_TYPE');
 		expect(suggestions[0].snippet).toBe('SATELLITE_TYPE: ');
@@ -88,13 +88,14 @@ describe('Property suggestions', function () {
 	it('should provide correct snippet for object types', function () {
 		Project.isTitaniumApp = true;
 		initTextEditor('"#id":{f');
-		suggestions = getSuggestions('f');
+		const suggestions = getSuggestions('f');
 
 		// find 'font' suggestion
 		const fontSuggestion = suggestions.find(suggestion => suggestion.displayText === 'font');
 
 		expect(fontSuggestion.type).toBe('property');
-		expect(fontSuggestion.snippet).toBe('font: {\n\t\${1}\t\n}');
+		// eslint-disable-next-line no-template-curly-in-string
+		expect(fontSuggestion.snippet).toBe('font: {\n\t${1}\t\n}');
 	});
 
 	it('should provide property value suggestions', function () {
@@ -102,7 +103,7 @@ describe('Property suggestions', function () {
 		initTextEditor('"#id":{');
 		editor.insertNewline();
 		editor.insertText('separatorStyle:');
-		suggestions = getSuggestions('');
+		const suggestions = getSuggestions('');
 
 		expect(suggestions.length).toBe(2);
 
@@ -118,7 +119,7 @@ describe('Property suggestions', function () {
 		initTextEditor('"#id":{');
 		editor.insertNewline();
 		editor.insertText('separatorStyle:');
-		suggestions = getSuggestions('s');
+		const suggestions = getSuggestions('s');
 
 		expect(suggestions.length).toBe(0);
 	});
