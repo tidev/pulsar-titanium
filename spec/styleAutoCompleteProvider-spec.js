@@ -3,6 +3,8 @@
 /* eslint-env mocha */
 /* global waitsForPromise, expect */
 
+import autoCompleteHelper from '../lib/providers/autoCompleteHelper';
+import path from 'path';
 import Project from '../lib/project';
 import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvider';
 
@@ -26,6 +28,7 @@ function getSuggestions(prefix) {
 }
 
 beforeEach(function () {
+	autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
 	waitsForPromise(() =>
 		atom.packages.activatePackage('appcelerator-titanium')
 	);
