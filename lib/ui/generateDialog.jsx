@@ -76,8 +76,8 @@ export default class GenerateDialog {
 				</div>
 				{argumentInputs}
 				<div className="row-buttons">
-					<button class="btn" attributes={{ tabindex: '10' }} on={{ click: this.cancelButtonClicked }}>Cancel</button>
-					<button class="btn btn-primary inline-block-tight" ref="generate" disabled={!this.generateButtonEnabled} attributes={{ tabindex: '11' }} on={{ click: this.generateButtonClicked }}>Generate</button>
+					<button className="btn" attributes={{ tabindex: '10' }} on={{ click: this.cancelButtonClicked }}>Cancel</button>
+					<button className="btn btn-primary inline-block-tight" ref="generate" disabled={!this.generateButtonEnabled} attributes={{ tabindex: '11' }} on={{ click: this.generateButtonClicked }}>Generate</button>
 				</div>
 			</div>
 		);

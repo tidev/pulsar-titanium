@@ -5,6 +5,7 @@
 **13/07/18**
 
 - Added support for taking screenshots from the IDE ([#112](https://github.com/appcelerator/atom-appcelerator-titanium/pull/112), thanks to [@m1ga](https://github.com/m1ga))
+- Internal: Added Travis CI to all pull requests ([#113](https://github.com/appcelerator/atom-appcelerator-titanium/pull/113)
 
 ## 1.3.0
 

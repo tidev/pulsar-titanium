@@ -7,9 +7,9 @@ import { remote } from 'electron';
 import etch from 'etch';
 import Appc from '../appc';
 import Project from '../project';
-import Button from './button';
-import Select from './select';
-import Hud from './hud';
+import Button from './button.jsx';
+import Select from './select.jsx';
+import Hud from './hud.jsx';
 import Utils from '../utils';
 
 etch.setScheduler(atom.views);
@@ -178,18 +178,36 @@ export default class Toolbar {
 					<div className="toolbar-row">
 						<div className="toolbar-center">
 							<div className="toolbar-item-title">Path:</div>
-							<input className="input-text native-key-bindings input keystore-path-input" ref="androidKeystorePath"
-								value={this.state.androidKeystore.path} on={{ change: this.androidKeystoreDidChange }} />
+							<input
+								className="input-text native-key-bindings input keystore-path-input"
+								ref="androidKeystorePath"
+								value={this.state.androidKeystore.path}
+								on={{ change: this.androidKeystoreDidChange }}
+							/>
 							<Button flat="true" icon="file-directory" click={this.androidKeystoreButtonClicked.bind(this)} />
 							<div className="toolbar-item-title">Alias:</div>
-							<input className="input-text native-key-bindings input" ref="androidKeystoreAlias"
-								value={this.state.androidKeystore.alias} on={{ change: this.androidKeystoreDidChange }} />
+							<input
+								className="input-text native-key-bindings input"
+								ref="androidKeystoreAlias"
+								value={this.state.androidKeystore.alias}
+								on={{ change: this.androidKeystoreDidChange }}
+							/>
 							<div className="toolbar-item-title">Password:</div>
-							<input type="password" className="input-text native-key-bindings input" ref="androidKeystorePassword"
-								value={this.state.androidKeystore.password} on={{ change: this.androidKeystoreDidChange }} />
+							<input
+								type="password"
+								className="input-text native-key-bindings input"
+								ref="androidKeystorePassword"
+								value={this.state.androidKeystore.password}
+								on={{ change: this.androidKeystoreDidChange }}
+							/>
 							<div className="toolbar-item-title">Private key password:</div>
-							<input type="password" className="input-text native-key-bindings input" ref="androidKeystorePrivateKeyPassword"
-								value={this.state.androidKeystore.privateKeyPassword} on={{ change: this.androidKeystoreDidChange }} />
+							<input
+								type="password"
+								className="input-text native-key-bindings input"
+								ref="androidKeystorePrivateKeyPassword"
+								value={this.state.androidKeystore.privateKeyPassword}
+								on={{ change: this.androidKeystoreDidChange }}
+							/>
 						</div>
 						<div className="toolbar-right">
 							<Button flat="true" icon="x" click={this.expandButtonClicked.bind(this)} />
@@ -218,7 +236,7 @@ export default class Toolbar {
 
 					<div className="toolbar-left main-toolbar-group">
 
-						<img className="logo" src={`${__dirname}/../../images/ti_28.png`} attributes={{ srcset: `${__dirname}/../../images/ti_28.png 1x, ${__dirname}/../../images/ti_56.png 2x, ${__dirname}/../../images/ti_84.png 3x` }} />
+						<img alt="Titanium Atom" className="logo" src={`${__dirname}/../../images/ti_28.png`} attributes={{ srcset: `${__dirname}/../../images/ti_28.png 1x, ${__dirname}/../../images/ti_56.png 2x, ${__dirname}/../../images/ti_84.png 3x` }} />
 
 						<div className="toolbar-item button build-button-container">
 							<Button ref="buildButton" className="build-button" custom="true" icon={buildButtonIcon} disabled={this.state.disableUI} click={this.buildButtonClicked.bind(this)} />
