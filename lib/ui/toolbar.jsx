@@ -19,30 +19,79 @@ etch.setScheduler(atom.views);
  */
 export default class Toolbar {
 
+	buildCommand() {
+		const buildCommand = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommand`);
+		const buildCommandName = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommandName`);
+
+		if (buildCommand !== null && buildCommand !== undefined) {
+			return {
+				name: buildCommand,
+				text: buildCommandName
+			};
+		} else if (Project.isTitaniumApp) {
+			return {
+				name: 'run',
+				text: 'Run'
+			};
+		}
+
+		// No Titanium project -> Module
+		return {
+			name: 'build',
+			text: 'Build'
+		};
+	}
+
+	selectedPlatform() {
+		const selectedPlatform = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.selectedPlatform`);
+
+		if (selectedPlatform !== null && selectedPlatform !== undefined) {
+			return {
+				value: selectedPlatform,
+				text: Utils.nameForPlatform(selectedPlatform)
+			};
+		}
+
+		// The defaults per platform
+		if (platform() === 'darvin') {
+			return {
+				value: 'ios',
+				text: 'iOS'
+			};
+		}
+
+		return {
+			value: 'android',
+			text: 'Android'
+		};
+	}
+
 	/**
 	 * Constructor
 	 */
 	constructor() {
 		this.targets = {};
+		this.normalizedAppName = Project.normalizedAppName();
 		this.targetOptions = [ { value: '', text: '', disabled: true } ];
+
 		this.state = {
-			buildCommand: (Project.isTitaniumApp) ?  'run' : 'build',
-			buildCommandName: (Project.isTitaniumApp) ? 'Run' : 'Build',
-			platform: (platform() === 'darwin') ? 'ios' : 'android',
-			platformName: (platform() === 'darwin') ? 'iOS' : 'Android',
+			buildCommand: this.buildCommand().name,
+			buildCommandName: this.buildCommand().text,
+			platform: this.selectedPlatform().value,
+			platformName: this.selectedPlatform().text,
 			selectedTarget: {},
 			target: null,
 			targetName: null,
 			disableUI: true,
-			enableLiveview: false,
+			enableLiveview: atom.config.get('appcelerator-titanium.general.liveviewEnabled'),
 			buildInProgress: false,
 			codeSigningAvailable: true,
 			showingCodeSigning: false,
 			showingCustom: false,
 			customArgs: atom.config.get('appcelerator-titanium.general.customArgs') || '',
 			iOSCodeSigning: {
-				certificate: null,
-				provisioningProfile: null
+				certificate: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedCertificate`),
+				provisioningProfile: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`)
 			},
 			androidKeystore: {
 				path: atom.config.get('appcelerator-titanium.android.keystorePath'),
@@ -158,17 +207,20 @@ export default class Toolbar {
 							<Select ref="iOSCertificateSelect" attributes={{ style: 'width:200px;' }} title={this.state.iOSCodeSigning.certificate} change={this.iOSCertificateSelectValueDidChange.bind(this)}>
 								{this.iOSCertificates
 									.filter(certificate => !certificate.expired)
-									.map(certificate =>
-										<option title={`${certificate.fullname} (${`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})`} value={certificate.fullname}>{certificate.fullname} ({`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})</option>
-									)
-								}
+									.map(certificate => {
+										return certificate.fullname === this.state.iOSCodeSigning.certificate
+											? <option title={`${certificate.fullname} (${`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})`} value={certificate.fullname} selected>{certificate.fullname} ({`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})</option>
+											: <option title={`${certificate.fullname} (${`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})`} value={certificate.fullname}>{certificate.fullname} ({`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})</option>;
+									})}
 							</Select>
 							<div className="toolbar-item-title icon icon-file" />
 							<Select ref="iOSProvisioningProfileSelect" attributes={{ style: 'width:200px;' }} title={this.state.iOSCodeSigning.provisioningProfile} change={this.iOSProvisioningProfileSelectValueDidChange.bind(this)}>
 								{this.iOSProvisioningProfiles
-									.map(profile =>
-										<option value={profile.uuid || ''}>{profile.name} ({'Expires: ' + new Date(profile.expirationDate).toLocaleDateString('en-US')})</option>
-									)
+									.map(profile => {
+										return profile.name === this.state.iOSCodeSigning.provisioningProfile
+											? <option value={profile.uuid || ''} selected>{profile.name} ({'Expires: ' + new Date(profile.expirationDate).toLocaleDateString('en-US')})</option>
+											: <option value={profile.uuid || ''}>{profile.name} ({'Expires: ' + new Date(profile.expirationDate).toLocaleDateString('en-US')})</option>;
+									})
 								}
 							</Select>
 						</div>
@@ -249,7 +301,7 @@ export default class Toolbar {
 							</Select>
 						</div>
 
-						<Select title="Select platform" ref="platformSelect" attributes={{ style: 'width:90px;' }} disabled={this.state.disableUI || this.state.buildCommand === 'custom'} change={this.platformSelectValueDidChange.bind(this)}>
+						<Select title="Select platform" value={this.state.platform} ref="platformSelect" attributes={{ style: 'width:90px;' }} disabled={this.state.disableUI || this.state.buildCommand === 'custom'} change={this.platformSelectValueDidChange.bind(this)}>
 							{platformOptions}
 						</Select>
 
@@ -334,6 +386,11 @@ export default class Toolbar {
 			targetType = 'device';
 		}
 
+		// Save build command
+		atom.config.set(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommand`, buildCommand.value);
+		atom.config.set(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommandName`, buildCommand.text);
+		atom.config.set(`appcelerator-titanium.general.${this.normalizedAppName}.selectedPlatform`, platform.value);
+
 		Object.assign(this.state, {
 			buildCommand: buildCommand.value,
 			buildCommandName: buildCommand.text,
@@ -353,6 +410,9 @@ export default class Toolbar {
 		}
 
 		if (this.refs.iOSCertificateSelect) {
+			const selectedValue = this.refs.iOSCertificateSelect.selectedOption.value;
+			atom.config.set(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedCertificate`, selectedValue);
+
 			this.state.iOSCodeSigning = {
 				certificate: this.refs.iOSCertificateSelect.selectedOption.value,
 				provisioningProfile: this.refs.iOSProvisioningProfileSelect.selectedOption.value || '-'
@@ -530,6 +590,11 @@ export default class Toolbar {
 	 */
 	platformSelectValueDidChange() {
 		this.getState();
+		this.refreshTargets();
+		etch.update(this);
+	}
+
+	refreshTargets() {
 		switch (this.state.platform) {
 			case 'ios':
 				this.populateiOSTargets();
@@ -542,7 +607,6 @@ export default class Toolbar {
 				this.populateAndroidTargets();
 				break;
 		}
-		etch.update(this);
 	}
 
 	/**
@@ -592,6 +656,9 @@ export default class Toolbar {
 	 * iOS provisioning profile select changed
 	 */
 	iOSProvisioningProfileSelectValueDidChange() {
+		// Save selected provisioning profile for this project
+		const selectedValue = this.refs.iOSProvisioningProfileSelect.selectedOption.value;
+		atom.config.set(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`, selectedValue);
 		this.getState();
 	}
 
@@ -675,8 +742,9 @@ export default class Toolbar {
 	 */
 	liveViewButtonClicked() {
 		this.state.enableLiveview = !this.state.enableLiveview;
-
 		this.getState();
+
+		atom.config.set('appcelerator-titanium.general.liveviewEnabled', this.state.enableLiveview);
 		etch.update(this);
 	}
 
