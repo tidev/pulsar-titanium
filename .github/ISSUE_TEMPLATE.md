@@ -1,7 +1,7 @@
-**Summary**
+### Summary
 A brief description of the issue you're seeing or request you have
 
-**Your Environment**
+### Your Environment
 | Software | Version |
 | ---------------- | ---------- |
 | Titanium SDK | |
