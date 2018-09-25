@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.1
+
+**25/09/18**
+
+- Fixed autocomplete issue when autocompleting the sdk-version tag in tiapp ([#119](https://github.com/appcelerator/atom-appcelerator-titanium/issues/119))
+- Internal: Add GitHub issue templates ([#123](https://github.com/appcelerator/atom-appcelerator-titanium/pull/123))
+
 ## 1.4.0
 
 **13/07/18**
