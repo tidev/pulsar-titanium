@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2
+
+**26/10/18**
+
+- Fixed error being thrown when tiapp.xml was saved in an invalid format (([#128]https://github.com/appcelerator/atom-appcelerator-titanium/issues/128))
+
 ## 1.4.1
 
 **25/09/18**
