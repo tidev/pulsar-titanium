@@ -1,3 +1,22 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.4.2...v1.5.0) (2018-12-19)
+
+
+### Bug Fixes
+
+* check for existence of type before trying to access properties ([ad4ebd2](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ad4ebd2)), closes [#126](https://github.com/appcelerator/atom-appcelerator-titanium/issues/126)
+
+
+### Features
+
+* add login dialog ([a3f9601](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a3f9601))
+
+
+
 # Changelog
 
 ## 1.4.2
