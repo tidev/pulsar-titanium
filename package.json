@@ -40,10 +40,10 @@
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-axway": "^2.0.14",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint": "^5.10.0",
+    "eslint-config-axway": "^4.2.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "regenerator-runtime": "^0.11.0"
   },
   "scripts": {
