@@ -16,9 +16,6 @@ All notable changes to this project will be documented in this file. See [standa
 * add login dialog ([a3f9601](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a3f9601))
 
 
-
-# Changelog
-
 ## 1.4.2
 
 **26/10/18**
