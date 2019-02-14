@@ -14,6 +14,7 @@ export default class Button {
 	 * @param {Object}      opts 			arguments
 	 * @param {String}      opts.icon		icon class
 	 * @param {String}      opts.className	custom css class
+	 * @param {String}      opts.title		title
 	 * @param {Boolean}     opts.flat		no border
 	 * @param {Boolean}     opts.custom		custom override
 	 * @param {Boolean}     opts.disabled	is disabled, not clickable
@@ -38,7 +39,7 @@ export default class Button {
 	 * @returns {Object}
 	 */
 	render() {
-		return <button className={this.className()} disabled={this.opts.disabled} on={{ click: this.opts.click }} />;
+		return <button className={this.className()} title={this.opts.title || ""} disabled={this.opts.disabled} on={{ click: this.opts.click }} />;
 	}
 
 	/**

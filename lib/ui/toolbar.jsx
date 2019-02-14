@@ -239,31 +239,31 @@ export default class Toolbar {
 						<img alt="Titanium Atom" className="logo" src={`${__dirname}/../../images/ti_28.png`} attributes={{ srcset: `${__dirname}/../../images/ti_28.png 1x, ${__dirname}/../../images/ti_56.png 2x, ${__dirname}/../../images/ti_84.png 3x` }} />
 
 						<div className="toolbar-item button build-button-container">
-							<Button ref="buildButton" className="build-button" custom="true" icon={buildButtonIcon} disabled={this.state.disableUI} click={this.buildButtonClicked.bind(this)} />
-							<Select ref="buildSelect" className="build-select" custom="true" value={this.state.buildCommand} attributes={{ style: 'width:20px;' }} disabled={this.state.disableUI} change={this.buildSelectValueDidChange.bind(this)}>
+							<Button title="Run" ref="buildButton" className="build-button" custom="true" icon={buildButtonIcon} disabled={this.state.disableUI} click={this.buildButtonClicked.bind(this)} />
+							<Select title="Run" ref="buildSelect" className="build-select" custom="true" value={this.state.buildCommand} attributes={{ style: 'width:20px;' }} disabled={this.state.disableUI} change={this.buildSelectValueDidChange.bind(this)}>
 								{buildOptions}
 							</Select>
 						</div>
 
-						<Select ref="platformSelect" attributes={{ style: 'width:90px;' }} disabled={this.state.disableUI || this.state.buildCommand === 'custom'} change={this.platformSelectValueDidChange.bind(this)}>
+						<Select title="Select platform" ref="platformSelect" attributes={{ style: 'width:90px;' }} disabled={this.state.disableUI || this.state.buildCommand === 'custom'} change={this.platformSelectValueDidChange.bind(this)}>
 							{platformOptions}
 						</Select>
 
-						<Select ref="targetSelect" attributes={{ style: 'width:150px;' }} disabled={this.state.disableUI || this.state.buildCommand !== 'run'} value={this.state.selectedTarget[this.state.platform]} change={this.targetSelectValueDidChange.bind(this)}>
+						<Select title="Select target" ref="targetSelect" attributes={{ style: 'width:150px;' }} disabled={this.state.disableUI || this.state.buildCommand !== 'run'} value={this.state.selectedTarget[this.state.platform]} change={this.targetSelectValueDidChange.bind(this)}>
 							{this.targetOptions.map(target =>
 								<option value={target.value} disabled={target.disabled}>{target.text}</option>
 							)}
 						</Select>
 
-						<Button icon="gear" flat="true" disabled={this.state.disableUI || !this.state.codeSigningAvailable} click={this.expandButtonClicked.bind(this)} />
-						<Button icon="eye" flat="true" grayed={!this.state.enableLiveview} disabled={this.shouldDisableLiveView()} click={this.liveViewButtonClicked.bind(this)} />
+						<Button icon="gear" title="Signing settings..." flat="true" disabled={this.state.disableUI || !this.state.codeSigningAvailable} click={this.expandButtonClicked.bind(this)} />
+						<Button icon="eye" title="Liveview" flat="true" grayed={!this.state.enableLiveview} disabled={this.shouldDisableLiveView()} click={this.liveViewButtonClicked.bind(this)} />
 					</div>
 
 					<Hud ref="hud" />
 
 					<div className="toolbar-right main-toolbar-group">
-						<Button icon="plus" className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
-						<Button icon="three-bars" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
+						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
+						<Button icon="three-bars" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
 					</div>
 
 				</div>
@@ -276,7 +276,7 @@ export default class Toolbar {
 
 	/**
 	 * Indicate if the LiveView button should be disabled.
-	 * @returns {Boolean} 
+	 * @returns {Boolean}
 	 */
 	shouldDisableLiveView() {
 		return this.state.disableUI || !(this.state.buildCommand === 'run' || this.state.buildCommand === 'custom');

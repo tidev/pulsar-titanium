@@ -13,6 +13,7 @@ export default class Select {
 	 *
 	 * @param {Object}      opts 				arguments
 	 * @param {String}      opts.className		custom css class
+	 * @param {String}      opts.title			title
 	 * @param {Boolean}     opts.custom			custom override
 	 * @param {Object}      opts.attributes		HTML attributes
 	 * @param {Boolean}     opts.disabled		is disabled
@@ -45,7 +46,7 @@ export default class Select {
 	 */
 	render() {
 		return (
-			<select className={this.className()} ref="select" attributes={this.opts.attributes} disabled={this.opts.disabled} on={{ change: this.valueDidChange }}>
+			<select className={this.className()} title={this.opts.title || ""} ref="select" attributes={this.opts.attributes} disabled={this.opts.disabled} on={{ change: this.valueDidChange }}>
 				{this.children}
 			</select>
 		);
