@@ -66,7 +66,9 @@ export default class Toolbar {
 
 		etch.initialize(this);
 
-		atom.workspace.addHeaderPanel({ item: this.element });
+		if (atom.config.get('appcelerator-titanium.general.showAppcToolbar')) {
+			atom.workspace.addHeaderPanel({ item: this.element });
+		}
 	}
 
 	/**
