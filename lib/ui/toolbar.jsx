@@ -66,9 +66,7 @@ export default class Toolbar {
 
 		etch.initialize(this);
 
-		if (atom.config.get('appcelerator-titanium.general.showAppcToolbar')) {
-			atom.workspace.addHeaderPanel({ item: this.element });
-		}
+		this.panel = atom.workspace.addHeaderPanel({ item: this.element });
 	}
 
 	/**
@@ -266,6 +264,7 @@ export default class Toolbar {
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
 						<Button icon="three-bars" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
+						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true"  click={this.toggle.bind(this)}/>
 					</div>
 
 				</div>
@@ -696,5 +695,13 @@ export default class Toolbar {
 
 		this.getState();
 		etch.update(this);
+	}
+
+	toggle() {
+		if (this.panel.isVisible()) {
+			this.panel.hide();
+		} else {
+			this.panel.show();
+		}
 	}
 }
