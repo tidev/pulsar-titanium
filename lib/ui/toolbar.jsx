@@ -427,10 +427,11 @@ export default class Toolbar {
 				this.targetOptions.push({ value: target.id, text: target.name });
 			}
 		}
-		for (const type in this.targets.emulators) {
+
+		for (const [ type, emulators ] of Object.entries(this.targets.emulators)) {
 			this.targetOptions.push({ value: '', text: ' ', disabled: true });
 			this.targetOptions.push({ value: '', text: type, disabled: true });
-			for (const emulator of this.targets.emulators[type]) {
+			for (const emulator of emulators) {
 				const emulatorSdkVersion = emulator['sdk-version'] || 'SDK not installed';
 				const name = `${emulator.name} (${emulatorSdkVersion})`;
 				this.targetOptions.push({ value: emulator.id, text: name });
