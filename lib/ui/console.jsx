@@ -170,7 +170,7 @@ export default class Console {
 					<div className="toolbar-row">
 						<div className="toolbar-left">
 							<Select change={this.logLevelValueDidChange.bind(this)} value={this.state.logLevel}>
-                                <option value="info">Info</option>
+								<option value="info">Info</option>
 								<option value="trace">Trace</option>
 								<option value="debug">Debug</option>
 								<option value="warn">Warn</option>
