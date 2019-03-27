@@ -126,4 +126,13 @@ describe('Property suggestions', function () {
 
 		expect(suggestions.length).toBe(0);
 	});
+
+	it('should provide color values', function () {
+		Project.isTitaniumApp = true;
+		initTextEditor('"#id":{');
+		editor.insertNewline();
+		editor.insertText('color: "ma"');
+		const suggestions = getSuggestions('"ma"');
+		expect(suggestions.length).toBe(2);
+	});
 });
