@@ -23,12 +23,13 @@ When sending in a PR please make sure you do the following:
 
 ## Releasing
 
-To release of the extension the following needs to be followed:
+To release of the extension the following needs to be followed. Note that the tag must be pushed before the `apm publish` command:
 
 1. Ensure that your local `master` branch is completely up to date with the main repo.
 2. Run `npm run release`, which performs the following
 	- Runs [standard-version](https://github.com/conventional-changelog/standard-version) to bump versions based on commit messages, updates the changelog, commits the files and tags a new release.
-3. Run `apm publish --tag <tag>` where `<tag>` is the tag produced by the `npm run release` step. This updates the package on the atom marketplace.
-4. Push to the main repo
+3. Push to the main repo with `git push` and `git push <appc remote> <tag>`.
+4. Run `apm publish --tag <tag>` where `<tag>` is the tag produced by the `npm run release` step. This updates the package on the atom marketplace.
+	- If this is your first release you will be prompted for an atom API token which you can find [here](https://atom.io/account)
 5. Draft a new release on the [releases page](https://github.com/appcelerator/atom-appcelerator-titanium/releases).
 6. 🎉
