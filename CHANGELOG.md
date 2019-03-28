@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.5.1...v1.6.0) (2019-03-28)
+
+
+### Bug Fixes
+
+* **autocomplete:** correct filtering of colors ([ffb340e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ffb340e)), closes [#139](https://github.com/appcelerator/atom-appcelerator-titanium/issues/139)
+* **definitions:** do not suggest app.tss when generating tss for id ([1fbf454](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1fbf454)), closes [#141](https://github.com/appcelerator/atom-appcelerator-titanium/issues/141)
+* **toolbar:** add titles to fields ([#135](https://github.com/appcelerator/atom-appcelerator-titanium/issues/135)) ([4514d57](https://github.com/appcelerator/atom-appcelerator-titanium/commit/4514d57))
+* **toolbar/android:** handle emulators being undefined, improve ui when no emulators ([f439e71](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f439e71)), closes [#142](https://github.com/appcelerator/atom-appcelerator-titanium/issues/142)
+
+
+### Features
+
+* **toolbar:** add button and command to toggle toolbar visibility ([b871811](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b871811)), closes [#138](https://github.com/appcelerator/atom-appcelerator-titanium/issues/138)
+
+
+
 <a name="1.5.1"></a>
 ## [1.5.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.5.0...v1.5.1) (2019-01-02)
 
