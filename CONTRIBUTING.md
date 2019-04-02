@@ -23,7 +23,7 @@ When sending in a PR please make sure you do the following:
 
 ## Releasing
 
-To release of the extension the following needs to be followed. Note that the tag must be pushed before the `apm publish` command:
+To release the extension the steps below need to be followed.
 
 1. Ensure that your local `master` branch is completely up to date with the main repo.
 2. Run `npm run release`, which performs the following
