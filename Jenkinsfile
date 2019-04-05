@@ -32,6 +32,7 @@ timestamps {
             sh 'npm run lint'
             withEnv(['JUNIT_REPORT_PATH=junit_report.xml', 'MOCHA_REPORTER=mocha-jenkins-reporter']) {
               sh 'npm run test'
+              junit 'junit_report.xml'
               stash includes: 'junit_report.xml', name: 'test-report'
             }
           } // stage lint and test
