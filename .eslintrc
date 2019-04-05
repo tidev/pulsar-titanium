@@ -1,5 +1,5 @@
 {
-	"extends": [ "axway", "axway/+react" ],
+	"extends": [ "axway", "axway/env-node", "axway/+react" ],
 	"globals": {
 		"atom": false,
 		"setTimeout": false,
