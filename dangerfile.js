@@ -8,7 +8,7 @@ const dependencies = require('@seadub/danger-plugin-dependencies').default;
 async function main() {
 	await Promise.all([
 		eslint(),
-		junit({ pathToReport: './junit_report.xml.xml' }),
+		junit({ pathToReport: './junit_report.xml' }),
 		dependencies({ type: 'npm' })
 	]);
 }

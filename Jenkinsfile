@@ -61,7 +61,6 @@ timestamps {
   } finally {
     if (runDanger) {
       stage('Danger') {
-        node('osx || linux') {
           nodejs(nodeJSInstallationName: "node ${nodeVersion}") {
             checkout scm
             try {
@@ -76,7 +75,6 @@ timestamps {
             } // withEnv
           } // nodejs
           deleteDir()
-        } // node
       } // stage
     }
   }
