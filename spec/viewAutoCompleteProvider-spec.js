@@ -91,7 +91,7 @@ describe('Attribute suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
 	});
-	
+
 	it('should provide property suggestions', function () {
 		Project.isTitaniumApp = true;
 

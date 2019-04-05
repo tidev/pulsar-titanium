@@ -1,7 +1,8 @@
 #! groovy
 library 'pipeline-library'
 
-def isPR = env.BRANCH_NAME.startsWith('PR-')
+def branchName = env.BRANCH_NAME
+def isPR = branchName.startsWith('PR-')
 def runDanger = isPR
 
 timestamps {
@@ -36,6 +37,24 @@ timestamps {
               stash includes: 'junit_report.xml', name: 'test-report'
             }
           } // stage lint and test
+
+          if ('release'.equals(branchName)) {
+            stage('Release') {
+              try{
+                sh 'npm run release'
+                def latestTag = sh(returnStdout: true, command: 'git describe --abbrev=0 --tags').trim()
+                withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
+                  sh "apm publish --tag ${latestTag}" // register that tag on atom.io
+                }
+                pushGit(name: 'release')
+              } catch (error) {
+                def msg = "Failed to release"
+                echo msg
+                manager.addWarningBadge(msg)
+                throw error
+              }
+            }
+          }
         } // ansiColor
       } // nodejs
     } // node
