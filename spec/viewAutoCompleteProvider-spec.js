@@ -1,19 +1,18 @@
 'use babel';
 
+import autoCompleteHelper from '../lib/providers/autoCompleteHelper';
 import viewAutoCompleteProvider from '../lib/providers/viewAutoCompleteProvider';
 import path from 'path';
 import Project from '../lib/project';
 
 let editor, atomEnvironment;
 
-// eslint-disable-next-line no-unused-vars
 function initTextEditor(text) {
 	editor = atomEnvironment.workspace.buildTextEditor();
 	editor.setGrammar(atomEnvironment.grammars.grammarForScopeName('text.alloyxml'));
 	editor.insertText(text);
 }
 
-// eslint-disable-next-line no-unused-vars
 function getSuggestions(prefix) {
 	return viewAutoCompleteProvider.getSuggestions({
 		editor,
@@ -25,9 +24,18 @@ function getSuggestions(prefix) {
 
 describe('Tag suggestions', function () {
 
-	beforeEach(async () => {
+	before(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+	});
+
+	after(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
 	});
 
 	it('should provide tag suggestions', function () {
@@ -70,6 +78,20 @@ describe('Tag suggestions', function () {
 
 describe('Attribute suggestions', function () {
 
+	before(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+	});
+
+	after(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
+	});
+	
 	it('should provide property suggestions', function () {
 		Project.isTitaniumApp = true;
 

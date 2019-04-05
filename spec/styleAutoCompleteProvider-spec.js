@@ -7,14 +7,12 @@ import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvide
 
 let editor, atomEnvironment;
 
-// eslint-disable-next-line no-unused-vars
 function initTextEditor(text) {
 	editor = atomEnvironment.workspace.buildTextEditor();
 	editor.setGrammar(atomEnvironment.grammars.grammarForScopeName('source.css.tss'));
 	editor.insertText(text);
 }
 
-// eslint-disable-next-line no-unused-vars
 function getSuggestions(prefix) {
 	return styleAutoCompleteProvider.getSuggestions({
 		editor,
@@ -26,10 +24,18 @@ function getSuggestions(prefix) {
 
 describe('Tag suggestions', function () {
 
-	beforeEach(async function () {
+	before(async function () {
+		this.timeout(5000);
 		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+	});
+
+	after(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
 	});
 
 	it('should provide tag suggestions', function () {
@@ -65,6 +71,20 @@ describe('Tag suggestions', function () {
 });
 
 describe('Property suggestions', function () {
+
+	before(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+	});
+
+	after(async function () {
+		this.timeout(5000);
+		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
+	});
 
 	it('should provide property name suggestions', function () {
 		Project.isTitaniumApp = true;
