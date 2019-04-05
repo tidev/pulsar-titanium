@@ -75,7 +75,7 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "lint": "eslint lib/ spec/",
+    "lint": "eslint --ext .js,.jsx .",
     "release": "standard-version",
     "test": "apm test"
   }

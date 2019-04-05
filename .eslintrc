@@ -12,6 +12,6 @@
 		"react/jsx-no-bind": "off", 
 		"react/no-string-refs": "off",
 		"no-control-regex": "off",
-		"jsx-a11y/label-has-for": "off",
+		"jsx-a11y/label-has-for": "off"
 	}
 }
