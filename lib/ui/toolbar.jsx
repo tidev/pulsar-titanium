@@ -66,7 +66,7 @@ export default class Toolbar {
 
 		etch.initialize(this);
 
-		this.panel = atom.workspace.addHeaderPanel({ item: this.element });
+		this.panel = atom.workspace.addHeaderPanel({ item: this.element, visible: atom.config.get('appcelerator-titanium.general.showToolbar') });
 	}
 
 	/**
@@ -700,8 +700,10 @@ export default class Toolbar {
 
 	toggle() {
 		if (this.panel.isVisible()) {
+			atom.config.set('appcelerator-titanium.general.showToolbar', false);
 			this.panel.hide();
 		} else {
+			atom.config.set('appcelerator-titanium.general.showToolbar', true);
 			this.panel.show();
 		}
 	}
