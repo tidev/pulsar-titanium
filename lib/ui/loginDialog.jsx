@@ -2,10 +2,6 @@
 /** @jsx etch.dom */
 
 import etch from 'etch';
-import Button from './button.jsx';
-import Utils from '../utils';
-import Appc from '../appc';
-
 /**
  * Login dialog
  */
@@ -48,7 +44,7 @@ export default class LoginDialog {
 		return (
 			<div className="appc-toolbar appc-login-dialog" on={{ keyup: this.onKeyUp }}>
 				<div className="row">
-				<p>Appcelerator Login:</p>
+					<p>Appcelerator Login:</p>
 				</div>
 				<div className="row">
 					<div className="title">Appcelerator ID:</div>

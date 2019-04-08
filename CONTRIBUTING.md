@@ -19,11 +19,24 @@ When sending in a PR please make sure you do the following:
 	- This is also validated on a `git commit` using git hooks via husky.
 - When making the PR, please make sure to contain as much relevant info as possible in the PR body.
 - Make sure to sign the [Axway CLA](https://cla.axway.com/).
+- Open the PR against `master`
 
 
 ## Releasing
 
-To release the extension the steps below need to be followed.
+### Through CI
+
+To release through Jenkins:
+
+1. PR the master branch against the release branch and let the tests run.
+2. Once everything is green merge the PR using "Rebase and merge".
+3. Sit back and let Jenkins do all the hard work!
+4. Once the build has finished and released, draft a new release on the [releases page](https://github.com/appcelerator/atom-appcelerator-titanium/releases).
+5. 🎉
+
+### Manually
+
+To release the extension manually, the steps below need to be followed. Manual release should only be done if the automated release process cannot be achieved (for example if Jenkins is down).
 
 1. Ensure that your local `master` branch is completely up to date with the main repo.
 2. Run `npm run release`, which performs the following
