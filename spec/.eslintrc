@@ -1,0 +1,3 @@
+{
+	"extends": [ "axway/+chai", "axway/+mocha" ]
+}

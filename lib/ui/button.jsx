@@ -39,7 +39,7 @@ export default class Button {
 	 * @returns {Object}
 	 */
 	render() {
-		return <button className={this.className()} title={this.opts.title || ""} disabled={this.opts.disabled} on={{ click: this.opts.click }} />;
+		return <button className={this.className()} title={this.opts.title || ''} disabled={this.opts.disabled} on={{ click: this.opts.click }} />;
 	}
 
 	/**

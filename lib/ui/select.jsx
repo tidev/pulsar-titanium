@@ -46,7 +46,7 @@ export default class Select {
 	 */
 	render() {
 		return (
-			<select className={this.className()} title={this.opts.title || ""} ref="select" attributes={this.opts.attributes} disabled={this.opts.disabled} on={{ change: this.valueDidChange }}>
+			<select className={this.className()} title={this.opts.title || ''} ref="select" attributes={this.opts.attributes} disabled={this.opts.disabled} on={{ change: this.valueDidChange }}>
 				{this.children}
 			</select>
 		);
