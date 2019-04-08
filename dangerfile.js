@@ -4,10 +4,13 @@
 const eslint = require('@seadub/danger-plugin-eslint').default;
 const junit = require('@seadub/danger-plugin-junit').default;
 const dependencies = require('@seadub/danger-plugin-dependencies').default;
+const fs = require('fs');
+const path = require('path');
 
 async function main() {
+	const eslintConfig = fs.readFileSync(path.join(__dirname, '.eslintrc'), 'utf8');
 	await Promise.all([
-		eslint(),
+		eslint(eslintConfig, [ '.js', '.jsx' ]),
 		junit({ pathToReport: './junit_report.xml' }),
 		dependencies({ type: 'npm' })
 	]);
