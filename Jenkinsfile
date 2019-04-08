@@ -8,38 +8,39 @@ def runDanger = isPR
 timestamps {
   def nodeVersion = '8.11.4'
   def npmVersion = 'latest'
-  try {
-    node('osx || linux') {
-      stage('Checkout') {
-        checkout([
-          $class: 'GitSCM',
-          branches: scm.branches,
-          extensions: scm.extensions + [[$class: 'CleanBeforeCheckout']],
-          userRemoteConfigs: scm.userRemoteConfigs
-        ])
-      }
+  node('osx || linux') {
 
-      nodejs(nodeJSInstallationName: "node ${nodeVersion}") {
-        ansiColor('xterm') {
+    nodejs(nodeJSInstallationName: "node ${nodeVersion}") {
+      ansiColor('xterm') {
+        try {
+
+          stage('Checkout') {
+            checkout([
+              $class: 'GitSCM',
+              branches: scm.branches,
+              extensions: scm.extensions + [[$class: 'CleanBeforeCheckout']],
+              userRemoteConfigs: scm.userRemoteConfigs
+            ])
+            ensureNPM(npmVersion)
+          } // stage checkout
+
           stage('Install') {
-            timeout(15) {
-              // Ensure we have npm
-              ensureNPM(npmVersion)
-              sh 'npm ci'
-            } // timeout
+            sh 'npm ci'
           } // stage install
 
           stage('Lint and Test') {
             sh 'npm run lint'
             withEnv(['JUNIT_REPORT_PATH=junit_report.xml', 'MOCHA_REPORTER=mocha-jenkins-reporter']) {
-              sh 'npm run test'
-              junit 'junit_report.xml'
-              stash includes: 'junit_report.xml', name: 'test-report'
+              try {
+                sh 'npm run test'
+              } finally {
+                junit 'junit_report.xml'
+              }
             }
           } // stage lint and test
 
-          if ('release'.equals(branchName)) {
-            stage('Release') {
+          stage('Release') {
+            if ('release'.equals(branchName)) {
               try{
                 sh 'npm run release'
                 def latestTag = sh(returnStdout: true, command: 'git describe --abbrev=0 --tags').trim()
@@ -54,28 +55,17 @@ timestamps {
                 throw error
               }
             }
-          }
-        } // ansiColor
-      } // nodejs
-    } // node
-  } finally {
-    if (runDanger) {
-      stage('Danger') {
-          nodejs(nodeJSInstallationName: "node ${nodeVersion}") {
-            checkout scm
-            try {
-              unstash 'test-report'
-            } catch (e) {}
-            ensureNPM(npmVersion)
-            timeout(5) {
-              sh 'npm ci'
+          } // stage release
+        } finally {
+          stage('Danger') {
+            if (runDanger) {
+              withEnv(["DANGER_JS_APP_INSTALL_ID=''"]) {
+                sh returnStatus: true, script: 'npx danger ci --verbose'
+              } // withEnv
             }
-            withEnv(["DANGER_JS_APP_INSTALL_ID=''"]) {
-              sh returnStatus: true, script: 'npx danger ci --verbose'
-            } // withEnv
-          } // nodejs
-          deleteDir()
-      } // stage
-    }
-  }
+          } // stage
+        }
+      } // ansicolor
+    } //nodejs
+  } // node
 } // timestamps
