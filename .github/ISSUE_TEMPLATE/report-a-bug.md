@@ -1,6 +1,7 @@
 ---
-name: Report a Bug
+name: 🐛 Report a Bug
 about: Create a report to help us improve the Titanium Atom Package
+labels: bug
 ---
 
 ### Describe the Bug
