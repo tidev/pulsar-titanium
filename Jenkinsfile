@@ -45,10 +45,10 @@ timestamps {
                 sh 'npm run release'
                 def latestTag = sh(returnStdout: true, script: 'git describe --abbrev=0 --tags').trim()
                 echo "Publishing ${latestTag}"
+                pushGit(name: 'release')
                 withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
                   sh "apm publish --tag ${latestTag}" // register that tag on atom.io
                 }
-                pushGit(name: 'release')
               } catch (error) {
                 def msg = "Failed to release"
                 echo msg
