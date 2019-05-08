@@ -89,6 +89,6 @@
     "commit": "git-cz",
     "lint": "eslint --ext .js,.jsx .",
     "release": "standard-version",
-    "test": "apm test"
+    "test": "apm --version && apm test"
   }
 }
