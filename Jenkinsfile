@@ -18,7 +18,7 @@ timestamps {
             checkout([
               $class: 'GitSCM',
               branches: scm.branches,
-              extensions: scm.extensions + [[$class: 'CleanBeforeCheckout']],
+              extensions: scm.extensions + [[$class: 'WipeWorkspace']],
               userRemoteConfigs: scm.userRemoteConfigs
             ])
             ensureNPM(npmVersion)
@@ -64,6 +64,7 @@ timestamps {
                 sh returnStatus: true, script: 'npx danger ci --verbose'
               } // withEnv
             }
+            deleteDir();
           } // stage
         }
       } // ansicolor
