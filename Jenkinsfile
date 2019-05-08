@@ -18,7 +18,10 @@ timestamps {
             checkout([
               $class: 'GitSCM',
               branches: scm.branches,
-              extensions: scm.extensions + [[$class: 'WipeWorkspace']],
+              extensions: scm.extensions + [
+                  [$class: 'LocalBranch']], // check out to local branch so we can git push on release job
+                  [$class: 'WipeWorkspace']
+                ],
               userRemoteConfigs: scm.userRemoteConfigs
             ])
             ensureNPM(npmVersion)
