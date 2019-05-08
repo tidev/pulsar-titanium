@@ -24,9 +24,16 @@ timestamps {
                 ],
               userRemoteConfigs: scm.userRemoteConfigs
             ])
+            def result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
+            skipBuild = (result == 0)
             ensureNPM(npmVersion)
           } // stage checkout
 
+          // If previous commit contained [ci skip] then ignore
+          if (skipBuild) {
+            currentBuild.result = 'NOT_BUILT'
+            return
+          }
           stage('Install') {
             sh 'npm ci'
           } // stage install
@@ -49,6 +56,7 @@ timestamps {
                 def latestTag = sh(returnStdout: true, script: 'git describe --abbrev=0 --tags').trim()
                 echo "Publishing ${latestTag}"
                 pushGit(name: 'release')
+                pushGitTag(name: latestTag, force: true)
                 withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
                   sh "apm publish --tag ${latestTag}" // register that tag on atom.io
                 }
