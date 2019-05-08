@@ -43,7 +43,8 @@ timestamps {
             if ('release'.equals(branchName)) {
               try{
                 sh 'npm run release'
-                def latestTag = sh(returnStdout: true, command: 'git describe --abbrev=0 --tags').trim()
+                def latestTag = sh(returnStdout: true, script: 'git describe --abbrev=0 --tags').trim()
+                echo "Publishing ${latestTag}"
                 withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
                   sh "apm publish --tag ${latestTag}" // register that tag on atom.io
                 }
