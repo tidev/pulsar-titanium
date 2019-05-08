@@ -56,6 +56,7 @@ timestamps {
                 def latestTag = sh(returnStdout: true, script: 'git describe --abbrev=0 --tags').trim()
                 echo "Publishing ${latestTag}"
                 pushGit(name: 'release')
+                pushGit(name: 'master')
                 pushGitTag(name: latestTag, force: true)
                 withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
                   sh "apm publish --tag ${latestTag}" // register that tag on atom.io
