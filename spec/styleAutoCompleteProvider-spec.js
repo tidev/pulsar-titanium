@@ -143,12 +143,51 @@ describe('Property suggestions', function () {
 		expect(suggestions.length).to.equal(0);
 	});
 
-	it('should provide color values', function () {
+	it('should provide color values with quotes', function () {
 		Project.isTitaniumApp = true;
 		initTextEditor('"#id":{');
 		editor.insertNewline();
 		editor.insertText('color: "ma"');
 		const suggestions = getSuggestions('"ma"');
 		expect(suggestions.length).to.equal(2);
+
+		expect(suggestions[0].type).to.equal('value');
+		expect(suggestions[0].text).to.equal('magenta');
+
+		expect(suggestions[1].type).to.equal('value');
+		expect(suggestions[1].text).to.equal('maroon');
+	});
+
+	it('should provide color values without quotes', function () {
+		Project.isTitaniumApp = true;
+		initTextEditor('"#id":{');
+		editor.insertNewline();
+		editor.insertText('color: ma');
+		const suggestions = getSuggestions('"m"');
+		expect(suggestions.length).to.equal(2);
+
+		expect(suggestions[0].type).to.equal('value');
+		expect(suggestions[0].text).to.equal('\'magenta\'');
+
+		expect(suggestions[1].type).to.equal('value');
+		expect(suggestions[1].text).to.equal('\'maroon\'');
+	});
+
+	it('should provide layout values', function () {
+		Project.isTitaniumApp = true;
+		initTextEditor('"#id":{');
+		editor.insertNewline();
+		editor.insertText('layout: ');
+		const suggestions = getSuggestions('');
+		expect(suggestions.length).to.equal(3);
+
+		expect(suggestions[0].type).to.equal('value');
+		expect(suggestions[0].text).to.equal('\'composite\'');
+
+		expect(suggestions[1].type).to.equal('value');
+		expect(suggestions[1].text).to.equal('\'horizontal\'');
+
+		expect(suggestions[2].type).to.equal('value');
+		expect(suggestions[2].text).to.equal('\'vertical\'');
 	});
 });
