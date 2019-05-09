@@ -8,21 +8,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* check for existence of type before trying to access properties ([ad4ebd2](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ad4ebd2)), closes [#126](https://github.com/appcelerator/atom-appcelerator-titanium/issues/126)
-* Enable LiveView for custom args as well, address review comments ([83b3be8](https://github.com/appcelerator/atom-appcelerator-titanium/commit/83b3be8))
-* **autocomplete:** correct filtering of colors ([ffb340e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ffb340e)), closes [#139](https://github.com/appcelerator/atom-appcelerator-titanium/issues/139)
-* **commands/login:** fix detection of output ([57370bf](https://github.com/appcelerator/atom-appcelerator-titanium/commit/57370bf))
-* **definitions:** do not suggest app.tss when generating tss for id ([1fbf454](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1fbf454)), closes [#141](https://github.com/appcelerator/atom-appcelerator-titanium/issues/141)
 * **styleprovider:** improved suggestions to include quotes for color and layout properties ([#154](https://github.com/appcelerator/atom-appcelerator-titanium/issues/154)) ([f7128a8](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f7128a8)), closes [#152](https://github.com/appcelerator/atom-appcelerator-titanium/issues/152)
-* **toolbar:** add titles to fields ([#135](https://github.com/appcelerator/atom-appcelerator-titanium/issues/135)) ([4514d57](https://github.com/appcelerator/atom-appcelerator-titanium/commit/4514d57))
-* **toolbar/android:** handle emulators being undefined, improve ui when no emulators ([f439e71](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f439e71)), closes [#142](https://github.com/appcelerator/atom-appcelerator-titanium/issues/142)
 
 
 ### Features
 
-* Add expire-date to dev-certs as well ([c22c3be](https://github.com/appcelerator/atom-appcelerator-titanium/commit/c22c3be))
-* add login dialog ([a3f9601](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a3f9601))
-* **toolbar:** add button and command to toggle toolbar visibility ([b871811](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b871811)), closes [#138](https://github.com/appcelerator/atom-appcelerator-titanium/issues/138)
 * **toolbar:** add config setting for showing toolbar, respect on open ([#151](https://github.com/appcelerator/atom-appcelerator-titanium/issues/151)) ([6fdae71](https://github.com/appcelerator/atom-appcelerator-titanium/commit/6fdae71)), closes [#148](https://github.com/appcelerator/atom-appcelerator-titanium/issues/148)
 
 
