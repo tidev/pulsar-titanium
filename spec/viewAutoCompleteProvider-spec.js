@@ -47,25 +47,25 @@ describe('Tag suggestions', function () {
 		expect(suggestions.length).to.equal(4);
 
 		expect(suggestions[0].type).to.equal('tag');
-		expect(suggestions[0].displayText).to.equal('WebView');
-		expect(suggestions[0].snippet).to.equal('WebView$1>$2</WebView>');
-		expect(suggestions[0].rightLabel).to.equal('Ti.UI.WebView');
-		expect(suggestions[0].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
+		expect(suggestions[0].displayText).to.equal('Widget');
+		expect(suggestions[0].snippet).to.equal('Widget$1>$2</Widget>');
+		expect(suggestions[0].rightLabel).to.equal('Alloy.Widget');
+		expect(suggestions[0].description).to.equal('Alloy.Widget: Widgets are self-contained components that can be easily dropped into an Alloy project.');
+		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Alloy.Widget');
 
 		expect(suggestions[1].type).to.equal('tag');
-		expect(suggestions[1].displayText).to.equal('Widget');
-		expect(suggestions[1].snippet).to.equal('Widget$1>$2</Widget>');
-		expect(suggestions[1].rightLabel).to.equal('Alloy.Widget');
-		expect(suggestions[1].description).to.equal('Alloy.Widget: Widgets are self-contained components that can be easily dropped into an Alloy project.');
-		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Alloy.Widget');
+		expect(suggestions[1].displayText).to.equal('Window');
+		expect(suggestions[1].snippet).to.equal('Window$1>$2</Window>');
+		expect(suggestions[1].rightLabel).to.equal('Ti.UI.Window');
+		expect(suggestions[1].description).to.equal('Ti.UI.Window: The Window is an empty drawing surface or container.');
+		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
 
 		expect(suggestions[2].type).to.equal('tag');
-		expect(suggestions[2].displayText).to.equal('Window');
-		expect(suggestions[2].snippet).to.equal('Window$1>$2</Window>');
-		expect(suggestions[2].rightLabel).to.equal('Ti.UI.Window');
-		expect(suggestions[2].description).to.equal('Ti.UI.Window: The Window is an empty drawing surface or container.');
-		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
+		expect(suggestions[2].displayText).to.equal('WebView');
+		expect(suggestions[2].snippet).to.equal('WebView$1>$2</WebView>');
+		expect(suggestions[2].rightLabel).to.equal('Ti.UI.WebView');
+		expect(suggestions[2].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
+		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
 
 		expect(suggestions[3].type).to.equal('tag');
 		expect(suggestions[3].displayText).to.equal('WindowToolbar');
@@ -117,10 +117,10 @@ describe('Attribute suggestions', function () {
 		expect(suggestions.length).to.equal(35);
 
 		expect(suggestions[0].type).to.equal('function');
-		expect(suggestions[0].displayText).to.equal('onAndroidback');
-		expect(suggestions[0].snippet).to.equal('onAndroidback="$1"$0');
+		expect(suggestions[0].displayText).to.equal('onOpen');
+		expect(suggestions[0].snippet).to.equal('onOpen="$1"$0');
 		expect(suggestions[0].rightLabel).to.equal('Window');
-		expect(suggestions[0].description).to.equal('Ti.UI.Window: androidback event');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-event-androidback');
+		expect(suggestions[0].description).to.equal('Ti.UI.Window: open event');
+		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-event-open');
 	});
 });
