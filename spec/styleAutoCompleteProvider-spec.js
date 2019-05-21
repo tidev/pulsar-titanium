@@ -44,23 +44,24 @@ describe('Tag suggestions', function () {
 		const suggestions = getSuggestions('W');
 
 		expect(suggestions.length).to.equal(4);
+
 		expect(suggestions[0].type).to.equal('tag');
-		expect(suggestions[0].text).to.equal('WebView');
-		expect(suggestions[0].rightLabel).to.equal('Ti.UI.WebView');
-		expect(suggestions[0].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
+		expect(suggestions[0].text).to.equal('Widget');
+		expect(suggestions[0].rightLabel).to.equal('Alloy.Widget');
+		expect(suggestions[0].description).to.equal('Alloy.Widget: Widgets are self-contained components that can be easily dropped into an Alloy project.');
+		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Alloy.Widget');
 
 		expect(suggestions[1].type).to.equal('tag');
-		expect(suggestions[1].text).to.equal('Widget');
-		expect(suggestions[1].rightLabel).to.equal('Alloy.Widget');
-		expect(suggestions[1].description).to.equal('Alloy.Widget: Widgets are self-contained components that can be easily dropped into an Alloy project.');
-		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Alloy.Widget');
+		expect(suggestions[1].text).to.equal('Window');
+		expect(suggestions[1].rightLabel).to.equal('Ti.UI.Window');
+		expect(suggestions[1].description).to.equal('Ti.UI.Window: The Window is an empty drawing surface or container.');
+		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
 
 		expect(suggestions[2].type).to.equal('tag');
-		expect(suggestions[2].text).to.equal('Window');
-		expect(suggestions[2].rightLabel).to.equal('Ti.UI.Window');
-		expect(suggestions[2].description).to.equal('Ti.UI.Window: The Window is an empty drawing surface or container.');
-		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
+		expect(suggestions[2].text).to.equal('WebView');
+		expect(suggestions[2].rightLabel).to.equal('Ti.UI.WebView');
+		expect(suggestions[2].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
+		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
 
 		expect(suggestions[3].type).to.equal('tag');
 		expect(suggestions[3].text).to.equal('WindowToolbar');
@@ -91,17 +92,18 @@ describe('Property suggestions', function () {
 
 		initTextEditor('"#id":{s');
 		const suggestions = getSuggestions('s');
+
 		expect(suggestions[0].type).to.equal('property');
-		expect(suggestions[0].displayText).to.equal('SATELLITE_TYPE');
-		expect(suggestions[0].snippet).to.equal('SATELLITE_TYPE: ');
+		expect(suggestions[0].displayText).to.equal('style');
+		expect(suggestions[0].snippet).to.equal('style: ');
 
 		expect(suggestions[1].type).to.equal('property');
-		expect(suggestions[1].displayText).to.equal('saveToPhotoGallery');
-		expect(suggestions[1].snippet).to.equal('saveToPhotoGallery: ');
+		expect(suggestions[1].displayText).to.equal('speed');
+		expect(suggestions[1].snippet).to.equal('speed: ');
 
 		expect(suggestions[2].type).to.equal('property');
-		expect(suggestions[2].displayText).to.equal('scale');
-		expect(suggestions[2].snippet).to.equal('scale: ');
+		expect(suggestions[2].displayText).to.equal('sound');
+		expect(suggestions[2].snippet).to.equal('sound: ');
 	});
 
 	it('should provide correct snippet for object types', function () {
@@ -152,10 +154,10 @@ describe('Property suggestions', function () {
 		expect(suggestions.length).to.equal(2);
 
 		expect(suggestions[0].type).to.equal('value');
-		expect(suggestions[0].text).to.equal('magenta');
+		expect(suggestions[0].text).to.equal('maroon');
 
 		expect(suggestions[1].type).to.equal('value');
-		expect(suggestions[1].text).to.equal('maroon');
+		expect(suggestions[1].text).to.equal('magenta');
 	});
 
 	it('should provide color values without quotes', function () {
@@ -167,10 +169,11 @@ describe('Property suggestions', function () {
 		expect(suggestions.length).to.equal(2);
 
 		expect(suggestions[0].type).to.equal('value');
-		expect(suggestions[0].text).to.equal('\'magenta\'');
+		expect(suggestions[0].text).to.equal('\'maroon\'');
 
 		expect(suggestions[1].type).to.equal('value');
-		expect(suggestions[1].text).to.equal('\'maroon\'');
+		expect(suggestions[1].text).to.equal('\'magenta\'');
+
 	});
 
 	it('should provide layout values', function () {
@@ -182,12 +185,13 @@ describe('Property suggestions', function () {
 		expect(suggestions.length).to.equal(3);
 
 		expect(suggestions[0].type).to.equal('value');
-		expect(suggestions[0].text).to.equal('\'composite\'');
+		expect(suggestions[0].text).to.equal('\'vertical\'');
 
 		expect(suggestions[1].type).to.equal('value');
-		expect(suggestions[1].text).to.equal('\'horizontal\'');
+		expect(suggestions[1].text).to.equal('\'composite\'');
 
 		expect(suggestions[2].type).to.equal('value');
-		expect(suggestions[2].text).to.equal('\'vertical\'');
+		expect(suggestions[2].text).to.equal('\'horizontal\'');
+
 	});
 });
