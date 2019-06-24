@@ -175,6 +175,21 @@
         text-align: center;
     }
 
+    .hud-updates {
+        border: none;
+        text-decoration: none;
+        text-align: center;
+        float: right;
+        width: 100px;
+        margin: 2px;
+        text-align: center;
+        background-color: green;
+        border-radius: 25px;
+    }
+    .icon-issue-reopened::before {
+        margin-right: 5px
+    }
+
 
     /**
      * android keystore
@@ -279,8 +294,9 @@
     }
 
     .row-buttons {
-        display: flex;
-        margin: 20px 0 5px 170px;
+        text-align: center;
+        margin: auto;
+        width: 100%;
     }
 
     .btn {
@@ -344,8 +360,9 @@
     }
 
     .row-buttons {
-        display: flex;
-        margin: 20px 0 5px 90px;
+        text-align: center;
+        margin: auto;
+        width: 100%;
     }
 
     .btn {
@@ -353,6 +370,57 @@
         cursor: default;
     }
 }
+
+/**
+ * update dialog
+ */
+ .appc-update-dialog {
+
+    .row {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .col {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 120%;
+        margin-bottom: 30px
+    }
+
+    .selected {
+        background-color: lighten(@base-background-color, 5%);
+    }
+
+    .input-checkbox {
+        margin-right: 15px
+    }
+
+    .row-buttons {
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .btn {
+        margin: 0 5px 0 0;
+        cursor: default;
+    }
+
+    .spinner {
+        margin: auto;
+    }
+ }
+
 
 
 /**
