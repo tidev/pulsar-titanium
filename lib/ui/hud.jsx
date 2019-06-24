@@ -2,6 +2,7 @@
 /** @jsx etch.dom */
 
 import etch from 'etch';
+import Update from '../update';
 
 etch.setScheduler(atom.views);
 
@@ -17,7 +18,9 @@ export default class Hud {
 		this.state = {
 			icon: `${__dirname}/../../images/appc_44.png`,
 			text: 'Ready',
-			spinner: false
+			spinner: false,
+			updates: false,
+			updateInfo: []
 		};
 		etch.initialize(this);
 	}
@@ -40,6 +43,11 @@ export default class Hud {
 				<img className="hud-icon" alt="Loading ..." src={this.state.icon} />
 				<p className="hud-message">{this.state.text}</p>
 				<div className="hud-spinner loading loading-spinner-tiny" attributes={this.state.spinner ? { style: 'display:block;' } : { style: 'display:none;' }} />
+				<button className="hud-updates" onClick={this.updatesButtonClicked.bind(this)} attributes={this.state.updates ? { style: 'display:block;' } : { style: 'display:none;' }}>
+					<div className="row icon-issue-reopened" >
+						{this.state.updateInfo.length} {this.state.updateInfo.length === 1 ? 'update' : 'updates'}
+					</div>
+				</button>
 			</div>
 		);
 	}
@@ -79,6 +87,18 @@ export default class Hud {
 			this.state.spinner = false;
 		}
 
+		if (opts.updates) {
+			this.state.updates = opts.updates;
+		} else {
+			this.state.updates = false;
+		}
+
+		if (opts.updateInfo) {
+			this.state.updateInfo = opts.updateInfo;
+		} else {
+			this.state.updateInfo = [];
+		}
+
 		if (opts.default) {
 			this.default = opts;
 		}
@@ -91,5 +111,13 @@ export default class Hud {
 	 */
 	displayDefault() {
 		this.display(this.default);
+	}
+
+	async checkforUpdates() {
+		return Update.refresh();
+	}
+
+	updatesButtonClicked() {
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:updates');
 	}
 }
