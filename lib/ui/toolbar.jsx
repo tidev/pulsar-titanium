@@ -268,6 +268,7 @@ export default class Toolbar {
 
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
+						<Button icon="trashcan" title="Clean project" className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.cleanProjectButtonClicked.bind(this)} />
 						<Button icon="three-bars" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
 						<Button ref="loginDetails" icon={userButtonIcon} title={this.loginDetails} className="button-right" flat="true" disabled={this.state.disableUI} click={this.userProfile.bind(this)} />
 						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true" click={this.toggle.bind(this)} />
@@ -685,6 +686,13 @@ export default class Toolbar {
 	 */
 	generateButtonClicked() {
 		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:generate');
+	}
+
+	/**
+	 * Clean project button clicked
+	 */
+	cleanProjectButtonClicked() {
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:clean');
 	}
 
 	/**
