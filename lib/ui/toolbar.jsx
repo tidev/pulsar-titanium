@@ -52,6 +52,7 @@ export default class Toolbar {
 			}
 		};
 
+		this.loginDetails = '';
 		this.subscriptions = new CompositeDisposable();
 		this.subscriptions.add(
 			atom.config.observe('appcelerator-titanium.android.keystorePath', value => {
@@ -264,7 +265,8 @@ export default class Toolbar {
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
 						<Button icon="three-bars" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
-						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true"  click={this.toggle.bind(this)} />
+						<Button ref="loginDetails" icon="person" title={this.loginDetails} className="button-right" flat="true" disabled={this.state.disableUI} click={this.userProfile.bind(this)} />
+						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true" click={this.toggle.bind(this)} />
 					</div>
 
 				</div>
@@ -686,6 +688,25 @@ export default class Toolbar {
 	 */
 	toggleConsoleButtonClicked() {
 		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:console:toggle');
+	}
+
+	/**
+	 * Console button clicked
+	 */
+	userProfile() {
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:login');
+	}
+	/**
+	 * iOS certificate select value changed
+	 */
+	async LoginDetails() {
+		const session = await Appc.getCurrentSession();
+		if (session) {
+			this.loginDetails = `${session.firstname} ${session.lastname} \nOrg Name (${session.org_name})`;
+		} else {
+			this.loginDetails = 'No user logged in';
+		}
+		etch.update(this);
 	}
 
 	/**
