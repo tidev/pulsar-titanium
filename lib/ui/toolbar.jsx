@@ -106,6 +106,10 @@ export default class Toolbar {
 					break;
 			}
 		}
+		let userButtonIcon = 'person';
+		if (this.loginDetails === 'No user logged in') {
+			userButtonIcon = 'sign-in';
+		}
 
 		let buildOptions = [];
 		if (Project.isTitaniumApp) {
@@ -265,7 +269,7 @@ export default class Toolbar {
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
 						<Button icon="three-bars" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
-						<Button ref="loginDetails" icon="person" title={this.loginDetails} className="button-right" flat="true" disabled={this.state.disableUI} click={this.userProfile.bind(this)} />
+						<Button ref="loginDetails" icon={userButtonIcon} title={this.loginDetails} className="button-right" flat="true" disabled={this.state.disableUI} click={this.userProfile.bind(this)} />
 						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true" click={this.toggle.bind(this)} />
 					</div>
 
@@ -701,8 +705,10 @@ export default class Toolbar {
 	 */
 	async LoginDetails() {
 		const session = await Appc.getCurrentSession();
+		const orgName = await Appc.session().org_name;
+
 		if (session) {
-			this.loginDetails = `${session.firstname} ${session.lastname} \nOrg Name (${session.org_name})`;
+			this.loginDetails = `${session.firstname} ${session.lastname} \n${orgName}`;
 		} else {
 			this.loginDetails = 'No user logged in';
 		}
