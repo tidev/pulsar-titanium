@@ -20,7 +20,8 @@ timestamps {
               branches: scm.branches,
               extensions: scm.extensions + [
                   [$class: 'LocalBranch'], // check out to local branch so we can git push on release job
-                  [$class: 'CleanBeforeCheckout']
+                  [$class: 'CleanBeforeCheckout'],
+                  [$class: 'CloneOption', noTags: false]
                 ],
               userRemoteConfigs: scm.userRemoteConfigs
             ])
