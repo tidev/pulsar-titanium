@@ -164,7 +164,7 @@ export default class NewProjectDialog {
 	 * Returns class name with added 'selected' class
 	 *
 	 * @param {String} platform 	target platform
-	 * @param {String} className 	defaul element class name
+	 * @param {String} className 	default element class name
 	 * @returns {String}
 	 */
 	classNameForPlatform(platform, className) {
