@@ -26,6 +26,7 @@ timestamps {
               userRemoteConfigs: scm.userRemoteConfigs
             ])
             def result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
+            sh 'git tag'
             skipBuild = (result == 0)
             ensureNPM(npmVersion)
           } // stage checkout
