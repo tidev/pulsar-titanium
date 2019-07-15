@@ -497,7 +497,7 @@ export default class Toolbar {
 	}
 
 	/**
-	 * Populate iOS provisioining profiles
+	 * Populate iOS provisioning profiles
 	 */
 	populateiOSProvisioningProfiles() {
 		let certificate = this.iOSCertificates[0];

@@ -8,7 +8,7 @@ import Button from './button.jsx';
 import Select from './select.jsx';
 
 /**
- * ConosleLog
+ * ConsoleLog
  */
 class ConsoleLog {
 
@@ -16,7 +16,7 @@ class ConsoleLog {
 	 * Constructor
 	 *
 	 * @param {Object} 	opts 				arguments
-	 * @param {Booleam}	opts.autoScroll		auto-scroll enabled
+	 * @param {Boolean}	opts.autoScroll		auto-scroll enabled
 	 */
 	constructor(opts) {
 		this.children = [];
