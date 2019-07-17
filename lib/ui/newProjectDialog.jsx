@@ -37,7 +37,6 @@ export default class NewProjectDialog {
 			platforms: Utils.platforms(),
 			location: homedir(),
 			enableServices: true,
-			enableHyperloop: true
 		};
 		etch.initialize(this);
 		this.setFocus();
@@ -92,10 +91,6 @@ export default class NewProjectDialog {
 				<div className="row">
 					<div className="title">Organization:</div>
 					<div className="value">{this.state.session.org_name} ({this.state.session.org_id})</div>
-				</div>,
-				<div className="row">
-					<div className="title">Enable Hyperloop:</div>
-					<input className="input-checkbox" type="checkbox" ref="enableHyperloop" disabled={this.state.executing} checked={this.project.enableHyperloop} on={{ change: this.enableHyperloopDidChange }} />
 				</div>
 			];
 		}
@@ -230,14 +225,6 @@ export default class NewProjectDialog {
 	 */
 	enableServicesDidChange() {
 		this.project.enableServices = this.refs.enableServices.checked;
-		etch.update(this);
-	}
-
-	/**
-	 * Enable hyperloop checkbox did change
-	 */
-	enableHyperloopDidChange() {
-		this.project.enableHyperloop = this.refs.enableHyperloop.checked;
 		etch.update(this);
 	}
 
