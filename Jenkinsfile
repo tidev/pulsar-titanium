@@ -17,7 +17,7 @@ timestamps {
           stage('Checkout') {
             checkout([
               $class: 'GitSCM',
-              branches: scm.branches + [[name: '*/master']],
+              branches: scm.branches + [[name: 'master']],
               extensions: scm.extensions + [
                   [$class: 'LocalBranch'], // check out to local branch so we can git push on release job
                   [$class: 'CleanBeforeCheckout'],
