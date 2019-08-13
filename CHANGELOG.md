@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.8.0...v1.9.0) (2019-08-13)
+
+
+### Bug Fixes
+
+* **app creation:** fixed the app creation flow for newer sdks ([#167](https://github.com/appcelerator/atom-appcelerator-titanium/issues/167)) ([cda8014](https://github.com/appcelerator/atom-appcelerator-titanium/commit/cda8014)), closes [#158](https://github.com/appcelerator/atom-appcelerator-titanium/issues/158)
+
+
+### Features
+
+* **toolbar:** add user information and login icon ([#165](https://github.com/appcelerator/atom-appcelerator-titanium/issues/165)) ([a478274](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a478274)), closes [#159](https://github.com/appcelerator/atom-appcelerator-titanium/issues/159)
+* add open related to context menu ([#175](https://github.com/appcelerator/atom-appcelerator-titanium/issues/175)) ([0b62033](https://github.com/appcelerator/atom-appcelerator-titanium/commit/0b62033)), closes [#174](https://github.com/appcelerator/atom-appcelerator-titanium/issues/174)
+* show login dialog if login is required to run command ([1e1168b](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1e1168b)), closes [#160](https://github.com/appcelerator/atom-appcelerator-titanium/issues/160)
+
+
+
 ## 1.8.0 (2019-07-15)
 
 
