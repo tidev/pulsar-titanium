@@ -1,11 +1,16 @@
 'use babel';
 
-import autoCompleteHelper from '../lib/providers/autoCompleteHelper';
 import viewAutoCompleteProvider from '../lib/providers/viewAutoCompleteProvider';
 import path from 'path';
 import Project from '../lib/project';
+import * as sinon from 'sinon';
+import * as tce from 'titanium-editor-commons';
+import * as fs from 'fs';
 
-let editor, atomEnvironment;
+let editor, atomEnvironment, sandbox;
+
+let rawdata = fs.readFileSync(path.join(__dirname, 'data', 'completions.json'));
+let completions = JSON.parse(rawdata);
 
 function initTextEditor(text) {
 	editor = atomEnvironment.workspace.buildTextEditor();
@@ -26,23 +31,25 @@ describe('Tag suggestions', function () {
 
 	before(async function () {
 		this.timeout(5000);
-		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
 	});
 
 	after(async function () {
 		this.timeout(5000);
-		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
 	});
 
-	it('should provide tag suggestions', function () {
+	it('should provide tag suggestions', async function () {
 		Project.isTitaniumApp = true;
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('<W');
-		const suggestions = getSuggestions('W');
+		const suggestions = await getSuggestions('W');
 
 		expect(suggestions.length).to.equal(4);
 
@@ -50,7 +57,7 @@ describe('Tag suggestions', function () {
 		expect(suggestions[0].displayText).to.equal('Widget');
 		expect(suggestions[0].snippet).to.equal('Widget$1>$2</Widget>');
 		expect(suggestions[0].rightLabel).to.equal('Alloy.Widget');
-		expect(suggestions[0].description).to.equal('Alloy.Widget: Widgets are self-contained components that can be easily dropped into an Alloy project.');
+		expect(suggestions[0].description).to.equal('Alloy.Widget');
 		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Alloy.Widget');
 
 		expect(suggestions[1].type).to.equal('tag');
@@ -80,23 +87,25 @@ describe('Attribute suggestions', function () {
 
 	before(async function () {
 		this.timeout(5000);
-		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
 	});
 
 	after(async function () {
 		this.timeout(5000);
-		autoCompleteHelper.completionsFile = path.join(__dirname, 'data', 'completions');
+		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
 	});
 
-	it('should provide property suggestions', function () {
+	it('should provide property suggestions', async function () {
 		Project.isTitaniumApp = true;
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('<Window s');
-		const suggestions = getSuggestions('status');
+		const suggestions = await getSuggestions('status');
 
 		expect(suggestions.length).to.equal(8);
 
@@ -108,11 +117,11 @@ describe('Attribute suggestions', function () {
 		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-scaleX');
 	});
 
-	it('should provide event suggestions for', function () {
+	it('should provide event suggestions for', async function () {
 		Project.isTitaniumApp = true;
 
 		initTextEditor('<Window on');
-		const suggestions = getSuggestions('on');
+		const suggestions = await getSuggestions('on');
 
 		expect(suggestions.length).to.equal(35);
 

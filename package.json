@@ -57,8 +57,9 @@
     "etch": "^0.12.6",
     "find": "^0.3.0",
     "mkdirp": "^0.5.1",
+    "sinon": "^7.3.2",
     "sudo-prompt": "^9.0.0",
-    "titanium-editor-commons": "^0.2.0",
+    "titanium-editor-commons": "^0.3.0",
     "underscore": "^1.9.1",
     "xml2js": "^0.4.17"
   },
