@@ -34,6 +34,7 @@ describe('Tag suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
 	});
 
 	after(async function () {
@@ -45,9 +46,7 @@ describe('Tag suggestions', function () {
 
 	it('should provide tag suggestions', async function () {
 		Project.isTitaniumApp = true;
-		const completionsStub = sandbox.stub(tce.completion, 'loadCompletions');
-
-		completionsStub.resolves(completions);
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('"W');
 		const suggestions = await getSuggestions('W');
@@ -87,6 +86,7 @@ describe('Property suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
 	});
 
 	after(async function () {
@@ -98,9 +98,7 @@ describe('Property suggestions', function () {
 
 	it('should provide property name suggestions', async function () {
 		Project.isTitaniumApp = true;
-		const completionsStub = sandbox.stub(tce.completion, 'loadCompletions');
-
-		completionsStub.resolves(completions);
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('"#id":{s');
 		const suggestions = await getSuggestions('s');
