@@ -34,7 +34,7 @@ describe('Tag suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
@@ -51,7 +51,7 @@ describe('Tag suggestions', function () {
 		initTextEditor('<W');
 		const suggestions = await getSuggestions('W');
 
-		expect(suggestions.length).to.equal(4);
+		expect(suggestions.length).to.equal(3);
 
 		expect(suggestions[0].type).to.equal('tag');
 		expect(suggestions[0].displayText).to.equal('Widget');
@@ -68,18 +68,11 @@ describe('Tag suggestions', function () {
 		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
 
 		expect(suggestions[2].type).to.equal('tag');
-		expect(suggestions[2].displayText).to.equal('WebView');
-		expect(suggestions[2].snippet).to.equal('WebView$1>$2</WebView>');
-		expect(suggestions[2].rightLabel).to.equal('Ti.UI.WebView');
-		expect(suggestions[2].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
-		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
-
-		expect(suggestions[3].type).to.equal('tag');
-		expect(suggestions[3].displayText).to.equal('WindowToolbar');
-		expect(suggestions[3].snippet).to.equal('WindowToolbar$1>$2</WindowToolbar>');
-		expect(suggestions[3].rightLabel).to.equal('Ti.UI.Window.WindowToolbar');
-		expect(suggestions[3].description).to.equal('Ti.UI.Window.WindowToolbar');
-		expect(suggestions[3].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window.WindowToolbar');
+		expect(suggestions[2].displayText).to.equal('WindowToolbar');
+		expect(suggestions[2].snippet).to.equal('WindowToolbar$1>$2</WindowToolbar>');
+		expect(suggestions[2].rightLabel).to.equal('Ti.UI.Window.WindowToolbar');
+		expect(suggestions[2].description).to.equal('Ti.UI.Window.WindowToolbar');
+		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window.WindowToolbar');
 	});
 });
 
@@ -90,7 +83,7 @@ describe('Attribute suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
