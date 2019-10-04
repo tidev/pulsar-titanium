@@ -67,35 +67,23 @@ describe('iOS provisioning profiles', function () {
 		it('should match certificate', function () {
 			const certificate = Appc.iosCertificates()[0];
 			const profiles = Appc.iosProvisioningProfiles('development', certificate);
-			expect(profiles.length).to.equal(3);
-			const enabledProfiles = profiles.filter((profile) => {
-				return !profile.disabled;
-			});
-			expect(enabledProfiles.length).to.equal(1);
-			expect(enabledProfiles[0].name).to.equal('Appcelerator Development Profile');
-			expect(enabledProfiles[0].team[0]).to.equal('WOUS58744L');
+			expect(profiles.length).to.equal(1);
+			expect(profiles[0].name).to.equal('Appcelerator Development Profile');
+			expect(profiles[0].team[0]).to.equal('WOUS58744L');
 		});
 
 		it('should match certificate and app ID', function () {
 			const certificate = Appc.iosCertificates()[0];
 			const profiles = Appc.iosProvisioningProfiles('development', certificate, 'com.appcelerator.test');
-			expect(profiles.length).to.equal(3);
-			const enabledProfiles = profiles.filter((profile) => {
-				return !profile.disabled;
-			});
-			expect(enabledProfiles.length).to.equal(1);
-			expect(enabledProfiles[0].name).to.equal('Appcelerator Development Profile');
-			expect(enabledProfiles[0].team[0]).to.equal('WOUS58744L');
+			expect(profiles.length).to.equal(1);
+			expect(profiles[0].name).to.equal('Appcelerator Development Profile');
+			expect(profiles[0].team[0]).to.equal('WOUS58744L');
 		});
 
 		it('should match certificate and not app ID', function () {
 			const certificate = Appc.iosCertificates()[0];
 			const profiles = Appc.iosProvisioningProfiles('development', certificate, 'com.axway.test');
-			expect(profiles.length).to.equal(3);
-			const enabledProfiles = profiles.filter((profile) => {
-				return !profile.disabled;
-			});
-			expect(enabledProfiles.length).to.equal(0);
+			expect(profiles.length).to.equal(0);
 		});
 
 	});

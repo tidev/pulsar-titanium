@@ -2,7 +2,11 @@
 
 /* eslint-env mocha */
 
+import Appc from '../lib/appc';
 import Utils from '../lib/utils';
+import info from './data/ti_info';
+
+Appc.info = info;
 
 describe('iOS provisioning profile matches app ID', function () {
 
@@ -38,5 +42,18 @@ describe('iOS provisioning profile matches app ID', function () {
 			expect(Utils.iOSProvisioningProfileMatchesAppId('com.example.*', 'com.example.example.app')).to.be.ok;
 		});
 	});
+});
 
+describe('#getCorrectCertificateName', function () {
+
+	it('Should return correct name property for <8.2.0', function () {
+		const certificate = Utils.getCorrectCertificateName('iPhone Developer: Mrs Developer (D4BDS41234)', '8.1.1.GA', 'developer');
+		expect(certificate).to.equal('Mrs Developer (D4BDS41234)');
+
+	});
+
+	it('Should return correct name property for >=8.2.0', function () {
+		const certificate = Utils.getCorrectCertificateName('iPhone Developer: Mrs Developer (D4BDS41234)', '8.2.0.GA', 'developer');
+		expect(certificate).to.equal('iPhone Developer: Mrs Developer (D4BDS41234)');
+	});
 });
