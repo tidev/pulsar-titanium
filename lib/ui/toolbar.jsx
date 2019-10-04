@@ -161,16 +161,21 @@ export default class Toolbar {
 					<div className="toolbar-row">
 						<div className="toolbar-center">
 							<div className="toolbar-item-title icon icon-organization" />
-							<Select ref="iOSCertificateSelect" attributes={{ style: 'width:200px;' }} value={this.state.iOSCodeSigning.certificate} change={this.iOSCertificateSelectValueDidChange.bind(this)}>
-								{this.iOSCertificates.map(certificate =>
-									<option value={certificate.name}>{certificate.name} ({certificate.expired ? 'EXPIRED' : 'Expires: ' + new Date(certificate.after).toLocaleDateString('en-US') })</option>
-								)}
+							<Select ref="iOSCertificateSelect" attributes={{ style: 'width:200px;' }} title={this.state.iOSCodeSigning.certificate} change={this.iOSCertificateSelectValueDidChange.bind(this)}>
+								{this.iOSCertificates
+									.filter(certificate => !certificate.expired)
+									.map(certificate =>
+										<option title={`${certificate.fullname} (${`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})`} value={certificate.fullname}>{certificate.fullname} ({`Expires: ${new Date(certificate.after).toLocaleDateString('en-US')}`})</option>
+									)
+								}
 							</Select>
 							<div className="toolbar-item-title icon icon-file" />
-							<Select ref="iOSProvisioningProfileSelect" attributes={{ style: 'width:200px;' }} value={this.state.iOSCodeSigning.provisioningProfile} change={this.iOSProvisioningProfileSelectValueDidChange.bind(this)}>
-								{this.iOSProvisioningProfiles.map(profile =>
-									<option value={profile.uuid} disabled={profile.disabled || profile.expired}>{profile.name} ({profile.expired ? 'EXPIRED' : 'Expires: ' + new Date(profile.expirationDate).toLocaleDateString('en-US') })</option>
-								)}
+							<Select ref="iOSProvisioningProfileSelect" attributes={{ style: 'width:200px;' }} title={this.state.iOSCodeSigning.provisioningProfile} change={this.iOSProvisioningProfileSelectValueDidChange.bind(this)}>
+								{this.iOSProvisioningProfiles
+									.map(profile =>
+										<option value={profile.uuid || ''}>{profile.name} ({'Expires: ' + new Date(profile.expirationDate).toLocaleDateString('en-US')})</option>
+									)
+								}
 							</Select>
 						</div>
 						<div className="toolbar-right">
@@ -498,7 +503,7 @@ export default class Toolbar {
 	populateiOSCertificates() {
 		this.iOSCertificates = Appc.iosCertificates(this.state.buildCommand === 'run' ? 'developer' : 'distribution');
 		this.iOSCertificates.sort(function (a, b) {
-			return a.name > b.name;
+			return a.fullnane > b.fullnane;
 		});
 	}
 
@@ -508,7 +513,7 @@ export default class Toolbar {
 	populateiOSProvisioningProfiles() {
 		let certificate = this.iOSCertificates[0];
 		if (this.state.iOSCodeSigning.certificate) {
-			certificate = this.iOSCertificates.find(cert => cert.name === this.state.iOSCodeSigning.certificate);
+			certificate = this.iOSCertificates.find(cert => cert.fullname === this.state.iOSCodeSigning.certificate);
 		}
 
 		let deployment = 'development';
@@ -517,15 +522,15 @@ export default class Toolbar {
 		} else if (this.state.buildCommand === 'dist-appstore') {
 			deployment = 'appstore';
 		}
+
 		this.iOSProvisioningProfiles = Appc.iosProvisioningProfiles(deployment, certificate, Project.appId());
 
-		// check selected provisioning profile is still valid
-		if (this.state.iOSCodeSigning.provisioningProfile && this.state.iOSCodeSigning.provisioningProfile !== '-') {
-			const provisioningProfile = this.iOSProvisioningProfiles.find(profile => profile.uuid === this.state.iOSCodeSigning.provisioningProfile);
-			if (provisioningProfile && provisioningProfile.disabled) {
-				this.state.iOSCodeSigning.provisioningProfile = '-';
-			}
+		if (!this.iOSProvisioningProfiles.length) {
+			this.iOSProvisioningProfiles.push({
+				name: 'No valid matching provisioning profiles'
+			});
 		}
+
 		this.iOSProvisioningProfiles.sort(function (a, b) {
 			var nameA = a.name.toLowerCase();
 			var nameB = b.name.toLowerCase();
