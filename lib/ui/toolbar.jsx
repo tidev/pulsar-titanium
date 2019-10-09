@@ -268,7 +268,6 @@ export default class Toolbar {
 
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
-						<Button icon="file-code" title="Open related files" className="button-right" flat="true" disabled={this.state.disableUI} click={this.openRelatedButtonClicked.bind(this)} />
 						<Button icon="terminal" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
 						<Button ref="loginDetails" icon={userButtonIcon} title={this.loginDetails} className="button-right" flat="true" disabled={this.state.disableUI} click={this.userProfile.bind(this)} />
 						<Button icon="x" title="Hide Toolbar" className="button-right" flat="true" click={this.toggle.bind(this)} />
@@ -693,13 +692,6 @@ export default class Toolbar {
 	 */
 	toggleConsoleButtonClicked() {
 		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:console:toggle');
-	}
-
-	/**
-	 * Open Related button clicked
-	 */
-	openRelatedButtonClicked() {
-		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:open-or-close-related');
 	}
 
 	/**
