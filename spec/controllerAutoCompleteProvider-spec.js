@@ -54,19 +54,16 @@ describe('Ti namespace suggestions', function () {
 		expect(suggestions.length).to.equal(217);
 
 		expect(suggestions[0].type).to.equal('method');
-		expect(suggestions[0].displayText).to.equal('Ti.UI');
 		expect(suggestions[0].text).to.equal('Ti.UI');
 		expect(suggestions[0].api).to.equal('Ti');
 		expect(suggestions[0].replacementPrefix).to.equal('Ti.');
 
 		expect(suggestions[1].type).to.equal('method');
-		expect(suggestions[1].displayText).to.equal('Ti.API');
 		expect(suggestions[1].text).to.equal('Ti.API');
 		expect(suggestions[1].api).to.equal('Ti');
 		expect(suggestions[1].replacementPrefix).to.equal('Ti.');
 
 		expect(suggestions[2].type).to.equal('method');
-		expect(suggestions[2].displayText).to.equal('Ti.Map');
 		expect(suggestions[2].text).to.equal('Ti.Map');
 		expect(suggestions[2].api).to.equal('Ti');
 		expect(suggestions[2].replacementPrefix).to.equal('Ti.');
@@ -102,13 +99,11 @@ describe('Extended suggestions', function () {
 
 		expect(suggestions[0].type).to.equal('properties');
 		expect(suggestions[0].displayText).to.equal('Ti.UI.tintColor');
-		expect(suggestions[0].rightLabel).to.equal('UI');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI');
+		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium');
 
 		expect(suggestions[1].type).to.equal('function');
 		expect(suggestions[1].displayText).to.equal('Ti.UI.fireEvent');
-		expect(suggestions[1].rightLabel).to.equal('UI');
-		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI');
+		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium');
 
 	});
 });
