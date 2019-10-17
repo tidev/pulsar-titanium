@@ -27379,7 +27379,7 @@
     },
     "alloy": {
         "version": 2,
-        "alloyVersion": "1.14.0",
+        "alloyVersion": "1.14.1",
         "properties": {
             "CFG": {
                 "description": "An object that stores Alloy configuration values as defined in your app's\napp/config.json file. ",
@@ -27669,6 +27669,9 @@
             },
             "View": {
                 "apiName": "Ti.Map.View"
+            },
+            "WebView": {
+                "apiName": "Ti.UI.WebView"
             },
             "Widget": {
                 "apiName": "Alloy.Widget"

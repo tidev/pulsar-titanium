@@ -51,7 +51,7 @@ describe('Tag suggestions', function () {
 		initTextEditor('"W');
 		const suggestions = await getSuggestions('W');
 
-		expect(suggestions.length).to.equal(3);
+		expect(suggestions.length).to.equal(4);
 
 		expect(suggestions[0].type).to.equal('tag');
 		expect(suggestions[0].text).to.equal('Widget');
@@ -66,10 +66,16 @@ describe('Tag suggestions', function () {
 		expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window');
 
 		expect(suggestions[2].type).to.equal('tag');
-		expect(suggestions[2].text).to.equal('WindowToolbar');
-		expect(suggestions[2].rightLabel).to.equal('Ti.UI.Window.WindowToolbar');
-		expect(suggestions[2].description).to.equal('Ti.UI.Window.WindowToolbar');
-		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window.WindowToolbar');
+		expect(suggestions[2].text).to.equal('WebView');
+		expect(suggestions[2].rightLabel).to.equal('Ti.UI.WebView');
+		expect(suggestions[2].description).to.equal('Ti.UI.WebView: The web view allows you to open an HTML5 based view which can load either local or remote content.');
+		expect(suggestions[2].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.WebView');
+
+		expect(suggestions[3].type).to.equal('tag');
+		expect(suggestions[3].text).to.equal('WindowToolbar');
+		expect(suggestions[3].rightLabel).to.equal('Ti.UI.Window.WindowToolbar');
+		expect(suggestions[3].description).to.equal('Ti.UI.Window.WindowToolbar');
+		expect(suggestions[3].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window.WindowToolbar');
 
 	});
 });
