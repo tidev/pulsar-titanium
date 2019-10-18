@@ -34,7 +34,7 @@ describe('Tag suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
@@ -76,6 +76,7 @@ describe('Tag suggestions', function () {
 		expect(suggestions[3].rightLabel).to.equal('Ti.UI.Window.WindowToolbar');
 		expect(suggestions[3].description).to.equal('Ti.UI.Window.WindowToolbar');
 		expect(suggestions[3].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window.WindowToolbar');
+
 	});
 });
 
@@ -86,7 +87,7 @@ describe('Property suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
@@ -108,12 +109,12 @@ describe('Property suggestions', function () {
 		expect(suggestions[0].snippet).to.equal('sys: ');
 
 		expect(suggestions[1].type).to.equal('property');
-		expect(suggestions[1].displayText).to.equal('sound');
-		expect(suggestions[1].snippet).to.equal('sound: ');
+		expect(suggestions[1].displayText).to.equal('style');
+		expect(suggestions[1].snippet).to.equal('style: ');
 
 		expect(suggestions[2].type).to.equal('property');
-		expect(suggestions[2].displayText).to.equal('style');
-		expect(suggestions[2].snippet).to.equal('style: ');
+		expect(suggestions[2].displayText).to.equal('scale');
+		expect(suggestions[2].snippet).to.equal('scale: ');
 	});
 
 	it('should provide correct snippet for object types', async function () {

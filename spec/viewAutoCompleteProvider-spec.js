@@ -34,7 +34,7 @@ describe('Tag suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
@@ -90,7 +90,7 @@ describe('Attribute suggestions', function () {
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		sandbox.stub(Project, 'sdk').resolves('8.0.2.GA');
+		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 	});
 
 	after(async function () {
