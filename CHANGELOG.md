@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.9.1...v1.10.1) (2019-12-06)
+
+
+### Bug Fixes
+
+* **completion:** handle array being returned from getCompletions ([7780d98](https://github.com/appcelerator/atom-appcelerator-titanium/commit/7780d98)), closes [#188](https://github.com/appcelerator/atom-appcelerator-titanium/issues/188)
+
+
 ## [1.10.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.9.1...v1.10.0) (2019-11-07)
 
 
