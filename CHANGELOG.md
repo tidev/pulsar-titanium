@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.9.1...v1.10.1) (2019-12-06)
+
+
+### Bug Fixes
+
+* **completion:** handle array being returned from getCompletions ([7780d98](https://github.com/appcelerator/atom-appcelerator-titanium/commit/7780d98)), closes [#188](https://github.com/appcelerator/atom-appcelerator-titanium/issues/188)
+
+
+### Features
+
+* change the console icon to command line icon ([#178](https://github.com/appcelerator/atom-appcelerator-titanium/issues/178)) ([2674829](https://github.com/appcelerator/atom-appcelerator-titanium/commit/2674829))
+* **completion:** add completions for Ti namespace in controllers ([#177](https://github.com/appcelerator/atom-appcelerator-titanium/issues/177)) ([efa3085](https://github.com/appcelerator/atom-appcelerator-titanium/commit/efa3085)), closes [#171](https://github.com/appcelerator/atom-appcelerator-titanium/issues/171)
+* **completions:** added completions for Alloy namespace in cont… ([#180](https://github.com/appcelerator/atom-appcelerator-titanium/issues/180)) ([61b7f0e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/61b7f0e)), closes [#179](https://github.com/appcelerator/atom-appcelerator-titanium/issues/179)
+* **ios:** support generic apple certificates ([eb895b4](https://github.com/appcelerator/atom-appcelerator-titanium/commit/eb895b4)), closes [#183](https://github.com/appcelerator/atom-appcelerator-titanium/issues/183)
+
+
+
 ## [1.10.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.9.1...v1.10.0) (2019-11-07)
 
 
