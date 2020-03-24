@@ -62,7 +62,7 @@
     "sudo-prompt": "^9.0.0",
     "titanium-editor-commons": "^0.4.1",
     "underscore": "^1.9.2",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@atom/mocha-test-runner": "^1.5.1",
