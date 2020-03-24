@@ -59,7 +59,7 @@
     "mkdirp": "^0.5.1",
     "semver": "^6.3.0",
     "sinon": "^7.3.2",
-    "sudo-prompt": "^9.0.0",
+    "sudo-prompt": "^9.1.1",
     "titanium-editor-commons": "^0.4.1",
     "underscore": "^1.9.2",
     "xml2js": "^0.4.17"
