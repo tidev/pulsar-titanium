@@ -54,7 +54,7 @@
   },
   "atomTestRunner": "./spec/test-runner.js",
   "dependencies": {
-    "etch": "^0.12.6",
+    "etch": "^0.14.0",
     "find": "^0.3.0",
     "mkdirp": "^0.5.1",
     "semver": "^6.3.0",
