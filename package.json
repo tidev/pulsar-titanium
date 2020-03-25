@@ -56,7 +56,7 @@
   "dependencies": {
     "etch": "^0.12.6",
     "find": "^0.3.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.3",
     "semver": "^6.3.0",
     "sinon": "^9.0.1",
     "sudo-prompt": "^9.1.1",
