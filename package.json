@@ -77,7 +77,7 @@
     "cz-conventional-changelog": "^3.1.0",
     "danger": "^10.0.0",
     "eslint": "^6.8.0",
-    "eslint-config-axway": "^4.2.2",
+    "eslint-config-axway": "^4.5.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-mocha": "^5.3.0",
