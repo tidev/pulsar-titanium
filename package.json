@@ -83,7 +83,7 @@
     "eslint-plugin-mocha": "^6.3.0",
     "eslint-plugin-react": "^7.14.1",
     "husky": "^4.2.3",
-    "lint-staged": "^10.1.0",
+    "lint-staged": "^10.1.2",
     "mocha-jenkins-reporter": "^0.4.1",
     "standard-version": "^7.1.0"
   },
