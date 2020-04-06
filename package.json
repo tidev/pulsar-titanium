@@ -57,7 +57,7 @@
     "etch": "^0.12.6",
     "find": "^0.3.0",
     "mkdirp": "^1.0.3",
-    "semver": "^6.3.0",
+    "semver": "^7.1.3",
     "sinon": "^9.0.1",
     "sudo-prompt": "^9.1.1",
     "titanium-editor-commons": "^0.4.2",
