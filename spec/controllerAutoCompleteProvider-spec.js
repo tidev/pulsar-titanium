@@ -36,6 +36,7 @@ describe('Ti namespace suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
 
 	after(async function () {
@@ -47,7 +48,6 @@ describe('Ti namespace suggestions', function () {
 
 	it('Should provide suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('Ti.');
 		const suggestions = await getSuggestions('Ti.');
@@ -93,6 +93,7 @@ describe('Extended Ti suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
 
 	after(async function () {
@@ -104,7 +105,6 @@ describe('Extended Ti suggestions', function () {
 
 	it('Should provide property suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('Ti.UI.cre');
 		const suggestions = await getSuggestions('cre');
@@ -141,6 +141,7 @@ describe('Alloy namespace suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
 
 	after(async function () {
@@ -152,7 +153,6 @@ describe('Alloy namespace suggestions', function () {
 
 	it('Should provide suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('Alloy.');
 		const suggestions = await getSuggestions('Alloy.');
@@ -199,6 +199,7 @@ describe('Extended Alloy suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
 
 	after(async function () {
@@ -210,7 +211,6 @@ describe('Extended Alloy suggestions', function () {
 
 	it('Should provide method suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('Alloy.Co');
 		const suggestions = await getSuggestions('Co');
