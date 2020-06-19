@@ -6,6 +6,7 @@ import * as sinon from 'sinon';
 import styleAutoCompleteProvider from '../lib/providers/styleAutoCompleteProvider';
 import * as tce from 'titanium-editor-commons';
 import * as fs from 'fs';
+import * as semver from 'semver';
 
 let editor, atomEnvironment, sandbox;
 
@@ -104,17 +105,32 @@ describe('Property suggestions', function () {
 		initTextEditor('"#id":{s');
 		const suggestions = await getSuggestions('s');
 
-		expect(suggestions[0].type).to.equal('property');
-		expect(suggestions[0].displayText).to.equal('sys');
-		expect(suggestions[0].snippet).to.equal('sys: ');
+		// TODO: Remove this check when support for Atom 1.46 and lower is dropped
+		if (semver.gte(process.version, '12.0.0')) {
+			expect(suggestions[0].type).to.equal('property');
+			expect(suggestions[0].displayText).to.equal('sys');
+			expect(suggestions[0].snippet).to.equal('sys: ');
 
-		expect(suggestions[1].type).to.equal('property');
-		expect(suggestions[1].displayText).to.equal('style');
-		expect(suggestions[1].snippet).to.equal('style: ');
+			expect(suggestions[1].type).to.equal('property');
+			expect(suggestions[1].displayText).to.equal('scale');
+			expect(suggestions[1].snippet).to.equal('scale: ');
 
-		expect(suggestions[2].type).to.equal('property');
-		expect(suggestions[2].displayText).to.equal('scale');
-		expect(suggestions[2].snippet).to.equal('scale: ');
+			expect(suggestions[2].type).to.equal('property');
+			expect(suggestions[2].displayText).to.equal('sound');
+			expect(suggestions[2].snippet).to.equal('sound: ');
+		} else {
+			expect(suggestions[0].type).to.equal('property');
+			expect(suggestions[0].displayText).to.equal('sys');
+			expect(suggestions[0].snippet).to.equal('sys: ');
+
+			expect(suggestions[1].type).to.equal('property');
+			expect(suggestions[1].displayText).to.equal('style');
+			expect(suggestions[1].snippet).to.equal('style: ');
+
+			expect(suggestions[2].type).to.equal('property');
+			expect(suggestions[2].displayText).to.equal('scale');
+			expect(suggestions[2].snippet).to.equal('scale: ');
+		}
 	});
 
 	it('should provide correct snippet for object types', async function () {
