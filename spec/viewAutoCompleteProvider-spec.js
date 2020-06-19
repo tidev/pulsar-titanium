@@ -6,6 +6,7 @@ import Project from '../lib/project';
 import * as sinon from 'sinon';
 import * as tce from 'titanium-editor-commons';
 import * as fs from 'fs';
+import * as semver from 'semver';
 
 let editor, atomEnvironment, sandbox;
 
@@ -46,7 +47,6 @@ describe('Tag suggestions', function () {
 
 	it('should provide tag suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('<W');
 		const suggestions = await getSuggestions('W');
@@ -91,6 +91,7 @@ describe('Attribute suggestions', function () {
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
+		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
 
 	after(async function () {
@@ -102,7 +103,6 @@ describe('Attribute suggestions', function () {
 
 	it('should provide property suggestions', async function () {
 		Project.isTitaniumApp = true;
-		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 
 		initTextEditor('<Window s');
 		const suggestions = await getSuggestions('status');
@@ -125,11 +125,21 @@ describe('Attribute suggestions', function () {
 
 		expect(suggestions.length).to.equal(35);
 
-		expect(suggestions[0].type).to.equal('function');
-		expect(suggestions[0].displayText).to.equal('onOpen');
-		expect(suggestions[0].snippet).to.equal('onOpen="$1"$0');
-		expect(suggestions[0].rightLabel).to.equal('Window');
-		expect(suggestions[0].description).to.equal('Ti.UI.Window: open event');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-event-open');
+		// TODO: Remove this check when support for Atom 1.46 and lower is dropped
+		if (semver.gte(process.version, '12.0.0')) {
+			expect(suggestions[0].type).to.equal('property');
+			expect(suggestions[0].displayText).to.equal('onBack');
+			expect(suggestions[0].snippet).to.equal('onBack="$1"$0');
+			expect(suggestions[0].rightLabel).to.equal('Window');
+			expect(suggestions[0].description).to.equal('Ti.UI.Window: Callback function that overrides the default behavior when the user presses the <strong>Back</strong>button.');
+			expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-onBack');
+		} else {
+			expect(suggestions[0].type).to.equal('function');
+			expect(suggestions[0].displayText).to.equal('onOpen');
+			expect(suggestions[0].snippet).to.equal('onOpen="$1"$0');
+			expect(suggestions[0].rightLabel).to.equal('Window');
+			expect(suggestions[0].description).to.equal('Ti.UI.Window: open event');
+			expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-event-open');
+		}
 	});
 });
