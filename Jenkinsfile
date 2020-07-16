@@ -6,7 +6,7 @@ def isPR = branchName.startsWith('PR-')
 def runDanger = isPR
 
 timestamps {
-  def nodeVersion = '8.11.4'
+  def nodeVersion = '12.18.0'
   def npmVersion = 'latest'
   node('(osx || linux) && atom && !macos-wilder') {
 
