@@ -75,7 +75,7 @@
     "chai-as-promised": "^7.1.1",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
-    "danger": "^10.2.1",
+    "danger": "^10.3.0",
     "eslint": "^7.6.0",
     "eslint-config-axway": "^4.7.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
