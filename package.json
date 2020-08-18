@@ -85,7 +85,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "mocha-jenkins-reporter": "^0.4.4",
-    "standard-version": "^8.0.2"
+    "standard-version": "^9.0.0"
   },
   "scripts": {
     "commit": "git-cz",
