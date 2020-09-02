@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.9.1...v1.12.0) (2020-09-02)
+
+
+### Features
+
+* **completion:** add completions for Ti namespace in controllers ([#177](https://github.com/appcelerator/atom-appcelerator-titanium/issues/177)) ([efa3085](https://github.com/appcelerator/atom-appcelerator-titanium/commit/efa3085412ab949c748549d5489a73ba51a44266)), closes [#171](https://github.com/appcelerator/atom-appcelerator-titanium/issues/171)
+* **completions:** added completions for Alloy namespace in cont… ([#180](https://github.com/appcelerator/atom-appcelerator-titanium/issues/180)) ([61b7f0e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/61b7f0edbb37572b29f6f0c0a36b39d4ff15852d)), closes [#179](https://github.com/appcelerator/atom-appcelerator-titanium/issues/179)
+* change the console icon to command line icon ([#178](https://github.com/appcelerator/atom-appcelerator-titanium/issues/178)) ([2674829](https://github.com/appcelerator/atom-appcelerator-titanium/commit/26748298fbc4d265cd874a07430f770845fd80cc))
+* **ios:** support generic apple certificates ([eb895b4](https://github.com/appcelerator/atom-appcelerator-titanium/commit/eb895b4881ce949f67a430802ca9bb812dc5294c)), closes [#183](https://github.com/appcelerator/atom-appcelerator-titanium/issues/183)
+
+
+### Bug Fixes
+
+* **completion:** handle array being returned from getCompletions ([bd01c01](https://github.com/appcelerator/atom-appcelerator-titanium/commit/bd01c0184c6c5509e96d8868d5d7948b31475abc)), closes [#188](https://github.com/appcelerator/atom-appcelerator-titanium/issues/188)
+* **providers/tiapp:** handle an open xml file that isn't on disk ([d0243d1](https://github.com/appcelerator/atom-appcelerator-titanium/commit/d0243d1bb64e73f97d76419d572d7605ab6c1957)), closes [#284](https://github.com/appcelerator/atom-appcelerator-titanium/issues/284)
+
 ## [1.11.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.10.1...v1.11.0) (2020-09-02)
 
 ### Bug Fixes
