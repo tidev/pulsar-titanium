@@ -38,9 +38,7 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.{js,jsx}": "npm run lint"
-    }
+    "*.{js,jsx}": "npm run lint"
   },
   "config": {
     "commitizen": {

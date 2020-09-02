@@ -8,7 +8,7 @@ def runDanger = isPR
 timestamps {
   def nodeVersion = '12.18.0'
   def npmVersion = 'latest'
-  node('(osx || linux) && atom && !macos-wilder') {
+  node('(osx || linux) && atom && !macos-wilder && !macos-darwin') {
 
     nodejs(nodeJSInstallationName: "node ${nodeVersion}") {
       ansiColor('xterm') {
