@@ -34,7 +34,10 @@ describe('Tag suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -87,7 +90,10 @@ describe('Property suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
