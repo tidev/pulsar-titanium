@@ -34,7 +34,10 @@ describe('Ti namespace suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -91,7 +94,10 @@ describe('Extended Ti suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -139,7 +145,10 @@ describe('Alloy namespace suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -172,7 +181,6 @@ describe('Alloy namespace suggestions', function () {
 			expect(suggestions[1].rightLabel).to.equal('Alloy');
 			expect(suggestions[1].snippet).to.equal('CFG');
 			expect(suggestions[1].priority).to.equal(2);
-			console.log(suggestions[2]);
 			expect(suggestions[2].type).to.equal('method');
 			expect(suggestions[2].displayText).to.equal('Alloy.Models');
 		} else {
@@ -197,7 +205,10 @@ describe('Extended Alloy suggestions', function () {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
+		await atomEnvironment.packages.triggerDeferredActivationHooks();
+		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
+		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
