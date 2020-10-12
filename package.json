@@ -60,7 +60,6 @@
     "fs-extra": "^9.0.1",
     "mkdirp": "^1.0.4",
     "semver": "^7.3.2",
-    "sinon": "^9.0.3",
     "sudo-prompt": "^9.2.1",
     "titanium-editor-commons": "^1.0.2",
     "underscore": "^1.11.0",
@@ -87,6 +86,7 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "mocha-jenkins-reporter": "^0.4.5",
+    "sinon": "^9.2.0",
     "standard-version": "^9.0.0"
   },
   "scripts": {
