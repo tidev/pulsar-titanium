@@ -2,7 +2,7 @@
 /** @jsx etch.dom */
 
 import etch from 'etch';
-import { updates } from 'titanium-editor-commons';
+import Update from '../update';
 
 /**
  * Generate component dialog
@@ -88,7 +88,7 @@ export default class UpdatesDialog {
 	 */
 	async pullUpdate() {
 		this.state.checking = true;
-		this.state.updates = await updates.checkAllUpdates();
+		this.state.updates = await Update.getUpdates();
 		this.state.checking = false;
 		for (let index = 0; index < this.state.updates.length; index++) {
 			this.state.updates[index].selected = true;
