@@ -49,6 +49,10 @@ appc:clean | `ctrl-alt-k`      | Clean the current project directory
 
 ### Build tools
 
+#### Selecting Tooling
+
+By default this package will use the Appcelerator CLI tooling. You can switch to the Titanium CLI tooling by enabling the `Use ti commands` property in the package settings. The toolbar will display `(appc)` when the Appcelerator tooling is enabled, and `(ti)` when the Titanium tooling is enabled.
+
 #### Toolbar
 
 The toolbar provides a UI to commonly used commands when developing a Titanium application. Further information on each function is provided in the sections below.

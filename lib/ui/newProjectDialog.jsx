@@ -36,7 +36,7 @@ export default class NewProjectDialog {
 			id: '',
 			platforms: Utils.platforms(),
 			location: homedir(),
-			enableServices: true,
+			enableServices: Utils.usingAppcTooling(),
 		};
 		etch.initialize(this);
 		this.setFocus();
@@ -116,10 +116,12 @@ export default class NewProjectDialog {
 					<Button flat="true" icon="file-directory" disabled={this.state.executing} click={this.locationButtonClicked.bind(this)} />
 				</div>
 				{projectLocation}
-				<div className="row">
-					<div className="title">Enable Services:</div>
-					<input className="input-checkbox" type="checkbox" ref="enableServices" disabled={this.state.executing} checked={this.project.enableServices} on={{ change: this.enableServicesDidChange }} />
-				</div>
+				{ Utils.usingAppcTooling() ? (
+					<div className="row">
+						<div className="title">Enable Services:</div>
+						<input className="input-checkbox" type="checkbox" ref="enableServices" disabled={this.state.executing} checked={this.project.enableServices} on={{ change: this.enableServicesDidChange }} />
+					</div>
+				) : null}
 				{services}
 				<div className="row-buttons">
 					<button className="btn" attributes={{ tabindex: '10' }} disabled={this.state.executing} on={{ click: this.cancelButtonClicked }}>Cancel</button>
