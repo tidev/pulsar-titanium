@@ -83,7 +83,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^4.3.7",
+    "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "mocha-jenkins-reporter": "^0.4.5",
     "sinon": "^9.2.3",
