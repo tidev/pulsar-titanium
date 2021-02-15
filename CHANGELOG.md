@@ -4,41 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 1.14.0 (2021-02-15)
 
-
-### Features
-
-* **completion:** add completions for Ti namespace in controllers ([#177](https://github.com/appcelerator/atom-appcelerator-titanium/issues/177)) ([efa3085](https://github.com/appcelerator/atom-appcelerator-titanium/commit/efa3085412ab949c748549d5489a73ba51a44266)), closes [#171](https://github.com/appcelerator/atom-appcelerator-titanium/issues/171)
-* **completions:** added completions for Alloy namespace in cont… ([#180](https://github.com/appcelerator/atom-appcelerator-titanium/issues/180)) ([61b7f0e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/61b7f0edbb37572b29f6f0c0a36b39d4ff15852d)), closes [#179](https://github.com/appcelerator/atom-appcelerator-titanium/issues/179)
-* **ios:** support generic apple certificates ([eb895b4](https://github.com/appcelerator/atom-appcelerator-titanium/commit/eb895b4881ce949f67a430802ca9bb812dc5294c)), closes [#183](https://github.com/appcelerator/atom-appcelerator-titanium/issues/183)
-* **toolbar:** add user information and login icon ([#165](https://github.com/appcelerator/atom-appcelerator-titanium/issues/165)) ([a478274](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a47827422c527342e75d8c27c9c6edda86171abf)), closes [#159](https://github.com/appcelerator/atom-appcelerator-titanium/issues/159)
-* **update:** add node update and install functionality ([#328](https://github.com/appcelerator/atom-appcelerator-titanium/issues/328)) ([e01cc65](https://github.com/appcelerator/atom-appcelerator-titanium/commit/e01cc65b52247d48b260f735f728dc1bc58aa429))
-* Add expire-date to dev-certs as well ([c22c3be](https://github.com/appcelerator/atom-appcelerator-titanium/commit/c22c3bebcfdd2c739f785abe438526906e247af2))
-* add login dialog ([a3f9601](https://github.com/appcelerator/atom-appcelerator-titanium/commit/a3f9601c16236f06758560b39caa9cdbba7d3469))
-* add open related to context menu ([#175](https://github.com/appcelerator/atom-appcelerator-titanium/issues/175)) ([0b62033](https://github.com/appcelerator/atom-appcelerator-titanium/commit/0b6203387675e5817b70051278d07df996fa9264)), closes [#174](https://github.com/appcelerator/atom-appcelerator-titanium/issues/174)
-* add support for interaction via mac Touch Bar ([#124](https://github.com/appcelerator/atom-appcelerator-titanium/issues/124)) ([1fae584](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1fae584367bcd487fabd1e76e331b1d0b691ea69))
-* change the console icon to command line icon ([#178](https://github.com/appcelerator/atom-appcelerator-titanium/issues/178)) ([2674829](https://github.com/appcelerator/atom-appcelerator-titanium/commit/26748298fbc4d265cd874a07430f770845fd80cc))
-* show login dialog if login is required to run command ([1e1168b](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1e1168be9577f2c658290d9ed372934c0b272d49)), closes [#160](https://github.com/appcelerator/atom-appcelerator-titanium/issues/160)
-* **toolbar:** add button and command to toggle toolbar visibility ([b871811](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b871811e1e5413fb170eb6c08204735fc20a87b9)), closes [#138](https://github.com/appcelerator/atom-appcelerator-titanium/issues/138)
-* **toolbar:** add config setting for showing toolbar, respect on open ([#151](https://github.com/appcelerator/atom-appcelerator-titanium/issues/151)) ([6fdae71](https://github.com/appcelerator/atom-appcelerator-titanium/commit/6fdae719baae7336f23ddcf042252bb8b88fec9b)), closes [#148](https://github.com/appcelerator/atom-appcelerator-titanium/issues/148)
-* **updates:** add update functionality ([#162](https://github.com/appcelerator/atom-appcelerator-titanium/issues/162)) ([dad3a08](https://github.com/appcelerator/atom-appcelerator-titanium/commit/dad3a08b2c2766d884e9a5f66cea52f29a43e998))
-
-
 ### Bug Fixes
 
-* **app creation:** fixed the app creation flow for newer sdks ([#167](https://github.com/appcelerator/atom-appcelerator-titanium/issues/167)) ([cda8014](https://github.com/appcelerator/atom-appcelerator-titanium/commit/cda8014af4d539fd4461f95eddefbf513d249e1c)), closes [#158](https://github.com/appcelerator/atom-appcelerator-titanium/issues/158)
-* **autocomplete:** correct filtering of colors ([ffb340e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ffb340e227343b24b7115e2bacdb23ae2e39d5e5)), closes [#139](https://github.com/appcelerator/atom-appcelerator-titanium/issues/139)
-* **commands/login:** fix detection of output ([57370bf](https://github.com/appcelerator/atom-appcelerator-titanium/commit/57370bf04297280b4444c66bf87d3009b8c6d77f))
-* **completion:** handle array being returned from getCompletions ([bd01c01](https://github.com/appcelerator/atom-appcelerator-titanium/commit/bd01c0184c6c5509e96d8868d5d7948b31475abc)), closes [#188](https://github.com/appcelerator/atom-appcelerator-titanium/issues/188)
 * **completions:** generate v3 for titanium and alloy completions ([#388](https://github.com/appcelerator/atom-appcelerator-titanium/issues/388)) ([eb8332a](https://github.com/appcelerator/atom-appcelerator-titanium/commit/eb8332a652bacd4fb02b8486ce8f7ea79699b96c))
-* **completions:** read only properties are not shown ([#488](https://github.com/appcelerator/atom-appcelerator-titanium/issues/488)) ([9191220](https://github.com/appcelerator/atom-appcelerator-titanium/commit/9191220e46429eb6b19b206cbc5ee5357fe7548a))
-* **definitions:** do not suggest app.tss when generating tss for id ([1fbf454](https://github.com/appcelerator/atom-appcelerator-titanium/commit/1fbf454c2da505ba981452876a0c43763fe2b18e)), closes [#141](https://github.com/appcelerator/atom-appcelerator-titanium/issues/141)
-* **provider:** improve ordering of suggestions ([#156](https://github.com/appcelerator/atom-appcelerator-titanium/issues/156)) ([59bb539](https://github.com/appcelerator/atom-appcelerator-titanium/commit/59bb5399c9aa685715748ef0f58629c1d8da61b8)), closes [#143](https://github.com/appcelerator/atom-appcelerator-titanium/issues/143)
-* **providers/tiapp:** handle an open xml file that isn't on disk ([d0243d1](https://github.com/appcelerator/atom-appcelerator-titanium/commit/d0243d1bb64e73f97d76419d572d7605ab6c1957)), closes [#284](https://github.com/appcelerator/atom-appcelerator-titanium/issues/284)
-* **styleprovider:** improved suggestions to include quotes for color and layout properties ([#154](https://github.com/appcelerator/atom-appcelerator-titanium/issues/154)) ([f7128a8](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f7128a878061817807936cb789ad40cc77370c5a)), closes [#152](https://github.com/appcelerator/atom-appcelerator-titanium/issues/152)
-* **toolbar:** add titles to fields ([#135](https://github.com/appcelerator/atom-appcelerator-titanium/issues/135)) ([4514d57](https://github.com/appcelerator/atom-appcelerator-titanium/commit/4514d57cb74b192aa984e5b9f9616f779a831ef6))
-* **toolbar/android:** handle emulators being undefined, improve ui when no emulators ([f439e71](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f439e71e6cf61c9b5c4ae2857c88b0e92db3a921)), closes [#142](https://github.com/appcelerator/atom-appcelerator-titanium/issues/142)
-* check for existence of type before trying to access properties ([ad4ebd2](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ad4ebd2d328dd8875d976dc8158ddb380cd2ecf0)), closes [#126](https://github.com/appcelerator/atom-appcelerator-titanium/issues/126)
-* Enable LiveView for custom args as well, address review comments ([83b3be8](https://github.com/appcelerator/atom-appcelerator-titanium/commit/83b3be87739012a2ed5c1cf4900a83d54eb5e3cb))
+
 
 ## 1.13.0 (2020-09-16)
 
