@@ -8,6 +8,9 @@
   "engines": {
     "atom": ">1.21.0"
   },
+  "activationHooks": [
+    "core:loaded-shell-environment"
+  ],
   "keywords": [
     "axway",
     "appcelerator",
@@ -54,36 +57,37 @@
   "dependencies": {
     "etch": "^0.12.6",
     "find": "^0.3.0",
+    "fs-extra": "^9.1.0",
     "mkdirp": "^1.0.4",
-    "semver": "^7.3.2",
-    "sinon": "^9.0.3",
+    "semver": "^7.3.4",
     "sudo-prompt": "^9.2.1",
-    "titanium-editor-commons": "^0.5.1",
+    "titanium-editor-commons": "^1.0.4",
     "underscore": "^1.11.0",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@atom/mocha-test-runner": "^1.5.1",
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
-    "@seadub/danger-plugin-dependencies": "^0.1.0",
+    "@atom/mocha-test-runner": "^1.6.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@seadub/danger-plugin-dependencies": "^1.0.0",
     "@seadub/danger-plugin-eslint": "^2.0.0",
     "@seadub/danger-plugin-junit": "^0.2.0",
-    "chai": "^4.2.0",
+    "chai": "^4.3.0",
     "chai-as-promised": "^7.1.1",
-    "commitizen": "^4.2.1",
+    "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
-    "danger": "^10.4.0",
-    "eslint": "^7.9.0",
-    "eslint-config-axway": "^4.7.3",
+    "danger": "^10.6.2",
+    "eslint": "^7.20.0",
+    "eslint-config-axway": "^5.0.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mocha": "^8.0.0",
-    "eslint-plugin-react": "^7.20.6",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
     "mocha-jenkins-reporter": "^0.4.5",
-    "standard-version": "^9.0.0"
+    "sinon": "^9.2.4",
+    "standard-version": "^9.1.0"
   },
   "scripts": {
     "commit": "git-cz",
