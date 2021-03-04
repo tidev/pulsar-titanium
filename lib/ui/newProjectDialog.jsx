@@ -198,8 +198,8 @@ export default class NewProjectDialog {
 	/**
 	 * Location button clicked
 	 */
-	locationButtonClicked() {
-		const filePaths = remote.dialog.showOpenDialog({ defaultPath: this.project.location, buttonLabel: 'Choose', properties: [ 'openDirectory', 'createDirectory' ] });
+	async locationButtonClicked() {
+		const { filePaths } = await remote.dialog.showOpenDialog({ defaultPath: this.project.location, buttonLabel: 'Choose', properties: [ 'openDirectory', 'createDirectory' ] });
 		if (filePaths && filePaths[0].length > 0) {
 			this.project.location = filePaths[0];
 		}
