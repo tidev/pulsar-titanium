@@ -52,16 +52,13 @@ timestamps {
           } // stage lint and test
 
           stage('Release') {
-            if ('release'.equals(branchName)) {
-              try{
-                sh 'npm run release'
-                def latestTag = sh(returnStdout: true, script: 'git describe --abbrev=0 --tags').trim()
-                echo "Publishing ${latestTag}"
-                pushGit(name: 'release')
-
-                pushGitTag(name: latestTag, force: true)
-                withCredentials([string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN')]) {
-                  sh "apm publish --tag ${latestTag}" // register that tag on atom.io
+            if ('master'.equals(branchName)) {
+              try {
+                withCredentials([
+                  string(credentialsId: 'atom-io-api-key', variable: 'ATOM_ACCESS_TOKEN'),
+                  string(credentialsId: 'oauth-github-api', variable: 'GH_TOKEN')]
+                ) {
+                  sh "npm run release"
                 }
               } catch (error) {
                 def msg = "Failed to release"
