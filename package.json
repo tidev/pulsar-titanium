@@ -66,7 +66,7 @@
     "@seadub/danger-plugin-dependencies": "^1.0.0",
     "@seadub/danger-plugin-eslint": "^2.0.0",
     "@seadub/danger-plugin-junit": "^0.2.0",
-    "chai": "^4.3.3",
+    "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
