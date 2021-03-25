@@ -129,12 +129,6 @@ export default class Toolbar {
 						<option value="custom">Custom</option>
 					];
 					break;
-				case 'windows':
-					buildOptions = [
-						<option value="run">Run</option>,
-						<option value="custom">Custom</option>
-					];
-					break;
 			}
 		} else if (Project.isTitaniumModule) {
 			buildOptions = [
@@ -336,13 +330,6 @@ export default class Toolbar {
 			targetType = 'device';
 		}
 
-		if (platform.value === 'windows') {
-			if (target.value === 'ws-local') {
-				targetType = 'ws-local';
-			} else {
-				targetType = `wp-${targetType}`;
-			}
-		}
 
 		Object.assign(this.state, {
 			buildCommand: buildCommand.value,
@@ -464,40 +451,6 @@ export default class Toolbar {
 	}
 
 	/**
-	 * Populate Windows targets
-	 */
-	populateWindowsTargets() {
-		this.targets = Appc.windowsTargets();
-		this.targetOptions = [];
-
-		this.targetOptions.push({ value: '', text: 'Devices', disabled: true });
-		if (this.targets.devices.length === 0) {
-			this.targetOptions.push({ value: '', text: 'No Device Targets', disabled: true });
-		} else {
-			for (const target of this.targets.devices) {
-				this.targetOptions.push({ value: target.udid, text: target.name });
-			}
-		}
-		this.targetOptions.push({ value: 'ws-local', text: 'Local Machine' });
-		for (const sdkVersion in this.targets.emulators) {
-			this.targetOptions.push({ value: '', text: ' ', disabled: true });
-			this.targetOptions.push({ value: '', text: 'Windows ' + sdkVersion + ' Emulators', disabled: true });
-			for (const emulator of this.targets.emulators[sdkVersion]) {
-				const name = emulator.name + ' (' + emulator.version + ')';
-				this.targetOptions.push({ value: emulator.udid, text: name });
-				if (!this.state.selectedTarget.windows) {
-					this.state.selectedTarget.windows = emulator.udid;
-				}
-			}
-		}
-		this.targetOptions.push({ value: '', text: '', disabled: true });
-		this.targetOptions.push({ value: '', text: '──────────', disabled: true });
-		this.targetOptions.push({ value: 'refresh', text: 'Refresh Targets' });
-
-		etch.update(this);
-	}
-
-	/**
 	 * Populate iOS certificates
 	 */
 	populateiOSCertificates() {
@@ -585,9 +538,6 @@ export default class Toolbar {
 				}
 				this.populateAndroidTargets();
 				break;
-			case 'windows':
-				this.populateWindowsTargets();
-				break;
 		}
 		etch.update(this);
 	}
@@ -613,9 +563,6 @@ export default class Toolbar {
 						break;
 					case 'android':
 						this.populateAndroidTargets();
-						break;
-					case 'windows':
-						this.populateWindowsTargets();
 						break;
 				}
 				this.hud.displayDefault();
