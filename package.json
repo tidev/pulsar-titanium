@@ -82,7 +82,7 @@
     "mocha-jenkins-reporter": "^0.4.5",
     "pinst": "^2.1.6",
     "sinon": "^10.0.0",
-    "standard-version": "^9.1.1"
+    "standard-version": "^9.2.0"
   },
   "scripts": {
     "commit": "git-cz",
