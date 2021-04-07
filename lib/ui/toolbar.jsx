@@ -330,7 +330,6 @@ export default class Toolbar {
 			targetType = 'device';
 		}
 
-
 		Object.assign(this.state, {
 			buildCommand: buildCommand.value,
 			buildCommandName: buildCommand.text,
