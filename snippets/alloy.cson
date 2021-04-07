@@ -66,15 +66,4 @@
         'rightLabelHTML': 'if (OS_ANDROID)'
         'description': 'Alloy Android conditional statement'
         'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-Conditionalcode'
-
-    'ifWindows': 
-        'prefix': 'ifwin'
-        'body': '''
-            if (OS_WINDOWS) {
-                $1
-            }$2
-        '''
-        'rightLabelHTML': 'if (OS_WINDOWS)'
-        'description': 'Alloy Windows conditional statement'
-        'descriptionMoreURL': 'http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Controllers-section-src-34636384_AlloyControllers-Conditionalcode'
     

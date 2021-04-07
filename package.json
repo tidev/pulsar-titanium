@@ -19,8 +19,7 @@
     "mobile",
     "javascript",
     "ios",
-    "android",
-    "windows"
+    "android"
   ],
   "providedServices": {
     "autocomplete.provider": {

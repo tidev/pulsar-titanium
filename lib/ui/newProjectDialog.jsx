@@ -183,9 +183,6 @@ export default class NewProjectDialog {
 			case this.refs.platformandroid:
 				platform = 'android';
 				break;
-			case this.refs.platformwindows:
-				platform = 'windows';
-				break;
 		}
 		const index = this.project.platforms.indexOf(platform);
 		if (index === -1) {
