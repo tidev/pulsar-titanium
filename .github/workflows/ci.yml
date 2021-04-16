@@ -4,9 +4,24 @@ on:
   - push
 
 jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install NPM dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+
   Test:
     name: ${{ matrix.os }} - Atom ${{ matrix.atom_channel }}
     runs-on: ${{ matrix.os }}
+    needs: Lint
     strategy:
       fail-fast: false
       matrix:
@@ -34,17 +49,3 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test
-
-  Lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install NPM dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
