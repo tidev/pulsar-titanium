@@ -1,7 +1,7 @@
 {
   "name": "appcelerator-titanium",
   "main": "./lib/index",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Appcelerator Titanium build tools and UI for Atom",
   "repository": "https://github.com/appcelerator/atom-appcelerator-titanium",
   "license": "Apache-2.0",

@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.0...v2.0.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* exit 0 if husky errors ([ddba778](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ddba778966dd682d7dad6f8a547df6f755f28cd5))
+
 # [2.0.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.14.0...v2.0.0) (2021-04-19)
 
 
