@@ -1,3 +1,30 @@
+# [2.0.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v1.14.0...v2.0.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **new:** adapt to  new electron dialog api ([f95247a](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f95247a2478b6e1c7d5e483bbf3a1577b5aedda9))
+* **new:** use correct subcommand for creating ([b061e22](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b061e2261ffed8188b3c22e9511de13ee84465fb))
+
+
+* refactor!: remove appcCommandPath setting ([e9eaa31](https://github.com/appcelerator/atom-appcelerator-titanium/commit/e9eaa3164e4450d78658a9263876a1c1686ca7a0))
+
+
+### Code Refactoring
+
+* remove windows platform ([#420](https://github.com/appcelerator/atom-appcelerator-titanium/issues/420)) ([b2af0a5](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b2af0a50adee3c4942fe9b45b8ff8913c910a92d))
+
+
+### Features
+
+* support using OSS tooling ([acf19ff](https://github.com/appcelerator/atom-appcelerator-titanium/commit/acf19fffdd808214950ca11bfe3e4bb9b57ce5d6))
+
+
+### BREAKING CHANGES
+
+* The appcCommandPath setting is no longer supported
+* Windows will no longer be offered as a choice in the platform selection
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
