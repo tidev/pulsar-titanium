@@ -3,26 +3,5 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
-    time: "10:00"
+    interval: weekly
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: etch
-    versions:
-    - "> 0.12.8"
-  - dependency-name: underscore
-    versions:
-    - 1.12.0
-    - 1.12.1
-    - 1.13.0
-  - dependency-name: sinon
-    versions:
-    - 10.0.1
-  - dependency-name: titanium-editor-commons
-    versions:
-    - 1.1.0
-    - 1.2.0
-  - dependency-name: husky
-    versions:
-    - 5.0.9
-    - 5.1.0
