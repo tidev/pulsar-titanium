@@ -50,7 +50,7 @@
   "dependencies": {
     "etch": "^0.12.6",
     "find": "^0.3.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "mkdirp": "^1.0.4",
     "semver": "^7.3.5",
     "sudo-prompt": "^9.2.1",
