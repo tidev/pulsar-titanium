@@ -71,7 +71,7 @@
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "danger": "^10.6.4",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "eslint-config-axway": "^6.0.1",
     "eslint-plugin-chai-friendly": "^0.7.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
