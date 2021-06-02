@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.1...v2.0.2) (2021-06-02)
+
+
+### Bug Fixes
+
+* **updates:** select Titanium SDK after installing it ([b57a36e](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b57a36ed474cdecc78ba2ef6431f1946eefd3194))
+
 ## [2.0.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.0...v2.0.1) (2021-04-19)
 
 
