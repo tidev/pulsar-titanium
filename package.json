@@ -88,7 +88,7 @@
   "scripts": {
     "commit": "git-cz",
     "lint": "eslint --ext .js,.jsx .",
-    "release": "cross-env HUSKY=1 semantic-release",
+    "release": "cross-env HUSKY=0 semantic-release",
     "test": "apm --version && apm test",
     "postinstall": "husky install || exit 0",
     "prepublishOnly": "pinst --disable",
