@@ -11,6 +11,7 @@ import Button from './button.jsx';
 import Select from './select.jsx';
 import Hud from './hud.jsx';
 import Utils from '../utils';
+import { Octicon } from './octicon.jsx';
 
 etch.setScheduler(atom.views);
 
@@ -312,7 +313,7 @@ export default class Toolbar {
 						</Select>
 
 						<Button icon="gear" title="Signing settings..." flat="true" disabled={this.state.disableUI || !this.state.codeSigningAvailable} click={this.expandButtonClicked.bind(this)} />
-						<Button icon="eye" title="Liveview" flat="true" grayed={!this.state.enableLiveview} disabled={this.shouldDisableLiveView()} click={this.liveViewButtonClicked.bind(this)} />
+						<Octicon name={this.state.enableLiveview ? 'eye' : 'eye-closed'} title="Liveview" flat="true" disabled={this.shouldDisableLiveView()} click={this.liveViewButtonClicked.bind(this)} />
 					</div>
 
 					<Hud ref="hud" />
