@@ -675,8 +675,8 @@ export default class Toolbar {
 	/**
 	 * Android keystore button clicked
 	 */
-	androidKeystoreButtonClicked() {
-		const filePaths = remote.dialog.showOpenDialog({ properties: [ 'openFile', 'showHiddenFiles' ] });
+	async androidKeystoreButtonClicked() {
+		const { filePaths } = await remote.dialog.showOpenDialog({ properties: [ 'openFile', 'showHiddenFiles' ] });
 		if (filePaths && filePaths[0].length > 0) {
 			this.state.androidKeystore.path = filePaths[0];
 		}
