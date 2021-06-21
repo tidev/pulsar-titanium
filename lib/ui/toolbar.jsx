@@ -320,6 +320,7 @@ export default class Toolbar {
 
 					<div className="toolbar-right main-toolbar-group">
 						<Button icon="plus" title="Create new..." className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.generateButtonClicked.bind(this)} />
+						<Button icon="trashcan" title="Clean project" className="button-right" flat="true" disabled={this.state.disableUI || !Project.isTitaniumApp} click={this.cleanProjectButtonClicked.bind(this)} />
 						<Button icon="terminal" title="Toggle console" className="button-right" flat="true" disabled={this.state.disableUI} click={this.toggleConsoleButtonClicked.bind(this)} />
 						{
 							Utils.usingAppcTooling()
@@ -757,5 +758,12 @@ export default class Toolbar {
 			atom.config.set('appcelerator-titanium.general.showToolbar', true);
 			this.panel.show();
 		}
+	}
+
+	/**
+	 * Dispatch the clean command when the clean button is clicked
+	 */
+	cleanProjectButtonClicked() {
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:clean');
 	}
 }
