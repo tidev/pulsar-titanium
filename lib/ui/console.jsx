@@ -115,32 +115,11 @@ export default class Console {
 			this.show();
 		}
 
-		const bottomDock = atom.workspace.getBottomDock();
-		const rightDock = atom.workspace.getRightDock();
 		this.subscriptions = new CompositeDisposable();
 		this.subscriptions.add(
-			bottomDock.onDidChangeVisible((visible) => {
-				for (const item of bottomDock.getPaneItems()) {
-					if (item === this) {
-						this.state.isHidden = !visible;
-					}
-				}
-			}),
-			rightDock.onDidChangeVisible((visible) => {
-				for (const item of rightDock.getPaneItems()) {
-					if (item === this) {
-						this.state.isHidden = !visible;
-					}
-				}
-			}),
-			atom.workspace.onDidAddPaneItem((e) => {
+			atom.workspace.onDidOpen(e => {
 				if (e.item === this) {
 					this.state.isHidden = false;
-				}
-			}),
-			atom.workspace.onDidDestroyPaneItem((e) => {
-				if (e.item === this) {
-					this.state.isHidden = true;
 				}
 			})
 		);
@@ -228,15 +207,6 @@ export default class Console {
 	 */
 	getDefaultLocation() {
 		return 'bottom';
-	}
-
-	/**
-	 * Atom dock allowed locations
-	 *
-	 * @returns {Array}
-	 */
-	getAllowedLocations() {
-		return [ 'right', 'bottom' ];
 	}
 
 	/**
