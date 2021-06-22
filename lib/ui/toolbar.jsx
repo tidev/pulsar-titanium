@@ -92,7 +92,8 @@ export default class Toolbar {
 			customArgs: atom.config.get('appcelerator-titanium.general.customArgs') || '',
 			iOSCodeSigning: {
 				certificate: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedCertificate`),
-				provisioningProfile: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`)
+				provisioningProfile: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`),
+				output: atom.config.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedOutput`),
 			},
 			androidKeystore: {
 				path: atom.config.get('appcelerator-titanium.android.keystorePath'),
@@ -224,6 +225,19 @@ export default class Toolbar {
 									})
 								}
 							</Select>
+							{
+								this.state.buildCommand === 'dist-appstore'
+									? (
+										<div attributes={{ style: 'display:flex;justify-content:center;' }}>
+											<Octicon className="toolbar-item-title" name="file-directory" title="Output location" flat="true" />
+											<Select ref="iOSOutputSelect" attributes={{ style: 'width:75px;text-align-last: center;' }} title={this.state.iOSCodeSigning.output} change={this.iOSProvisioningProfileSelectValueDidChange.bind(this)}>
+												<option title="Xcode" value="xcode" selected>Xcode</option>
+												<option title="Folder" value="folder" selected>Folder</option>
+											</Select>
+										</div>
+									)
+									: null
+							}
 						</div>
 						<div className="toolbar-right">
 							<Button flat="true" icon="x" click={this.expandButtonClicked.bind(this)} />
@@ -417,8 +431,12 @@ export default class Toolbar {
 
 			this.state.iOSCodeSigning = {
 				certificate: this.refs.iOSCertificateSelect.selectedOption.value,
-				provisioningProfile: this.refs.iOSProvisioningProfileSelect.selectedOption.value || '-'
+				provisioningProfile: this.refs.iOSProvisioningProfileSelect.selectedOption.value || '-',
 			};
+
+			if (this.state.buildCommand === 'dist-appstore' && this.refs.iOSOutputSelect) {
+				this.state.iOSCodeSigning.output = this.refs.iOSOutputSelect.selectedOption.value || 'Xcode';
+			}
 		}
 
 		if (this.refs.androidKeystorePath) {
@@ -661,6 +679,15 @@ export default class Toolbar {
 		// Save selected provisioning profile for this project
 		const selectedValue = this.refs.iOSProvisioningProfileSelect.selectedOption.value;
 		atom.config.set(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`, selectedValue);
+		this.getState();
+	}
+
+	/**
+	 * Output select changed
+	 */
+	iOSOutputSelectValueDidChange() {
+		const selectedValue = this.refs.iOSOutputSelect.selectedOption.value;
+		atom.config.set(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedOutput`, selectedValue);
 		this.getState();
 	}
 
