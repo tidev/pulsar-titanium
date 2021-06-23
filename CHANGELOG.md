@@ -1,3 +1,54 @@
+## [2.2.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.1.1...v2.2.0) (2021-06-22)
+
+
+### Bug Fixes
+
+* **completions:** guard against undefined when check for events ([654a217](https://github.com/appcelerator/atom-appcelerator-titanium/commit/654a2177567bcc609842cbe170aa26a3357ebdf5)), closes [#136](https://github.com/appcelerator/atom-appcelerator-titanium/issues/136)
+* check for existence of toolbar before performing target setup ([8004fbe](https://github.com/appcelerator/atom-appcelerator-titanium/commit/8004fbe51d5814cc927dcc5951813aafbfa14ab3)), closes [#253](https://github.com/appcelerator/atom-appcelerator-titanium/issues/253)
+
+
+### Features
+
+* **console:** allow positioning console anywhere in the atom window ([8dba020](https://github.com/appcelerator/atom-appcelerator-titanium/commit/8dba0200a0ca0fd3a7aef97e8e78fa0e4e0db2c9)), closes [#134](https://github.com/appcelerator/atom-appcelerator-titanium/issues/134)
+* **ios:** support outputting to xcode when performing a dist-appstore build ([06420e7](https://github.com/appcelerator/atom-appcelerator-titanium/commit/06420e7e8fb47d1b52b137ba8ec319f05bcc1337)), closes [#85](https://github.com/appcelerator/atom-appcelerator-titanium/issues/85)
+* **toolbar:** add clean button to toolbar ([cfa1f97](https://github.com/appcelerator/atom-appcelerator-titanium/commit/cfa1f976dc711f6a65d774ecee651c42a6bd6ac5)), closes [#161](https://github.com/appcelerator/atom-appcelerator-titanium/issues/161)
+
+## [2.1.1](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.1.0...v2.1.1) (2021-06-15)
+
+
+### Bug Fixes
+
+* **touchbar:** adapt to new touchbar API ([37abfed](https://github.com/appcelerator/atom-appcelerator-titanium/commit/37abfedfe682c4b5841abc5319d0d13b9264dfe4))
+
+## [2.1.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.4...v2.1.0) (2021-06-14)
+
+
+### Bug Fixes
+
+* **toolbar:** correct usage of open dialog on keystore selection ([bbcd086](https://github.com/appcelerator/atom-appcelerator-titanium/commit/bbcd0864bc5915a2c8c5e283b22e8b59e83600b8))
+* **updates:** update editor commons to fix passing of error metadata ([f18b43d](https://github.com/appcelerator/atom-appcelerator-titanium/commit/f18b43dfbfb168d73eb409ad51bd53f6097d41f0))
+
+
+### Features
+
+* **toolbar:** update liveview icon to better distinguish states ([4ccc3d0](https://github.com/appcelerator/atom-appcelerator-titanium/commit/4ccc3d02ffe40226d4bfb7d7aefecddf32204e2f)), closes [#306](https://github.com/appcelerator/atom-appcelerator-titanium/issues/306)
+* persist build information ([760ad5d](https://github.com/appcelerator/atom-appcelerator-titanium/commit/760ad5d0f7bac14b2e90df7fffacb326faa98e5f))
+
+## [2.0.4](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.3...v2.0.4) (2021-06-08)
+
+
+### Bug Fixes
+
+* **updates:** ensure updates always has an eempty error to prevent errors ([9e58fd1](https://github.com/appcelerator/atom-appcelerator-titanium/commit/9e58fd1943b5bafab18c80b2c43afff1b8e92109))
+* update editor-commons to fix issue when pulling latest npm version ([b94d4d2](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b94d4d2ddd1db736f8b6a957b80dbb1c457d4883))
+
+## [2.0.3](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.2...v2.0.3) (2021-06-03)
+
+
+### Bug Fixes
+
+* update editor-commons to fix issue when detecting environment ([b118468](https://github.com/appcelerator/atom-appcelerator-titanium/commit/b1184685f6925e6cb5b5a4b7b22034f1cd22dd1f))
+
 ## [2.0.2](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.0.1...v2.0.2) (2021-06-02)
 
 
