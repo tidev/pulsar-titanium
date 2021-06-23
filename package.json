@@ -106,6 +106,7 @@
           "successComment": false
         }
       ],
+      "@semantic-release/changelog",
       "@semantic-release/apm",
       "@semantic-release/git"
     ]
