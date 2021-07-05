@@ -72,7 +72,7 @@
     "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "danger": "^10.6.4",
+    "danger": "^10.6.6",
     "eslint": "^7.29.0",
     "eslint-config-axway": "^6.0.2",
     "eslint-plugin-chai-friendly": "^0.7.1",
