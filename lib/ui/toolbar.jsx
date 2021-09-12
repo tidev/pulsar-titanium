@@ -85,6 +85,7 @@ export default class Toolbar {
 			targetName: null,
 			disableUI: true,
 			enableLiveview: atom.config.get('appcelerator-titanium.general.liveviewEnabled'),
+			isDebugMode: atom.config.get('appcelerator-titanium.general.isDebugMode'),
 			buildInProgress: false,
 			codeSigningAvailable: true,
 			showingCodeSigning: false,
@@ -327,6 +328,7 @@ export default class Toolbar {
 						</Select>
 
 						<Button icon="gear" title="Signing settings..." flat="true" disabled={this.state.disableUI || !this.state.codeSigningAvailable} click={this.expandButtonClicked.bind(this)} />
+						<Button icon="bug" title="Debug mode" flat="true" class={!this.state.isDebugMode ? 'disabled' : 'enabled'} click={this.debugModeButtonClick.bind(this)} />
 						<Octicon name={this.state.enableLiveview ? 'eye' : 'eye-closed'} title="Liveview" flat="true" disabled={this.shouldDisableLiveView()} click={this.liveViewButtonClicked.bind(this)} />
 					</div>
 
@@ -774,6 +776,17 @@ export default class Toolbar {
 		this.getState();
 
 		atom.config.set('appcelerator-titanium.general.liveviewEnabled', this.state.enableLiveview);
+		etch.update(this);
+	}
+
+	/**
+	 * Toggle debug mude
+	 */
+	debugModeButtonClick() {
+		this.state.isDebugMode = !this.state.isDebugMode;
+		this.getState();
+
+		atom.config.set('appcelerator-titanium.general.isDebugMode', this.state.isDebugMode);
 		etch.update(this);
 	}
 
