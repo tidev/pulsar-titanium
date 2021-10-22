@@ -321,9 +321,12 @@ export default class Toolbar {
 						</Select>
 
 						<Select title="Select target" ref="targetSelect" attributes={{ style: 'width:150px;' }} disabled={this.state.disableUI || this.state.buildCommand !== 'run'} value={this.state.selectedTarget[this.state.platform]} change={this.targetSelectValueDidChange.bind(this)}>
-							{this.targetOptions.map(target =>
-								<option value={target.value} disabled={target.disabled}>{target.text}</option>
-							)}
+							{this.targetOptions.map(target => {
+								return target.value === this.state.selectedTarget[this.state.platform]
+									? <option platform={this.state.platform} value={target.value} disabled={target.disabled} selected>{target.text}</option>
+									: <option platform={this.state.platform} value={target.value} disabled={target.disabled}>{target.text}</option>;
+							})
+							}
 						</Select>
 
 						<Button icon="gear" title="Signing settings..." flat="true" disabled={this.state.disableUI || !this.state.codeSigningAvailable} click={this.expandButtonClicked.bind(this)} />
@@ -396,6 +399,12 @@ export default class Toolbar {
 		const buildCommand = this.refs.buildSelect.selectedOption;
 		const platform = this.refs.platformSelect.selectedOption;
 		const target = this.refs.targetSelect.selectedOption;
+		const targetNode = this.refs.targetSelect.children.find(t => t.props.value === target.value);
+		if (targetNode && targetNode.props.value && targetNode.props.platform === platform.value) {
+			atom.config.set(`appcelerator-titanium.general.${this.normalizedAppName}.${platform.value}.selectedTarget`, target.value);
+		}
+		const androidSelectedTarget = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.android.selectedTarget`);
+		const iosSelectedTarget = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
 
 		let targetType = platform.value === 'ios' ? 'simulator' : 'emulator';
 		if (this.targets.devices && target.index < this.targets.devices.length + 1) {
@@ -414,7 +423,11 @@ export default class Toolbar {
 			platformName: platform.text,
 			target: target.value,
 			targetName: target.text,
-			targetType
+			targetType,
+			selectedTarget: {
+				android: androidSelectedTarget,
+				ios: iosSelectedTarget
+			}
 		});
 
 		if ((this.state.platform === 'ios' && ((this.state.buildCommand === 'run' && this.state.targetType === 'device') || this.state.buildCommand === 'dist-adhoc' || this.state.buildCommand === 'dist-appstore'))
@@ -464,10 +477,16 @@ export default class Toolbar {
 		this.targets = Appc.iOSTargets();
 		this.targetOptions = [];
 		this.targetOptions.push({ value: '', text: 'Devices', disabled: true });
+
+		const selectedTarget = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
+		let hasSelectedTarget = false;
 		if (this.targets.devices.length === 0) {
 			this.targetOptions.push({ value: '', text: 'No Device Targets', disabled: true });
 		} else {
 			for (const target of this.targets.devices) {
+				if (target.udid === selectedTarget) {
+					hasSelectedTarget = true;
+				}
 				this.targetOptions.push({ value: target.udid, text: target.name });
 			}
 			if (this.targets.devices.length === 1 && this.targets.devices[0].udid === 'itunes') {
@@ -481,6 +500,9 @@ export default class Toolbar {
 			this.targetOptions.push({ value: '', text: ' ', disabled: true });
 			this.targetOptions.push({ value: '', text: 'iOS ' + sdkVersion + ' Simulators', disabled: true });
 			for (const simulator of this.targets.simulators[sdkVersion]) {
+				if (simulator.udid === selectedTarget) {
+					hasSelectedTarget = true;
+				}
 				const name = simulator.name + ' (' + simulator.version + ')';
 				this.targetOptions.push({ value: simulator.udid, text: name });
 				if (!this.state.selectedTarget.ios) {
@@ -492,6 +514,12 @@ export default class Toolbar {
 		this.targetOptions.push({ value: '', text: '──────────────────', disabled: true });
 		this.targetOptions.push({ value: 'refresh', text: 'Refresh Targets' });
 
+		if (!hasSelectedTarget) {
+			const simulatorsStart = this.targetOptions.findIndex(option => option.disabled && option.text.includes('Simulators'));
+			const target = this.targetOptions[simulatorsStart + 1];
+			this.state.selectedTarget.ios = target.value;
+		}
+
 		etch.update(this);
 	}
 
@@ -502,10 +530,15 @@ export default class Toolbar {
 		this.targets = Appc.androidTargets();
 		this.targetOptions = [];
 		this.targetOptions.push({ value: '', text: 'Devices', disabled: true });
+		const selectedTarget = atom.config.get(`appcelerator-titanium.general.${this.normalizedAppName}.android.selectedTarget`);
+		let hasSelectedTarget = false;
 		if (this.targets.devices.length === 0) {
 			this.targetOptions.push({ value: '', text: 'No Connected Devices', disabled: true });
 		} else {
 			for (const target of this.targets.devices) {
+				if (target.id === selectedTarget) {
+					hasSelectedTarget = true;
+				}
 				this.targetOptions.push({ value: target.id, text: target.name });
 			}
 		}
@@ -514,6 +547,9 @@ export default class Toolbar {
 			this.targetOptions.push({ value: '', text: ' ', disabled: true });
 			this.targetOptions.push({ value: '', text: type, disabled: true });
 			for (const emulator of emulators) {
+				if (emulator.id === selectedTarget) {
+					hasSelectedTarget = true;
+				}
 				const emulatorSdkVersion = emulator['sdk-version'] || 'SDK not installed';
 				const name = `${emulator.name} (${emulatorSdkVersion})`;
 				this.targetOptions.push({ value: emulator.id, text: name });
@@ -529,6 +565,12 @@ export default class Toolbar {
 		this.targetOptions.push({ value: '', text: '', disabled: true });
 		this.targetOptions.push({ value: '', text: '──────────────────', disabled: true });
 		this.targetOptions.push({ value: 'refresh', text: 'Refresh Targets' });
+
+		if (!hasSelectedTarget) {
+			const emulatorStart = this.targetOptions.findIndex(option => option.disabled && option.text.includes('AVD'));
+			const target = this.targetOptions[emulatorStart + 1];
+			this.state.selectedTarget.android = target.value;
+		}
 
 		etch.update(this);
 	}
@@ -658,7 +700,6 @@ export default class Toolbar {
 			});
 		} else {
 			this.getState();
-			this.state.selectedTarget[this.state.platform] = this.state.target;
 			etch.update(this);
 		}
 	}
