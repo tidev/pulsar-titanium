@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.2.0...v2.3.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* **toolbar:** correct default platform on mac ([6308885](https://github.com/appcelerator/atom-appcelerator-titanium/commit/6308885fd542237658e4d0b26660229028f3fe45))
+
+
+### Features
+
+* support storing the last selected target for an app project ([ee3f426](https://github.com/appcelerator/atom-appcelerator-titanium/commit/ee3f4268a3ddc50d308d52485d0c76ca2144fff4))
+
 ## [2.2.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.1.1...v2.2.0) (2021-06-22)
 
 
