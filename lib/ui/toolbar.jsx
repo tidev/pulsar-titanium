@@ -54,7 +54,7 @@ export default class Toolbar {
 		}
 
 		// The defaults per platform
-		if (platform() === 'darvin') {
+		if (platform() === 'darwin') {
 			return {
 				value: 'ios',
 				text: 'iOS'
