@@ -17,6 +17,10 @@
 
     .toolbar-expanded {
         height: 88px;
+
+        .icon-gear {
+          color: inherit;
+        }
     }
 
     .toolbar-row {
@@ -192,17 +196,46 @@
 
     .etch-octicon-eye-closed {
       svg {
-        fill: #505868;
+        opacity: 0.5;
       }
     }
 
-
+    .icon-gear {
+      opacity: 0.5;
+    }
     /**
      * android keystore
      */
 
     .keystore-path-input {
         width: 300px;
+    }
+
+    &.toolbar-expanded {
+        .icon-gear {
+          opacity: 1;
+
+          &.disabled {
+            color: inherit;
+          }
+        }
+    }
+
+    &.run {
+      .icon-gear {
+        display: none;
+      }
+      .etch-octicon-eye-closed,
+      .etch-octicon-eye {
+        padding: 0 5px;
+      }
+    }
+
+    &.dist-appstore {
+      .etch-octicon-eye-closed,
+      .etch-octicon-eye {
+        display: none !important;
+      }
     }
 }
 

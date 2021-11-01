@@ -301,7 +301,7 @@ export default class Toolbar {
 		}
 
 		return (
-			<div className={this.state.showingCodeSigning || this.state.buildCommand === 'custom' ? 'appc-toolbar toolbar-expanded' : 'appc-toolbar'}>
+			<div className={this.state.showingCodeSigning || this.state.buildCommand === 'custom' ? 'appc-toolbar toolbar-expanded ' + this.state.buildCommand : 'appc-toolbar ' + this.state.buildCommand}>
 
 				<div className="toolbar-row">
 

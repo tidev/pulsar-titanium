@@ -64,7 +64,7 @@ export class Octicon {
 			classNames.push('disabled');
 		}
 
-		const fill = disabled ? '#505868' : '#9da5b4';
+		const fill = 'var(--standard-text-color)';
 		const octicon = octicons[name].toSVG({ fill });
 
 		const handlers = disabled ? {} : { click: this.opts.click };
