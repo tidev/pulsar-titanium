@@ -64,7 +64,7 @@ export class Octicon {
 			classNames.push('disabled');
 		}
 
-		const fill = getComputedStyle(document.querySelector("atom-panel")).color;
+		const fill = getComputedStyle(document.querySelector('atom-panel')).color;
 		const octicon = octicons[name].toSVG({ fill });
 
 		const handlers = disabled ? {} : { click: this.opts.click };
