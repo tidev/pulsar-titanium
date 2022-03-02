@@ -49,7 +49,7 @@
   "atomTestRunner": "./spec/test-runner.js",
   "dependencies": {
     "@primer/octicons": "^16.0.0",
-    "etch": "^0.12.6",
+    "etch": "^0.14.1",
     "find": "^0.3.0",
     "fs-extra": "^10.0.0",
     "mkdirp": "^1.0.4",
