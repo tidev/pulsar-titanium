@@ -285,7 +285,7 @@ export default class Toolbar {
 				<div className="toolbar-row">
 					<div className="toolbar-center">
 						<div className="toolbar-item-title">Custom arguments:</div>
-						<input className="input-text native-key-bindings input keystore-path-input" ref="customArgs" value={this.state.customArgs} attributes={{ placeholder: 'Arguments passed to the "appc run" command ...' }} on={{ change: this.customArgsDidChange }} />
+						<input className="input-text native-key-bindings input keystore-path-input" ref="customArgs" value={this.state.customArgs} attributes={{ placeholder: 'Arguments passed to the "ti build" command ...' }} on={{ change: this.customArgsDidChange }} />
 					</div>
 					<div className="toolbar-right">
 						<Button flat="true" icon="x" click={this.expandButtonClicked.bind(this)} />
