@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.3.0...v3.0.0) (2022-03-02)
+
+
+### Code Refactoring
+
+* cleanup code relating to appc commands and migrate to only ti ([d3ca4c8](https://github.com/appcelerator/atom-appcelerator-titanium/commit/d3ca4c81aab067d487890d0725623d64a6e06bbe))
+* remove login requirement and related code ([1248617](https://github.com/appcelerator/atom-appcelerator-titanium/commit/12486174b9e3af20f525c454f350471482ecf2e9))
+
+
+### BREAKING CHANGES
+
+* removes the ability to use the Appc CLI
+* removes the ability to login
+
 # [2.3.0](https://github.com/appcelerator/atom-appcelerator-titanium/compare/v2.2.0...v2.3.0) (2021-10-27)
 
 
