@@ -8,7 +8,6 @@ import path from 'path';
 import etch from 'etch';
 import Button from './button.jsx';
 import Utils from '../utils';
-import Appc from '../appc';
 
 /**
  * New project component dialog
@@ -28,15 +27,13 @@ export default class NewProjectDialog {
 			focus: 'name',
 			submitButtonEnabled: false,
 			locationExists: false,
-			executing: false,
-			session: Appc.session()
+			executing: false
 		};
 		this.project = {
 			name: '',
 			id: '',
 			platforms: Utils.platforms(),
-			location: homedir(),
-			enableServices: Utils.usingAppcTooling(),
+			location: homedir()
 		};
 		etch.initialize(this);
 		this.setFocus();
@@ -78,22 +75,6 @@ export default class NewProjectDialog {
 				);
 			}
 		}
-		let services = '';
-		if (this.project.enableServices) {
-			services = [
-				<div className="row">
-					<p className="disabled">App will be registered with the Axway AMPLIFY Platform and mobile backend services enabled.</p>
-				</div>,
-				<div className="row">
-					<div className="title">User:</div>
-					<div className="value">{this.state.session.firstname} {this.state.session.lastname} ({this.state.session.username})</div>
-				</div>,
-				<div className="row">
-					<div className="title">Organization:</div>
-					<div className="value">{this.state.session.org_name} ({this.state.session.org_id})</div>
-				</div>
-			];
-		}
 		return (
 			<div className="appc-toolbar appc-new-project-dialog" on={{ keyup: this.onKeyUp }}>
 				<div className="row">
@@ -116,13 +97,6 @@ export default class NewProjectDialog {
 					<Button flat="true" icon="file-directory" disabled={this.state.executing} click={this.locationButtonClicked.bind(this)} />
 				</div>
 				{projectLocation}
-				{ Utils.usingAppcTooling() ? (
-					<div className="row">
-						<div className="title">Enable Services:</div>
-						<input className="input-checkbox" type="checkbox" ref="enableServices" disabled={this.state.executing} checked={this.project.enableServices} on={{ change: this.enableServicesDidChange }} />
-					</div>
-				) : null}
-				{services}
 				<div className="row-buttons">
 					<button className="btn" attributes={{ tabindex: '10' }} disabled={this.state.executing} on={{ click: this.cancelButtonClicked }}>Cancel</button>
 					<button className="btn btn-primary inline-block-tight" ref="submit" disabled={!this.state.submitButtonEnabled || this.state.executing} attributes={{ tabindex: '11' }} on={{ click: this.submitButtonClicked }}>Create</button>
