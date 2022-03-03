@@ -67,7 +67,7 @@
     "@seadub/danger-plugin-eslint": "^2.0.0",
     "@seadub/danger-plugin-junit": "^0.3.0",
     "@semantic-release/apm-config": "^8.0.0",
-    "chai": "^4.3.4",
+    "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
