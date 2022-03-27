@@ -246,7 +246,7 @@ Prefix          | Description
 
 ## Contributions
 
-This package would not be possible without support from the Titanium community. Autocompletion, jump-to-definition and grammar support provided by [Jong Eun Lee](https://github.com/yomybaby) through the [Titanium Alloy package](https://github.com/yomybaby/atom-titanium). Also a huge **thanks** to all our [open source contributors](https://github.com/appcelerator/atom-appcelerator-titanium/graphs/contributors) that help making every release
+This package would not be possible without support from the Titanium community. Autocompletion, jump-to-definition and grammar support provided by [Jong Eun Lee](https://github.com/yomybaby) through the [Titanium Alloy package](https://github.com/yomybaby/atom-titanium). Also a huge **thanks** to all our [open source contributors](https://github.com/tidev/atom-appcelerator-titanium/graphs/contributors) that help making every release
 unique for the Titanium community!
 
 ### Additional thanks
