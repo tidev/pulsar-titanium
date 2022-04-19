@@ -1,5 +1,7 @@
 /** @babel */
 /** @jsx etch.dom */
+/* global getComputedStyle, document */
+/* eslint no-undef: "error" */
 
 import etch from 'etch';
 import octicons from '@primer/octicons';
