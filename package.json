@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@atom/mocha-test-runner": "^1.6.1",
-    "@commitlint/cli": "^13.2.0",
+    "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^13.2.0",
     "@seadub/danger-plugin-dependencies": "^1.0.0",
     "@seadub/danger-plugin-eslint": "^2.0.0",
