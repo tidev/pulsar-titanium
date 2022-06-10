@@ -83,7 +83,7 @@
     "lint-staged": "^11.2.0",
     "mocha-jenkins-reporter": "^0.4.7",
     "pinst": "^2.1.6",
-    "semantic-release": "^17.4.7",
+    "semantic-release": "^19.0.3",
     "sinon": "^11.1.2"
   },
   "scripts": {
