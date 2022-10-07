@@ -48,7 +48,7 @@
   },
   "atomTestRunner": "./spec/test-runner.js",
   "dependencies": {
-    "@primer/octicons": "^17.4.0",
+    "@primer/octicons": "^17.6.0",
     "etch": "^0.14.1",
     "find": "^0.3.0",
     "fs-extra": "^10.1.0",
