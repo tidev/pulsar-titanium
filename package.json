@@ -53,7 +53,7 @@
     "find": "^0.3.0",
     "fs-extra": "^10.1.0",
     "mkdirp": "^1.0.4",
-    "semver": "^7.3.7",
+    "semver": "^7.3.8",
     "sudo-prompt": "^9.2.1",
     "titanium-editor-commons": "^2.1.0",
     "underscore": "^1.13.4",
