@@ -1,5 +1,7 @@
 /** @babel */
 /** @jsx etch.dom */
+/* global getComputedStyle, document */
+/* eslint no-undef: "error" */
 
 import etch from 'etch';
 import octicons from '@primer/octicons';
@@ -64,7 +66,7 @@ export class Octicon {
 			classNames.push('disabled');
 		}
 
-		const fill = disabled ? '#505868' : '#9da5b4';
+		const fill = getComputedStyle(document.querySelector('atom-panel')).color;
 		const octicon = octicons[name].toSVG({ fill });
 
 		const handlers = disabled ? {} : { click: this.opts.click };
