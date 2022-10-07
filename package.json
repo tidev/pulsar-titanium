@@ -56,7 +56,7 @@
     "semver": "^7.3.7",
     "sudo-prompt": "^9.2.1",
     "titanium-editor-commons": "^2.1.0",
-    "underscore": "^1.13.4",
+    "underscore": "^1.13.6",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
