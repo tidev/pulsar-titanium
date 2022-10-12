@@ -79,7 +79,7 @@
     "lint-staged": "^13.0.3",
     "pinst": "^3.0.0",
     "semantic-release": "^17.4.7",
-    "sinon": "^14.0.0"
+    "sinon": "^14.0.1"
   },
   "scripts": {
     "commit": "git-cz",
