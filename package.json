@@ -1,5 +1,5 @@
 {
-  "name": "appcelerator-titanium",
+  "name": "titanium",
   "main": "./lib/index",
   "version": "3.0.1",
   "description": "Appcelerator Titanium build tools and UI for Atom",
