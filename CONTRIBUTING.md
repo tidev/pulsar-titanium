@@ -28,14 +28,13 @@ When sending in a PR please make sure you do the following:
 
 ## Releasing
 
-All PRs that land on master are automatically released via semantic-release on Jenkins.
-### Through CI
+Releasing should generally be done through GitHub actions which is described below. However the "manual" process is also documented.
 
-To release through Jenkins:
+## Through GitHub Actions
 
-1. Merge a PR onto `master`
-2. Sit back and let Jenkins do the "hard" work
-3. 🎉
+1. Navigate to the [Release workflow](https://github.com/tidev/atom-appcelerator-titanium/actions/workflows/release.yml)
+2. Trigger a workflow run and wait for the run to finish
+3. Verify the release is published on the Atom registry and GitHub releases
 
 ### Manually
 
