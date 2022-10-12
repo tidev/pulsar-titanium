@@ -1,3 +1,11 @@
+## [3.0.1](https://github.com/tidev/atom-appcelerator-titanium/compare/v3.0.0...v3.0.1) (2022-10-12)
+
+
+### Bug Fixes
+
+* **all:** liveview icon color ([#518](https://github.com/tidev/atom-appcelerator-titanium/issues/518)) ([96886ee](https://github.com/tidev/atom-appcelerator-titanium/commit/96886eec6a360309643a4c0c5e7463e91fcbde1b))
+* links to repo and issues ([#572](https://github.com/tidev/atom-appcelerator-titanium/issues/572)) ([75c5ddb](https://github.com/tidev/atom-appcelerator-titanium/commit/75c5ddb7fd86c3c5f4a31e7837acb3069c86c949))
+
 # [3.0.0](https://github.com/tidev/atom-appcelerator-titanium/compare/v2.3.0...v3.0.0) (2022-03-02)
 
 
