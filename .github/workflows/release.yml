@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+      - uses: UziTech/action-setup-atom@v3
       - name: Install NPM dependencies
         run: npm ci
       - name: Release
