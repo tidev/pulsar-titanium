@@ -188,7 +188,7 @@ export default class Console {
 	 * @returns {String}
 	 */
 	getTitle() {
-		return 'Titanium console';
+		return 'Titanium SDK console';
 	}
 
 	/**
