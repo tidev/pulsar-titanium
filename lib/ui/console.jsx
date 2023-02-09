@@ -119,7 +119,7 @@ export default class Console {
 		this.subscriptions.add(
 			atom.workspace.onDidOpen(e => {
 				if (e.item === this) {
-					this.state.isHidden = false;
+					this.state.isHidden = true;
 				}
 			})
 		);
@@ -188,7 +188,7 @@ export default class Console {
 	 * @returns {String}
 	 */
 	getTitle() {
-		return 'Appcelerator Console';
+		return 'Titanium SDK console';
 	}
 
 	/**
