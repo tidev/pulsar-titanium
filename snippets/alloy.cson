@@ -71,9 +71,9 @@
       'ListView':
         'prefix': 'ListView'
         'body': """
-        	<ListView id="" defaultItemTemplate="default">
+        	<ListView id="${1:listview}" defaultItemTemplate="${2:default}">
         		<Templates>
-        			<ItemTemplate name="default"></ItemTemplate>
+        			<ItemTemplate name="${2:default}"></ItemTemplate>
         		</Templates>
         		<ListSection>
         			<ListItem/>
@@ -84,25 +84,25 @@
         'prefix': 'TabGroup'
         'body': """
         	<TabGroup>
-        		<Tab id="tab1" title="Tab 1" icon="KS_nav_views.png">
-        			<Window id="win1" title="Tab 1"></Window>
+        		<Tab id="${1:tab1}" title="${2:Tab 1}" icon="KS_nav_views.png">
+        			<Window id="${3:win}" title="${2:Tab 1}"></Window>
         		</Tab>
         	</TabGroup>
             """
       'NavigationWidow':
         'prefix': 'NavigationWidow'
         'body': """
-        	<NavigationWindow id="navWin">
-        		<Window title="Window"></Window>
+        	<NavigationWindow id="${1:navWin}">
+        		<Window title="${2:Window}"></Window>
         	</NavigationWindow>
             """
       'OptionDialog':
         'prefix': 'OptionDialog'
         'body': """
-        	<OptionDialog id="dialog" title="Option dialog">
+        	<OptionDialog id="${1:dialog}" title="${2:Options}">
         		<Options>
-        			<Option>Confirm</Option>
-        			<Option cancel="true">Cancel</Option>
+        			<Option>${3:Confirm}</Option>
+        			<Option cancel="true">${4:Cancel}</Option>
         		</Options>
         	</OptionDialog>
             """
