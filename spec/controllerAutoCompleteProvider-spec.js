@@ -37,7 +37,7 @@ describe('Ti namespace suggestions', function () {
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
 		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
+		expect(atomEnvironment.packages.isPackageActive('titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -97,7 +97,7 @@ describe('Extended Ti suggestions', function () {
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
 		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
+		expect(atomEnvironment.packages.isPackageActive('titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -148,7 +148,7 @@ describe('Alloy namespace suggestions', function () {
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
 		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
+		expect(atomEnvironment.packages.isPackageActive('titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
@@ -208,7 +208,7 @@ describe('Extended Alloy suggestions', function () {
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
 		await atomEnvironment.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atomEnvironment.packages.activatePackage(path.join(__dirname, '..'));
-		expect(atomEnvironment.packages.isPackageActive('appcelerator-titanium')).to.equal(true);
+		expect(atomEnvironment.packages.isPackageActive('titanium')).to.equal(true);
 		sandbox.stub(Project, 'sdk').resolves('8.1.0.GA');
 		sandbox.stub(tce.completion, 'loadCompletions').resolves(completions);
 	});
