@@ -1,0 +1,14 @@
+{
+	"global": {
+		"test": "value"
+	},
+	"env:development": {},
+	"env:test": {},
+	"env:production": {},
+	"os:android": {},
+	"os:ios": {},
+	"os:windows": {},
+	"dependencies": {
+		"widget-test": "1.0"
+	}
+}
