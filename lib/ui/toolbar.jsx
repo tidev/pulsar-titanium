@@ -21,8 +21,8 @@ etch.setScheduler(atom.views);
 export default class Toolbar {
 
 	buildCommand() {
-		const buildCommand = Utils.get(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommand`);
-		const buildCommandName = Utils.get(`appcelerator-titanium.general.${this.normalizedAppName}.buildCommandName`);
+		const buildCommand = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.buildCommand`);
+		const buildCommandName = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.buildCommandName`);
 
 		if (buildCommand !== null && buildCommand !== undefined) {
 			return {
@@ -44,7 +44,7 @@ export default class Toolbar {
 	}
 
 	selectedPlatform() {
-		const selectedPlatform = Utils.get(`appcelerator-titanium.general.${this.normalizedAppName}.selectedPlatform`);
+		const selectedPlatform = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.selectedPlatform`);
 
 		if (selectedPlatform !== null && selectedPlatform !== undefined) {
 			return {
@@ -84,21 +84,21 @@ export default class Toolbar {
 			target: null,
 			targetName: null,
 			disableUI: true,
-			enableLiveview: Utils.get('appcelerator-titanium.general.liveviewEnabled'),
-			isDebugMode: Utils.get('appcelerator-titanium.general.isDebugMode'),
+			enableLiveview: Utils.getConfigSetting('titanium.general.liveviewEnabled'),
+			isDebugMode: Utils.getConfigSetting('titanium.general.isDebugMode'),
 			buildInProgress: false,
 			codeSigningAvailable: true,
 			showingCodeSigning: false,
 			showingCustom: false,
-			customArgs: Utils.get('appcelerator-titanium.general.customArgs') || '',
+			customArgs: Utils.getConfigSetting('titanium.general.customArgs') || '',
 			iOSCodeSigning: {
-				certificate: Utils.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedCertificate`),
-				provisioningProfile: Utils.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`),
-				output: Utils.get(`appcelerator-titanium.ios.${this.normalizedAppName}.selectedOutput`),
+				certificate: Utils.getConfigSetting(`titanium.ios.${this.normalizedAppName}.selectedCertificate`),
+				provisioningProfile: Utils.getConfigSetting(`titanium.ios.${this.normalizedAppName}.selectedProvisioningProfile`),
+				output: Utils.getConfigSetting(`titanium.ios.${this.normalizedAppName}.selectedOutput`),
 			},
 			androidKeystore: {
-				path: Utils.get('appcelerator-titanium.android.keystorePath'),
-				alias: Utils.get('appcelerator-titanium.android.keystoreAlias'),
+				path: Utils.getConfigSetting('titanium.android.keystorePath'),
+				alias: Utils.getConfigSetting('titanium.android.keystoreAlias'),
 				password: '',
 				privateKeyPassword: ''
 			}
@@ -118,7 +118,7 @@ export default class Toolbar {
 
 		etch.initialize(this);
 
-		this.panel = atom.workspace.addHeaderPanel({ item: this.element, visible: Utils.get('appcelerator-titanium.general.showToolbar') });
+		this.panel = atom.workspace.addHeaderPanel({ item: this.element, visible: Utils.getConfigSetting('titanium.general.showToolbar') });
 	}
 
 	/**
@@ -394,8 +394,8 @@ export default class Toolbar {
 		if (targetNode && targetNode.props.value && targetNode.props.platform === platform.value) {
 			atom.config.set(`titanium.general.${this.normalizedAppName}.${platform.value}.selectedTarget`, target.value);
 		}
-		const androidSelectedTarget = Utils.get(`titanium.general.${this.normalizedAppName}.android.selectedTarget`);
-		const iosSelectedTarget = Utils.get(`titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
+		const androidSelectedTarget = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.android.selectedTarget`);
+		const iosSelectedTarget = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
 
 		let targetType = platform.value === 'ios' ? 'simulator' : 'emulator';
 		if (this.targets.devices && target.index < this.targets.devices.length + 1) {
@@ -469,7 +469,7 @@ export default class Toolbar {
 		this.targetOptions = [];
 		this.targetOptions.push({ value: '', text: 'Devices', disabled: true });
 
-		const selectedTarget = Utils.get(`appcelerator-titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
+		const selectedTarget = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.ios.selectedTarget`);
 		let hasSelectedTarget = false;
 		if (this.targets.devices.length === 0) {
 			this.targetOptions.push({ value: '', text: 'No Device Targets', disabled: true });
@@ -521,7 +521,7 @@ export default class Toolbar {
 		this.targets = Appc.androidTargets();
 		this.targetOptions = [];
 		this.targetOptions.push({ value: '', text: 'Devices', disabled: true });
-		const selectedTarget = Utils.get(`appcelerator-titanium.general.${this.normalizedAppName}.android.selectedTarget`);
+		const selectedTarget = Utils.getConfigSetting(`titanium.general.${this.normalizedAppName}.android.selectedTarget`);
 		let hasSelectedTarget = false;
 		if (this.targets.devices.length === 0) {
 			this.targetOptions.push({ value: '', text: 'No Connected Devices', disabled: true });
