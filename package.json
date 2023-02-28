@@ -2,7 +2,7 @@
   "name": "titanium",
   "main": "./lib/index",
   "version": "3.0.2",
-  "description": "Appcelerator Titanium build tools and UI for Atom",
+  "description": "Titanium build tools and UI for Atom",
   "repository": "https://github.com/tidev/atom-appcelerator-titanium",
   "license": "Apache-2.0",
   "engines": {
@@ -85,7 +85,7 @@
     "commit": "git-cz",
     "lint": "eslint --ext .js,.jsx .",
     "release": "cross-env HUSKY=0 semantic-release",
-    "test": "ppm --version && ppm test",
+    "test": "pulsar --version && pulsar --test spec",
     "postinstall": "husky install || exit 0",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"

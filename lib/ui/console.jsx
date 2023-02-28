@@ -197,7 +197,7 @@ export default class Console {
 	 * @returns {String}
 	 */
 	getURI() {
-		return 'atom://appcelerator-titanium/console';
+		return 'atom://titanium/console';
 	}
 
 	/**

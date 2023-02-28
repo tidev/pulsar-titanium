@@ -57,3 +57,30 @@ describe('#getCorrectCertificateName', function () {
 		expect(certificate).to.equal('iPhone Developer: Mrs Developer (D4BDS41234)');
 	});
 });
+
+describe('#getConfigSetting', () => {
+
+	beforeEach(() => {
+		atom.config.clear();
+	});
+
+	it('should handle mapping config values that start with appcelerator-titanium', async () => {
+		atom.config.set('appcelerator-titanium.general.screenshotPath', 'test');
+		expect(Utils.getConfigSetting('appcelerator-titanium.general.screenshotPath')).to.equal('test');
+	});
+
+	it('should handle mapping config values that start with titanium', async () => {
+		atom.config.set('titanium.general.screenshotPath', 'test');
+		expect(Utils.getConfigSetting('titanium.general.screenshotPath')).to.equal('test');
+	});
+
+	it('should handle mapping config values that start with nothing', async () => {
+		atom.config.set('titanium.general.screenshotPath', 'test');
+		expect(Utils.getConfigSetting('general.screenshotPath')).to.equal('test');
+	});
+
+	it('should handle falling back to looking up against the previous namespace', async () => {
+		atom.config.set('appcelerator-titanium.general.screenshotPath', 'test');
+		expect(Utils.getConfigSetting('titanium.general.screenshotPath')).to.equal('test');
+	});
+});
