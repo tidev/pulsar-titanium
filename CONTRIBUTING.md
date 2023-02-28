@@ -41,9 +41,9 @@ Releasing should generally be done through GitHub actions which is described bel
 To release the extension manually, the steps below need to be followed. Manual release should only be done if the automated release process cannot be achieved (for example if Jenkins is down).
 
 1. Ensure that your local `master` branch is completely up to date with the main repo.
-2. Run `npm run release`, which uses [semantic-release](https://github.com/semantic-release/semantic-release). It requires a `ATOM_ACCESS_TOKEN` and `GH_TOKEN` environment variable and will do the following:
+2. Run `npm run release`, which uses [semantic-release](https://github.com/semantic-release/semantic-release). It requires a `PULSAR_ACCESS_TOKEN` and `GH_TOKEN` environment variable and will do the following:
 	- Bump the version based on commit messages, updates the changelog, commits the files and tags a new release.
 	- Pushes the changes and tag to the main repo
 	- Creates a new release based on that tag on GitHub with the entry from the changelog
-	- Runs `apm publish` to register that tag on the Atom marketplace
+	- Runs `pulsar --package publish` to register that tag on the Atom marketplace
 3. 🎉
