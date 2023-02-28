@@ -11,11 +11,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - uses: UziTech/action-setup-atom@v3
+      - name: Install Pulsar
+        uses: pulsar-edit/action-pulsar-dependency@v3.2
       - name: Install NPM dependencies
         run: npm ci
       - name: Release
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ATOM_ACCESS_TOKEN: ${{ secrets.ATOM_ACCESS_TOKEN }}
+          PULSAR_ACCESS_TOKEN: ${{ secrets.PULSAR_ACCESS_TOKEN }}
