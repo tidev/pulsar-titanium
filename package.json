@@ -3,7 +3,7 @@
   "main": "./lib/index",
   "version": "3.0.2",
   "description": "Titanium build tools and UI for Atom",
-  "repository": "https://github.com/tidev/atom-appcelerator-titanium",
+  "repository": "https://github.com/tidev/pulsar-titanium",
   "license": "Apache-2.0",
   "engines": {
     "atom": ">1.21.0"

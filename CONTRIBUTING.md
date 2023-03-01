@@ -32,7 +32,7 @@ Releasing should generally be done through GitHub actions which is described bel
 
 ## Through GitHub Actions
 
-1. Navigate to the [Release workflow](https://github.com/tidev/atom-appcelerator-titanium/actions/workflows/release.yml)
+1. Navigate to the [Release workflow](https://github.com/tidev/pulsar-titanium/actions/workflows/release.yml)
 2. Trigger a workflow run and wait for the run to finish
 3. Verify the release is published on the Atom registry and GitHub releases
 
