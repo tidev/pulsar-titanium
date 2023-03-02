@@ -99,7 +99,7 @@ Show or hide the console which outputs debug information during build and run.
 
 #### Build
 
-The build select button executes and provides selections of the build command. Depending on the target platform selected, the drop-down will display options for the `ti run` command:
+The build select button executes and provides selections of the build command. Depending on the target platform selected, the drop-down will display options for the `ti build` command:
 
 <img src="https://user-images.githubusercontent.com/2697821/33169524-ed2b85ca-d03c-11e7-881e-4eb9e301649d.png" width="109px" alt="Build command select" />
 
