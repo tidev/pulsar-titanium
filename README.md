@@ -23,7 +23,7 @@ ppm install pulsar-titanium
 
 You can also use the repo URL to install the latest repo version:
 ```
-ppm install https://github.com/tidev/pulsar-titanium
+pulsar --package install https://github.com/tidev/pulsar-titanium
 ```
 
 ## Open a Titanium project
