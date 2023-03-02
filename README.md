@@ -11,7 +11,7 @@ Titanium SDK build tools and UI for the [Pulsar text editor](https://pulsar-edit
 
 ### Using the Pulsar package manager
 
-Preferences/Settings > Install > Search for `pulsar-titanium`.
+Preferences/Settings > Install > Search for `titanium`.
 
 ### Using the CLI:
 
