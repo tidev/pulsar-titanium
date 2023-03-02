@@ -18,7 +18,7 @@ Preferences/Settings > Install > Search for `pulsar-titanium`.
 Use `ppm` (Pulsar package manager) or `apm` (Atom package manager):
 
 ```
-ppm install pulsar-titanium
+pulsar --package install pulsar-titanium
 ```
 
 You can also use the repo URL to install the latest repo version:
