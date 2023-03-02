@@ -106,7 +106,7 @@ The build select button executes and provides selections of the build command. D
 * Run: Build and run the app on selected simulator/emulator or device
 * Ad-Hoc: (iOS only) build and package the app for Ad-Hoc distribution using selected code signing
 * Publish: Build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
-* Custom: Execute `ti run -d <project_dir>` with custom arguments
+* Custom: Execute `ti build -d <project_dir>` with custom arguments
 
 #### Console
 
