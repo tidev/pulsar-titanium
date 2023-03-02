@@ -112,7 +112,7 @@ The build select button executes and provides selections of the build command. D
 
 <img src="https://user-images.githubusercontent.com/2697821/33169526-ed531cf2-d03c-11e7-8d08-5657f691aca2.png" width="876px" alt="Build command select" />
 
-The console displays debug logging during the build and run. The log level is passed to the `appc run` comand so selecting the log level does not alter output from the currently executing command. There are options to automatically scroll the console to the latest message and to open it when a build is initiated.
+The console displays debug logging during the build and run. The log level is passed to the `ti build` command so selecting the log level does not alter output from the currently executing command. There are options to automatically scroll the console to the latest message and to open it when a build is initiated.
 
 **By default the executing command is displayed in the console to aid debugging. This can be disabled in the package settings.**
 
