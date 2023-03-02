@@ -7,7 +7,7 @@ Titanium SDK build tools and UI for the [Pulsar text editor](https://pulsar-edit
 ## Getting Started
 
 * Pulsar is required.
-* Install `pulsar-titanium` package.
+* Install `titanium` package.
 
 ### Using the Pulsar package manager
 
