@@ -1,23 +1,29 @@
-# Appcelerator Titanium Package for Atom [![Build Status](https://travis-ci.org/appcelerator/atom-appcelerator-titanium.svg?branch=master)](https://travis-ci.org/appcelerator/atom-appcelerator-titanium)
+# Titanium SDK Package for Pulsar [![Build Status](https://travis-ci.org/appcelerator/atom-appcelerator-titanium.svg?branch=master)](https://travis-ci.org/appcelerator/atom-appcelerator-titanium)
 
-Appcelerator Titanium build tools and UI for the [Atom text editor](https://atom.io).
+Titanium SDK build tools and UI for the [Pulsar text editor](https://pulsar-edit.dev/) (formally Atom).
 
-<img src="https://user-images.githubusercontent.com/10667698/42400977-8e552cde-8141-11e8-8696-1380eb9dd581.png" width="900px" alt="Appcelerator Titanium for Atom screenshot" />
+<img src="https://user-images.githubusercontent.com/10667698/42400977-8e552cde-8141-11e8-8696-1380eb9dd581.png" width="900px" alt="Titanium SDK for Pulsar screenshot" />
 
 ## Getting Started
 
-* Atom 1.21 (or later) is required.
-* Some features are implemented as providers for services in the [Atom IDE](https://ide.atom.io) package. Install `atom-ide-ui` package.
-* Install `appcelerator-titanium` package.
+* Pulsar is required.
+* Install `titanium` package.
 
-### Using the Atom package manager
+### Using the Pulsar package manager
 
-Preferences/Settings > Install > Search for `appcelerator-titanium`.
+Preferences/Settings > Install > Search for `titanium`.
 
 ### Using the CLI:
 
+Use `ppm` (Pulsar package manager) or `apm` (Atom package manager):
+
 ```
-apm install appcelerator-titanium
+pulsar --package install pulsar-titanium
+```
+
+You can also use the repo URL to install the latest repo version:
+```
+pulsar --package install https://github.com/tidev/pulsar-titanium
 ```
 
 ## Open a Titanium project
@@ -27,7 +33,7 @@ File > Open... > Browse to Titanium project
 From the CLI:
 
 ```
-atom /path/to/titanium/project
+pulsar /path/to/titanium/project
 ```
 
 ## Features
@@ -51,7 +57,7 @@ appc:clean | `ctrl-alt-k`      | Clean the current project directory
 
 #### Selecting Tooling
 
-By default this package will use the Appcelerator CLI tooling. You can switch to the Titanium CLI tooling by enabling the `Use ti commands` property in the package settings. The toolbar will display `(appc)` when the Appcelerator tooling is enabled, and `(ti)` when the Titanium tooling is enabled.
+By default this package will use the Titanium CLI tooling. You can switch to the Titanium CLI tooling by enabling the `Use ti commands` property in the package settings.
 
 #### Toolbar
 
@@ -71,13 +77,13 @@ Select available platforms to build for.
 
 Select simulator/emulator or local device. When attaching a device, select Refresh Targets option to add it to the target list.
 
-##### 4. Code signing / Android KeyStore configuration 
+##### 4. Code signing / Android KeyStore configuration
 
 When building for device (iOS) or distribution (iOS and Android) the option to configure code signing or keystore credentials is available.
 
 ##### 5. LiveView toggle
 
-Toggle the LiveView icon to enable or disable LiveView in your application. 
+Toggle the LiveView icon to enable or disable LiveView in your application.
 
 ##### 6. Info panel
 
@@ -93,20 +99,20 @@ Show or hide the console which outputs debug information during build and run.
 
 #### Build
 
-The build select button executes and provides selections of the build command. Depending on the target platform selected, the drop-down will display options for the `appc run` command:
+The build select button executes and provides selections of the build command. Depending on the target platform selected, the drop-down will display options for the `ti build` command:
 
 <img src="https://user-images.githubusercontent.com/2697821/33169524-ed2b85ca-d03c-11e7-881e-4eb9e301649d.png" width="109px" alt="Build command select" />
 
 * Run: Build and run the app on selected simulator/emulator or device
 * Ad-Hoc: (iOS only) build and package the app for Ad-Hoc distribution using selected code signing
 * Publish: Build and package the app for distribution through the App Store or Google Play using selected code signing or keystore credentials
-* Custom: Execute `appc run -d <project_dir>` with custom arguments
+* Custom: Execute `ti build -d <project_dir>` with custom arguments
 
 #### Console
 
 <img src="https://user-images.githubusercontent.com/2697821/33169526-ed531cf2-d03c-11e7-8d08-5657f691aca2.png" width="876px" alt="Build command select" />
 
-The console displays debug logging during the build and run. The log level is passed to the `appc run` comand so selecting the log level does not alter output from the currently executing command. There are options to automatically scroll the console to the latest message and to open it when a build is initiated. 
+The console displays debug logging during the build and run. The log level is passed to the `ti build` command so selecting the log level does not alter output from the currently executing command. There are options to automatically scroll the console to the latest message and to open it when a build is initiated.
 
 **By default the executing command is displayed in the console to aid debugging. This can be disabled in the package settings.**
 
@@ -135,7 +141,7 @@ Autocompletion support is provided to help speed up development by providing qui
 On initial launch, autocomplete suggestions are generated for the current selected Titanium SDK. You can check and set this using the CLI:
 
 ```
-$ appc ti sdk
+$ ti sdk
 
 ...
 
@@ -144,7 +150,7 @@ Installed SDKs:
 ```
 
 ```
-$ appc ti sdk select
+$ ti sdk select
 ```
 
 Autocomplete suggestions can be regenerated by selecting the 'Regenerate autocomplete suggestions' option from the package settings and relaunching Atom.
@@ -259,6 +265,4 @@ We doff our caps to:
 
 ## Legal stuff
 
-Appcelerator is a registered trademark of Appcelerator, Inc. Titanium is
-a registered trademark of Appcelerator, Inc.  Please see the LEGAL information about using our trademarks,
-privacy policy, terms of usage and other legal information at [http://www.appcelerator.com/legal](http://www.appcelerator.com/legal).
+Titanium is a registered trademark of TiDev Inc. All Titanium trademark and patent rights were transferred and assigned to TiDev Inc. on 4/7/2022. Please see the LEGAL information about using our trademarks, privacy policy, terms of usage and other legal information at https://tidev.io/legal.
