@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/tidev/pulsar-titanium/compare/v3.0.4...v3.0.5) (2023-03-08)
+
+
+### Bug Fixes
+
+* **commands:** rename command prefix to titanium ([#675](https://github.com/tidev/pulsar-titanium/issues/675)) ([c3442c4](https://github.com/tidev/pulsar-titanium/commit/c3442c4a21f4deaf5669464398c6392d21886484))
+
 ## [3.0.1](https://github.com/tidev/atom-appcelerator-titanium/compare/v3.0.0...v3.0.1) (2022-10-12)
 
 
