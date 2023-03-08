@@ -626,7 +626,7 @@ export default class Toolbar {
 	 * Build button clicked
 	 */
 	buildButtonClicked() {
-		let command = (this.state.buildInProgress) ? 'appc:stop' : 'appc:build';
+		let command = (this.state.buildInProgress) ? 'titanium:stop' : 'titanium:build';
 		atom.commands.dispatch(atom.views.getView(atom.workspace), command);
 	}
 
@@ -767,14 +767,14 @@ export default class Toolbar {
 	 * Generate button clicked
 	 */
 	generateButtonClicked() {
-		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:generate');
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'titanium:generate');
 	}
 
 	/**
 	 * Console button clicked
 	 */
 	toggleConsoleButtonClicked() {
-		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:console:toggle');
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'titanium:console:toggle');
 	}
 
 	/**
@@ -813,6 +813,6 @@ export default class Toolbar {
 	 * Dispatch the clean command when the clean button is clicked
 	 */
 	cleanProjectButtonClicked() {
-		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:clean');
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'titanium:clean');
 	}
 }

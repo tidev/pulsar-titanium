@@ -118,6 +118,6 @@ export default class Hud {
 	}
 
 	updatesButtonClicked() {
-		atom.commands.dispatch(atom.views.getView(atom.workspace), 'appc:updates');
+		atom.commands.dispatch(atom.views.getView(atom.workspace), 'titanium:updates');
 	}
 }
