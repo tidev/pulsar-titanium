@@ -91,7 +91,7 @@
     "postpublish": "pinst --enable"
   },
   "release": {
-    "extends": "@semantic-release/apm-config",
+    "extends": "semantic-release-pulsar-config",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -102,7 +102,7 @@
         }
       ],
       "@semantic-release/changelog",
-      "@semantic-release/apm",
+      "semantic-release-pulsar",
       "@semantic-release/git"
     ]
   }
