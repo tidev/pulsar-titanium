@@ -1,4 +1,4 @@
-# Titanium SDK Package for Pulsar [![Build Status](https://travis-ci.org/appcelerator/atom-appcelerator-titanium.svg?branch=master)](https://travis-ci.org/appcelerator/atom-appcelerator-titanium)
+# Titanium SDK Package for Pulsar
 
 Titanium SDK build tools and UI for the [Pulsar text editor](https://pulsar-edit.dev/) (formally Atom).
 
