@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/tidev/pulsar-titanium/compare/v3.0.5...v3.0.6) (2023-08-24)
+
+
+### Bug Fixes
+
+* run npm audit to resolve audit warnings ([a6f9186](https://github.com/tidev/pulsar-titanium/commit/a6f918661356e0283f93b5cba52861b86f99efd5))
+
 ## [3.0.5](https://github.com/tidev/pulsar-titanium/compare/v3.0.4...v3.0.5) (2023-03-08)
 
 
