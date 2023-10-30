@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/tidev/pulsar-titanium/compare/v3.0.6...v3.1.0) (2023-10-30)
+
+
+### Features
+
+* alloy checkbox when creating a new project ([#682](https://github.com/tidev/pulsar-titanium/issues/682)) ([c1805fd](https://github.com/tidev/pulsar-titanium/commit/c1805fde4c63591b217dbd00f2b376a91336986e))
+
 ## [3.0.6](https://github.com/tidev/pulsar-titanium/compare/v3.0.5...v3.0.6) (2023-08-24)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "titanium",
   "main": "./lib/index",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "description": "Titanium build tools and UI for Pulsar",
   "repository": "https://github.com/tidev/pulsar-titanium",
   "license": "Apache-2.0",
