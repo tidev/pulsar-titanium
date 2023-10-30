@@ -27,13 +27,15 @@ export default class NewProjectDialog {
 			focus: 'name',
 			submitButtonEnabled: false,
 			locationExists: false,
-			executing: false
+			executing: false,
+			enableAlloy: true
 		};
 		this.project = {
 			name: '',
 			id: '',
 			platforms: Utils.platforms(),
-			location: homedir()
+			location: homedir(),
+			enableAlloy: true
 		};
 		etch.initialize(this);
 		this.setFocus();
@@ -97,6 +99,12 @@ export default class NewProjectDialog {
 					<Button flat="true" icon="file-directory" disabled={this.state.executing} click={this.locationButtonClicked.bind(this)} />
 				</div>
 				{projectLocation}
+
+				<div className="row">
+					<div className="title">Enable Alloy:</div>
+					<input className="input-checkbox" type="checkbox" ref="enableAlloy" disabled={this.state.executing} checked={this.project.enableAlloy} on={{ change: this.enableAlloyDidChange }} />
+				</div>
+
 				<div className="row-buttons">
 					<button className="btn" attributes={{ tabindex: '10' }} disabled={this.state.executing} on={{ click: this.cancelButtonClicked }}>Cancel</button>
 					<button className="btn btn-primary inline-block-tight" ref="submit" disabled={!this.state.submitButtonEnabled || this.state.executing} attributes={{ tabindex: '11' }} on={{ click: this.submitButtonClicked }}>Create</button>
@@ -196,8 +204,8 @@ export default class NewProjectDialog {
 	/**
 	 * Enable services checkbox did change
 	 */
-	enableServicesDidChange() {
-		this.project.enableServices = this.refs.enableServices.checked;
+	enableAlloyDidChange() {
+		this.project.enableAlloy = this.refs.enableAlloy.checked;
 		etch.update(this);
 	}
 
