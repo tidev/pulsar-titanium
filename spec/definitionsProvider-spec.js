@@ -28,7 +28,7 @@ describe('Definition suggestions', () => {
 	before(async function ()  {
 		this.timeout(5000);
 		sandbox = sinon.createSandbox();
-		atom.project.setPaths([path.join(__dirname, 'data', 'fixtures', 'alloy-project')]);
+		atom.project.setPaths([ path.join(__dirname, 'data', 'fixtures', 'alloy-project') ]);
 		await atom.packages.triggerDeferredActivationHooks();
 		await atom.packages.triggerActivationHook('core:loaded-shell-environment');
 		await atom.packages.activatePackage(path.join(__dirname, '..'));
