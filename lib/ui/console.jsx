@@ -21,6 +21,7 @@ class ConsoleLog {
 	constructor(opts) {
 		this.children = [];
 		this.autoScroll = opts.autoScroll;
+		this.HighlightText = '';
 		etch.initialize(this);
 	}
 
@@ -42,6 +43,59 @@ class ConsoleLog {
 				{this.children}
 			</div>
 		);
+	}
+
+	/**
+	 * Set highlighted text string
+	 *
+	 * @param {String} text		Text that will be highlighted
+	 */
+	setHighlightText(text) {
+		this.highlightText = text;
+	}
+
+	/**
+	 * Highlight text in console from highlightText string
+	 */
+	highlightTextInLog() {
+		let origInnerHtml = this.refs.log.innerHTML;
+		let cleanInnerHtml = origInnerHtml.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
+		if (this.highlightText) {
+			this.refs.log.innerHTML = cleanInnerHtml.replaceAll(this.highlightText, '<span class="highlight">' + this.highlightText + '</span>');
+		} else {
+			this.refs.log.innerHTML = cleanInnerHtml;
+		}
+	}
+
+	/**
+	 * Jump to next highlighted text string
+	 *
+	 * @param {String} direction	Direction to jump (up/down)
+	 */
+	jumpToHighlightedText(direction) {
+		let textElements = this.refs.log.querySelectorAll('.highlight');
+		let consoleHeight = this.refs.log.offsetHeight;
+		let curScrollPosition = this.refs.log.scrollTop;
+		let nextAbovePosition = 0;
+		let nextBelowPosition = this.refs.log.scrollHeight;
+
+		for (let nextElement = 0; nextElement < textElements.length; nextElement++) {
+			let elementOffset = textElements[nextElement].offsetTop;
+			let centeredOffset = elementOffset - (consoleHeight / 2);
+
+			if (elementOffset < curScrollPosition + (consoleHeight / 2)) {
+				nextAbovePosition = Math.max(centeredOffset, 0);
+			}
+			if (elementOffset > curScrollPosition + (consoleHeight / 2) && centeredOffset < nextBelowPosition) {
+				nextBelowPosition = Math.min(centeredOffset, this.refs.log.scrollHeight - consoleHeight);
+			}
+		}
+
+		if (direction === 'down') {
+			this.refs.log.scrollTop = nextBelowPosition;
+		} else {
+			this.refs.log.scrollTop = nextAbovePosition;
+		}
 	}
 
 	/**
@@ -82,6 +136,7 @@ class ConsoleLog {
 	 */
 	clear() {
 		this.children = [];
+		this.childrenClean = [];
 		this.update();
 	}
 }
@@ -105,7 +160,8 @@ export default class Console {
 			isHidden: true,
 			logLevel: 'info',
 			autoScroll: true,
-			showOnBuild: true
+			showOnBuild: true,
+			consoleHighlightText: ''
 		};
 		opts && Object.assign(this.state, opts);
 
@@ -160,6 +216,21 @@ export default class Console {
 							</div>
 							<div className="toolbar-item-title">
 								<label className="input-label"><input className="input-checkbox" type="checkbox" attributes={this.state.showOnBuild ? { checked: 'true' } : {}} on={{ change: this.showOnBuildCheckboxDidChange }} />Show on build</label>
+							</div>
+							<div className="toolbar-item-title">
+								<label className="input-label">Find:</label>
+							</div>
+							<div>
+								<input
+									type="text"
+									className="input-text native-key-bindings input"
+									value={this.state.consoleHighlightText}
+									on={{ input: this.consoleHighlightTextDidChange }}
+								/>
+							</div>
+							<div>
+								<Button icon="arrow-up" title="Find Previous" className="button-right console-search-button" flat="true" click={this.findText.bind(this, 'up')} />
+								<Button icon="arrow-down" title="Find Next" className="button-right console-search-button" flat="true" click={this.findText.bind(this, 'down')} />
 							</div>
 						</div>
 						<div className="toolbar-right">
@@ -235,6 +306,7 @@ export default class Console {
 			if (line.length === 0) {
 				continue;
 			}
+
 			if (line.indexOf('[TRACE]') === 0 || line.indexOf('TRACE') !== -1) {
 				this.trace(line);
 			} else if (line.indexOf('[DEBUG]') === 0 || line.indexOf('DEBUG') !== -1) {
@@ -339,6 +411,28 @@ export default class Console {
 	 */
 	clear() {
 		this.refs.log.clear();
+	}
+
+	/**
+	 * Jump to text
+	 *
+	 * @param {String} direction	Direction to look for text
+	 */
+	findText(direction) {
+		if (this.state.consoleHighlightText) {
+			this.refs.log.setHighlightText(this.state.consoleHighlightText);
+			this.refs.log.highlightTextInLog();
+			this.refs.log.jumpToHighlightedText(direction);
+		}
+	}
+
+	/**
+	 * Console filter value changed
+	 *
+	 * @param {Object} event 	change event object
+	 */
+	consoleHighlightTextDidChange(event) {
+		this.state.consoleHighlightText = event.target.value;
 	}
 
 	/**
