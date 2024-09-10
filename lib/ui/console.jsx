@@ -136,7 +136,7 @@ class ConsoleLog {
 	 */
 	clear() {
 		this.children = [];
-		this.childrenClean = [];
+		this.refs.log.innerHTML = '';
 		this.update();
 	}
 }
