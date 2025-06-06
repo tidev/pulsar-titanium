@@ -7,6 +7,8 @@ jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Install libsecret
+        run: sudo apt install -y libsecret-1-dev
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
