@@ -25,10 +25,14 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-20.04
+          - ubuntu-latest
           - macos-latest
           - windows-latest
     steps:
+      - if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt install -y libnotify4 libsecret-1-0
       - uses: actions/checkout@v4
       - name: Install Pulsar
         uses: pulsar-edit/action-pulsar-dependency@v3.3
