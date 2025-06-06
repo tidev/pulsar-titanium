@@ -7,8 +7,6 @@ jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Install libsecret
-        run: sudo apt install -y libsecret-1-dev
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -31,6 +29,8 @@ jobs:
           - macos-latest
           - windows-latest
     steps:
+      - name: Install libsecret
+        run: sudo apt install -y libsecret-1 libsecret-1-dev
       - uses: actions/checkout@v4
       - name: Install Pulsar
         uses: pulsar-edit/action-pulsar-dependency@v3.2
