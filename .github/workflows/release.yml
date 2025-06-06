@@ -11,8 +11,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
+      - if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt install -y libnotify4 libsecret-1-0
       - name: Install Pulsar
-        uses: pulsar-edit/action-pulsar-dependency@v3.2
+        uses: pulsar-edit/action-pulsar-dependency@v3.3
       - name: Install NPM dependencies
         run: npm ci
       - name: Release
