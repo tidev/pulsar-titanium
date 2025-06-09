@@ -61,7 +61,9 @@ class ConsoleLog {
 		let origInnerHtml = this.refs.log.innerHTML;
 		let cleanInnerHtml = origInnerHtml.replace(/<span class="highlight">(.*?)<\/span>/gi, '$1');
 		if (this.highlightText) {
-			this.refs.log.innerHTML = cleanInnerHtml.replaceAll(this.highlightText, '<span class="highlight">' + this.highlightText + '</span>');
+			const escapedText = this.highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+			const regex = new RegExp(escapedText, 'gi');
+			this.refs.log.innerHTML = cleanInnerHtml.replace(regex, match => `<span class="highlight">${match}</span>`);
 		} else {
 			this.refs.log.innerHTML = cleanInnerHtml;
 		}
@@ -73,28 +75,36 @@ class ConsoleLog {
 	 * @param {String} direction	Direction to jump (up/down)
 	 */
 	jumpToHighlightedText(direction) {
-		let textElements = this.refs.log.querySelectorAll('.highlight');
-		let consoleHeight = this.refs.log.offsetHeight;
-		let curScrollPosition = this.refs.log.scrollTop;
-		let nextAbovePosition = 0;
-		let nextBelowPosition = this.refs.log.scrollHeight;
+		const log = this.refs.log;
+		const textElements = log.querySelectorAll('.highlight');
+		const scrollTop = log.scrollTop;
+		const containerHeight = log.offsetHeight;
+		const centerLine = scrollTop + containerHeight / 2;
 
-		for (let nextElement = 0; nextElement < textElements.length; nextElement++) {
-			let elementOffset = textElements[nextElement].offsetTop;
-			let centeredOffset = elementOffset - (consoleHeight / 2);
+		let bestAbove = null;
+		let bestBelow = null;
 
-			if (elementOffset < curScrollPosition + (consoleHeight / 2)) {
-				nextAbovePosition = Math.max(centeredOffset, 0);
-			}
-			if (elementOffset > curScrollPosition + (consoleHeight / 2) && centeredOffset < nextBelowPosition) {
-				nextBelowPosition = Math.min(centeredOffset, this.refs.log.scrollHeight - consoleHeight);
+		for (const el of textElements) {
+			const elTop = el.offsetTop;
+			const centeredOffset = elTop - containerHeight / 2;
+
+			if (elTop < centerLine) {
+				bestAbove = centeredOffset;
+			} else if (elTop > centerLine && bestBelow === null) {
+				bestBelow = centeredOffset;
 			}
 		}
 
 		if (direction === 'down') {
-			this.refs.log.scrollTop = nextBelowPosition;
+			if (bestBelow === null) {
+				return;
+			}
+			log.scrollTop = Math.min(bestBelow, log.scrollHeight - containerHeight);
 		} else {
-			this.refs.log.scrollTop = nextAbovePosition;
+			if (bestAbove === null) {
+				return;
+			}
+			log.scrollTop = Math.max(bestAbove, 0);
 		}
 	}
 
