@@ -480,9 +480,6 @@ export default class Toolbar {
 				}
 				this.targetOptions.push({ value: target.udid, text: target.name });
 			}
-			if (this.targets.devices.length === 1 && this.targets.devices[0].udid === 'itunes') {
-				this.targetOptions.push({ value: '', text: 'No Connected Devices', disabled: true });
-			}
 		}
 		let sdkVersions = Object.keys(this.targets.simulators);
 		sdkVersions.sort((a, b) => a < b);
