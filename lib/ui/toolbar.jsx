@@ -569,7 +569,7 @@ export default class Toolbar {
 	populateiOSCertificates() {
 		this.iOSCertificates = Appc.iosCertificates(this.state.buildCommand === 'run' ? 'developer' : 'distribution');
 		this.iOSCertificates.sort(function (a, b) {
-			return a.fullnane > b.fullnane;
+			return a.fullname > b.fullname;
 		});
 	}
 
