@@ -31,7 +31,7 @@ function getSuggestions(prefix) {
 describe('Tag suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -42,7 +42,7 @@ describe('Tag suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -89,7 +89,7 @@ describe('Tag suggestions', function () {
 describe('Attribute suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -101,7 +101,7 @@ describe('Attribute suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));

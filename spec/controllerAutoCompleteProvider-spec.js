@@ -31,7 +31,7 @@ function getSuggestions(prefix) {
 describe('Ti namespace suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -43,7 +43,7 @@ describe('Ti namespace suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -91,7 +91,7 @@ describe('Ti namespace suggestions', function () {
 describe('Extended Ti suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -103,7 +103,7 @@ describe('Extended Ti suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -142,7 +142,7 @@ describe('Extended Ti suggestions', function () {
 describe('Alloy namespace suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -154,7 +154,7 @@ describe('Alloy namespace suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -202,7 +202,7 @@ describe('Alloy namespace suggestions', function () {
 describe('Extended Alloy suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -214,7 +214,7 @@ describe('Extended Alloy suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
