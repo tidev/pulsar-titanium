@@ -250,6 +250,16 @@ Prefix          | Description
 `ifios`         | iOS conditional statement
 `ifand`         | Android conditional statement
 
+## Updating TSS syntax tags
+
+The TSS grammar (`grammars/tss.cson`) contains a regex of valid Alloy UI tag names for syntax highlighting. To update the tag list from the Titanium SDK API, run:
+
+```
+node tools/update-tss-tags.js /path/to/api.jsca
+```
+
+The script extracts all `Titanium.UI.*` view and window types from the `api.jsca` file and merges them with any Alloy-specific tags preserved from the current grammar.
+
 ## Contributions
 
 This package would not be possible without support from the Titanium community. Autocompletion, jump-to-definition and grammar support provided by [Jong Eun Lee](https://github.com/yomybaby) through the [Titanium Alloy package](https://github.com/yomybaby/atom-titanium). Also a huge **thanks** to all our [open source contributors](https://github.com/tidev/pulsar-titanium/graphs/contributors) that help making every release
