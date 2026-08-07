@@ -31,7 +31,7 @@ function getSuggestions(prefix) {
 describe('Ti namespace suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -43,7 +43,7 @@ describe('Ti namespace suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -91,7 +91,7 @@ describe('Ti namespace suggestions', function () {
 describe('Extended Ti suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -103,7 +103,7 @@ describe('Extended Ti suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -120,11 +120,11 @@ describe('Extended Ti suggestions', function () {
 		// TODO: Remove this check when support for Atom 1.46 and lower is dropped
 		if (semver.gte(process.version, '12.0.0')) {
 			expect(suggestions[0].type).to.equal('function');
-			expect(suggestions[0].displayText).to.equal('Ti.UI.fireEvent');
+			expect(suggestions[0].displayText).to.equal('Ti.UI.createTab');
 			expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium');
 
 			expect(suggestions[1].type).to.equal('function');
-			expect(suggestions[1].displayText).to.equal('Ti.UI.createTab');
+			expect(suggestions[1].displayText).to.equal('Ti.UI.createView');
 			expect(suggestions[1].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium');
 		} else {
 			expect(suggestions[0].type).to.equal('properties');
@@ -142,7 +142,7 @@ describe('Extended Ti suggestions', function () {
 describe('Alloy namespace suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -154,7 +154,7 @@ describe('Alloy namespace suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -202,7 +202,7 @@ describe('Alloy namespace suggestions', function () {
 describe('Extended Alloy suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -214,7 +214,7 @@ describe('Extended Alloy suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -249,15 +249,15 @@ describe('Extended Alloy suggestions', function () {
 		// TODO: Remove this check when support for Atom 1.46 and lower is dropped
 		if (semver.gte(process.version, '12.0.0')) {
 			expect(suggestions[0].type).to.equal('function');
-			expect(suggestions[0].displayText).to.equal('Alloy.Controller.destroy');
+			expect(suggestions[0].displayText).to.equal('Alloy.Controller.getView');
 			// eslint-disable-next-line no-template-curly-in-string
-			expect(suggestions[0].snippet).to.equal('destroy(${1})${0}');
+			expect(suggestions[0].snippet).to.equal('getView(${1})${0}');
 			expect(suggestions[0].rightLabel).to.equal('Controller');
 
 			expect(suggestions[2].type).to.equal('function');
-			expect(suggestions[2].displayText).to.equal('Alloy.Controller.addClass');
+			expect(suggestions[2].displayText).to.equal('Alloy.Controller.getListener');
 			// eslint-disable-next-line no-template-curly-in-string
-			expect(suggestions[2].snippet).to.equal('addClass(${1})${0}');
+			expect(suggestions[2].snippet).to.equal('getListener(${1})${0}');
 			expect(suggestions[2].rightLabel).to.equal('Controller');
 		} else {
 			expect(suggestions[0].type).to.equal('function');

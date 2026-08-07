@@ -1,0 +1,31 @@
+".container": {
+	backgroundColor: "white"
+}
+
+"Label": {
+	color: "#000"
+}
+
+"#label": {
+	font: {
+		fontSize: 12
+	}
+}
+
+".title": {
+	font: {
+		fontWeight: "bold"
+	}
+}
+
+".highlighted": {
+	backgroundColor: "yellow"
+}
+
+".unused-class": {
+	color: "red"
+}
+
+"#unusedId[platform=ios]": {
+	top: 0
+}
