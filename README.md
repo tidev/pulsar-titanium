@@ -52,6 +52,7 @@ appc:open style         | `ctrl-alt-s`      | Open the related Alloy TSS file
 appc:open controller    | `ctrl-alt-x`      | Open the related JavaScript file
 appc:open close related | `ctrl-alt-a`      | Toggle the related Alloy XML, TSS and Javascript files
 appc:clean | `ctrl-alt-k`      | Clean the current project directory
+titanium:cleanup-tss    | None              | Comment out unused class and ID selectors in the current TSS file
 
 ### Build tools
 
@@ -194,6 +195,19 @@ Opening related Alloy files is supported (see above commands list).
 * From View, open related Style and/or Controller
 * From Style, open related View and/or Controller
 * From Controller, open related View and/or Style
+
+### Clean up TSS
+
+Right-click in a TSS file and choose **Clean up TSS** (also under _Packages ▸ Titanium SDK_) to comment out style blocks that are no longer used.
+
+A class or ID selector counts as used if its name appears in the related XML view *or* the related JS controller — the controller is checked because Alloy can apply classes at runtime through `$.addClass()` and friends. Tag selectors such as `"Label"` are never touched, and qualifiers are ignored when comparing, so `".row[platform=ios]"` is matched on `row`.
+
+Unused blocks are commented out with `//` rather than deleted, and the whole cleanup is a single undo step.
+
+Two limitations worth knowing:
+
+* `app.tss` is skipped. Its selectors are global and apply to every view in the project, so they cannot be judged against a single one.
+* Class names built at runtime, e.g. `$.addClass($.row, 'row-' + type)`, cannot be detected. Check the result before committing it.
 
 ### Jump-to-definition
 
