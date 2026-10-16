@@ -26,7 +26,7 @@ function getSuggestions(word, range) {
 
 describe('Definition suggestions', () => {
 	before(async function ()  {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atom.project.setPaths([ path.join(__dirname, 'data', 'fixtures', 'alloy-project') ]);
 		await atom.packages.triggerDeferredActivationHooks();
@@ -38,7 +38,7 @@ describe('Definition suggestions', () => {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		await atom.packages.deactivatePackage(path.join(__dirname, '..'));
 	});

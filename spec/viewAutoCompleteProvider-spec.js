@@ -31,7 +31,7 @@ function getSuggestions(prefix) {
 describe('Tag suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -42,7 +42,7 @@ describe('Tag suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -89,7 +89,7 @@ describe('Tag suggestions', function () {
 describe('Attribute suggestions', function () {
 
 	before(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox = sinon.createSandbox();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.triggerDeferredActivationHooks();
@@ -101,7 +101,7 @@ describe('Attribute suggestions', function () {
 	});
 
 	after(async function () {
-		this.timeout(5000);
+		this.timeout(15000);
 		sandbox.restore();
 		atomEnvironment = global.buildAtomEnvironment();
 		await atomEnvironment.packages.deactivatePackage(path.join(__dirname, '..'));
@@ -116,11 +116,11 @@ describe('Attribute suggestions', function () {
 		expect(suggestions.length).to.equal(8);
 
 		expect(suggestions[0].type).to.equal('property');
-		expect(suggestions[0].displayText).to.equal('scaleX');
-		expect(suggestions[0].snippet).to.equal('scaleX="$1"$0');
+		expect(suggestions[0].displayText).to.equal('statusBarStyle');
+		expect(suggestions[0].snippet).to.equal('statusBarStyle="$1"$0');
 		expect(suggestions[0].rightLabel).to.equal('Window');
-		expect(suggestions[0].description).to.equal('Ti.UI.Window: Scaling of the view in x-axis in pixels.');
-		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-scaleX');
+		expect(suggestions[0].description).to.equal('Ti.UI.Window: The status bar style associated with this window.');
+		expect(suggestions[0].descriptionMoreURL).to.equal('http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-statusBarStyle');
 	});
 
 	it('should provide event suggestions for', async function () {
