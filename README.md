@@ -132,9 +132,23 @@ When building for distribution through Google Play, the app must be signed with 
 
 The path to the keystore can be entered manually or by using the file picker. Keystore path and alias are stored in package configuration.
 
+### Language server
+
+Language features come from the [Titanium Language Server](https://github.com/tidev/titanium-language-server), which is bundled with the package. In Alloy views, styles, controllers and `tiapp.xml` it provides:
+
+* Autocompletion
+* Go to definition (via hyperclick)
+* Hover, including image previews. This needs [pulsar-hover](https://web.pulsar-edit.dev/packages/pulsar-hover) or [atom-ide-datatip](https://atom.io/packages/atom-ide-datatip).
+* Warnings for misspelt attributes and properties. This needs [linter](https://atom.io/packages/linter).
+* Code actions to generate a missing style, event handler or translation, and to extract attributes into a style. This needs [intentions](https://atom.io/packages/intentions).
+
+The server only starts for projects that contain a `tiapp.xml`. It runs on your own installation of Node.js, not the editor's, so it needs a Node.js version that the server supports (currently 20.18 or newer) on your `PATH`. You can also set the path to `node` in the package settings. If Node.js is missing or too old, you get one warning and the built-in providers described below are used instead.
+
+To use the built-in providers instead of the language server, turn off **Language Server › Use the Titanium Language Server** in the package settings and reload the window.
+
 ### Autocompletion
 
-Autocompletion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
+These are the built-in providers. They are used when the language server is turned off or can't run. Autocompletion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
 
 #### Generation
 
