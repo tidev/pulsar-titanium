@@ -138,9 +138,9 @@ Language features come from the [Titanium Language Server](https://github.com/ti
 
 * Autocompletion
 * Go to definition (via hyperclick)
-* Hover, including image previews. This needs [pulsar-hover](https://web.pulsar-edit.dev/packages/pulsar-hover) or [atom-ide-datatip](https://atom.io/packages/atom-ide-datatip).
-* Warnings for misspelt attributes and properties. This needs [linter](https://atom.io/packages/linter).
-* Code actions to generate a missing style, event handler or translation, and to extract attributes into a style. This needs [intentions](https://atom.io/packages/intentions).
+* Hover, including image previews. This needs [pulsar-hover](https://web.pulsar-edit.dev/packages/pulsar-hover) or [atom-ide-datatip](https://web.pulsar-edit.dev/packages/atom-ide-datatip).
+* Warnings for misspelt attributes and properties. This needs [linter](https://web.pulsar-edit.dev/packages/linter).
+* Code actions to generate a missing style, event handler or translation, and to extract attributes into a style. This needs [intentions](https://web.pulsar-edit.dev/packages/intentions).
 
 The server only starts for projects that contain a `tiapp.xml`. It runs on your own installation of Node.js, not the editor's, so it needs a Node.js version that the server supports (currently 20.18 or newer) on your `PATH`. You can also set the path to `node` in the package settings. If Node.js is missing or too old, you get one warning and the built-in providers described below are used instead.
 
