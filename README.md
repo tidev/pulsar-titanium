@@ -134,7 +134,7 @@ The path to the keystore can be entered manually or by using the file picker. Ke
 
 ### Language server
 
-Language features come from the [Titanium Language Server](https://github.com/tidev/titanium-language-server), which is bundled with the package. In Alloy views, styles, controllers and `tiapp.xml` it provides:
+Language features come from the [Titanium Language Server](https://github.com/tidev/titanium-language-server), which is bundled with the package. It works in both Alloy and classic projects. Alloy views, styles and controllers, classic `Resources/` JavaScript, and `tiapp.xml` get autocompletion, go to definition and hover. Warnings and code actions are for Alloy views and styles. In full:
 
 * Autocompletion
 * Go to definition (via hyperclick)
