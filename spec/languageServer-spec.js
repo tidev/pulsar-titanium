@@ -4,7 +4,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { expect } from 'chai';
-import TitaniumLanguageClient, { findTiapp, resolveServer } from '../lib/languageServer';
+import TitaniumLanguageClient, { continuesWord, findTiapp, resolveServer } from '../lib/languageServer';
 
 function editorFor(filePath, scopeName) {
 	return {
@@ -55,6 +55,29 @@ describe('Language server', function () {
 
 		it('rejects a configured path that does not exist', function () {
 			expect(() => resolveServer(path.join(tmp, 'missing.js'))).to.throw(/does not exist/);
+		});
+	});
+
+	describe('#continuesWord', function () {
+		const editor = {};
+		const request = (column, prefix, other = editor) => ({ editor: other, prefix, bufferPosition: { row: 1, column } });
+
+		it('continues while the word grows', function () {
+			expect(continuesWord(request(2, 'b'), request(4, 'bac'))).to.equal(true);
+			expect(continuesWord(request(4, 'bac'), request(4, 'bac'))).to.equal(true);
+		});
+
+		it('does not continue once the word shrinks or is retyped', function () {
+			expect(continuesWord(request(5, 'back'), request(4, 'bac'))).to.equal(false);
+			// "bac" deleted and "top" typed in its place: same start, different text
+			expect(continuesWord(request(4, 'bac'), request(4, 'top'))).to.equal(false);
+		});
+
+		it('does not continue into another word, line or editor', function () {
+			expect(continuesWord(request(4, 'bac'), request(9, 'to'))).to.equal(false);
+			expect(continuesWord(request(2, 'b'), { editor, prefix: 'ba', bufferPosition: { row: 2, column: 3 } })).to.equal(false);
+			expect(continuesWord(request(2, 'b'), request(3, 'ba', {}))).to.equal(false);
+			expect(continuesWord(undefined, request(3, 'ba'))).to.equal(false);
 		});
 	});
 
