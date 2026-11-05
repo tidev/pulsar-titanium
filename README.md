@@ -146,6 +146,10 @@ The server only starts for projects that contain a `tiapp.xml`. It runs on your 
 
 To use the built-in providers instead of the language server, turn off **Language Server › Use the Titanium Language Server** in the package settings and reload the window.
 
+#### Troubleshooting
+
+Run **Titanium: Show Language Server Log** from the command palette (also under _Packages › Titanium SDK_) to see what the server has reported: which projects it registered, which version of the Titanium types each uses, why it couldn't start, and when it stopped. The log is kept from startup, so you can open it after something has gone wrong. To also see every message between the editor and the server, turn on Pulsar's **Core › Debug LSP** setting (`core.debugLSP`), reload the window, and open the developer tools console.
+
 ### Autocompletion
 
 These are the built-in providers. They are used when the language server is turned off or can't run. Autocompletion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
