@@ -132,9 +132,27 @@ When building for distribution through Google Play, the app must be signed with 
 
 The path to the keystore can be entered manually or by using the file picker. Keystore path and alias are stored in package configuration.
 
+### Language server
+
+Language features come from the [Titanium Language Server](https://github.com/tidev/titanium-language-server), which is bundled with the package. It works in both Alloy and classic projects. Alloy views, styles and controllers, classic `Resources/` JavaScript, and `tiapp.xml` get autocompletion, go to definition and hover. Warnings and code actions are for Alloy views and styles. In full:
+
+* Autocompletion
+* Go to definition (via hyperclick)
+* Hover, including image previews. This needs [pulsar-hover](https://web.pulsar-edit.dev/packages/pulsar-hover) or [atom-ide-datatip](https://web.pulsar-edit.dev/packages/atom-ide-datatip).
+* Warnings for misspelt attributes and properties. This needs [linter](https://web.pulsar-edit.dev/packages/linter) and [linter-ui-default](https://web.pulsar-edit.dev/packages/linter-ui-default). `linter` normally offers to install `linter-ui-default`, but check that both are installed.
+* Code actions to generate a missing style, event handler or translation, and to extract attributes into a style. This needs [intentions](https://web.pulsar-edit.dev/packages/intentions). Put the cursor on a class, id or event handler that isn't defined yet, or on a tag name, then run **Intentions: Show** from the command palette (bound to `alt-enter`, ⌥ Return on macOS).
+
+The server only starts for projects that contain a `tiapp.xml`. It runs on your own installation of Node.js, not the editor's, so it needs a Node.js version that the server supports (currently 20.18 or newer) on your `PATH`. You can also set the path to `node` in the package settings. If Node.js is missing or too old, you get one warning and the built-in providers described below are used instead.
+
+To use the built-in providers instead of the language server, turn off **Language Server › Use the Titanium Language Server** in the package settings and reload the window.
+
+#### Troubleshooting
+
+Run **Titanium: Show Language Server Log** from the command palette (also under _Packages › Titanium SDK_) to see what the server has reported: which projects it registered, which version of the Titanium types each uses, why it couldn't start, and when it stopped. The log is kept from startup, so you can open it after something has gone wrong. To also see every message between the editor and the server, turn on Pulsar's **Core › Debug LSP** setting (`core.debugLSP`), reload the window, and open the developer tools console.
+
 ### Autocompletion
 
-Autocompletion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
+These are the built-in providers. They are used when the language server is turned off or can't run. Autocompletion support is provided to help speed up development by providing quick references to Titanium APIs and Alloy markup as well as references to modules, widgets and assets within your project.
 
 #### Generation
 

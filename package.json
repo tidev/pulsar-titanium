@@ -31,6 +31,38 @@
       "versions": {
         "0.1.0": "provideDefinitions"
       }
+    },
+    "code-actions": {
+      "versions": {
+        "0.1.0": "provideCodeActions"
+      }
+    },
+    "intentions:list": {
+      "versions": {
+        "1.0.0": "provideIntentionsList"
+      }
+    },
+    "hover": {
+      "versions": {
+        "0.1.0": "provideHover"
+      }
+    }
+  },
+  "consumedServices": {
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatip"
+      }
+    },
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    },
+    "atom-ide-busy-signal": {
+      "versions": {
+        "0.1.0": "consumeBusySignal"
+      }
     }
   },
   "lint-staged": {
@@ -49,6 +81,8 @@
   "atomTestRunner": "./spec/test-runner.js",
   "dependencies": {
     "@primer/octicons": "^19.6.0",
+    "@savetheclocktower/atom-languageclient": "^1.18.0",
+    "@titanium-sdk/language-server": "^0.1.1",
     "etch": "^0.14.1",
     "find": "^0.3.0",
     "fs-extra": "^11.1.1",

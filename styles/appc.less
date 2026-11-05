@@ -482,3 +482,29 @@
         border: none;
     }
 }
+
+/**
+ * language server log
+ */
+
+.titanium-language-server-log {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: @base-background-color;
+
+    .btn-toolbar {
+        flex: none;
+        padding: @component-padding / 2;
+    }
+
+    pre {
+        flex: 1;
+        margin: 0;
+        overflow: auto;
+        border-radius: 0;
+        font-size: @font-size;
+        user-select: text;
+        white-space: pre-wrap;
+    }
+}
